@@ -102,10 +102,8 @@
 (defun create-tags (dir-name)
   "Create tags file."
   (interactive "DDirectory: ")
-  (shell-command
-   (format "ctags -e -R -f %s/TAGS %s"
-           (directory-file-name dir-name)
-           (directory-file-name dir-name)))
+  (let (dir (directory-file-name dir-name))
+       (shell-command (format "ctags -e -R -f %s/TAGS %s" dir dir)))
 )
 
 ;; ---------------------------------------------------------------------------------------
