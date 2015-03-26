@@ -19,7 +19,7 @@
 
 ;; ---------------------------------------------------------------------------------------
 
-(load-theme 'monokai t)
+(load-theme (if (eq system-type 'windows-nt) 'monokai 'misterioso) t)
 
 (fset 'yes-or-no-p 'y-or-n-p)
 (windmove-default-keybindings 'meta)
