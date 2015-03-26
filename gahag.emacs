@@ -76,6 +76,8 @@
 
 ;; ---------------------------------------------------------------------------------------
 
+(add-hook 'csharp-mode-hook 'omnisharp-mode)
+
 (add-hook 'term-mode-hook
           '(lambda () (term-set-escape-char ?\C-x)))
 
