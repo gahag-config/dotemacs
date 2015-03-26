@@ -51,7 +51,7 @@
 
 (setq-default c-default-style "linux")
 (setq-default c-basic-offset 2)
-(c-set-offset 'substatement-open t)
+(c-set-offset 'substatement-open 0)
 
 (setq-default haskell-font-lock-symbols t)
 (setq-default haskell-indent-offset 2)
