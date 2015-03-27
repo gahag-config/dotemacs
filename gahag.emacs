@@ -40,7 +40,7 @@
                                     194 196 198 200)))
 
 
-(setq-default c-default-style "linux")
+(setq-default c-default-style "c#")
 (setq-default c-basic-offset 2)
 (c-set-offset 'substatement-open 0)
 
@@ -55,6 +55,7 @@
 
 (global-linum-mode)
 (global-fci-mode)
+(nyan-mode)
 (column-number-mode)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
@@ -66,6 +67,7 @@
 (delete-selection-mode)
 (show-paren-mode)
 
+(helm-mode)
 (recentf-mode t)
 (desktop-save-mode t)
 
@@ -75,8 +77,6 @@
 (global-set-key "\C-xg" 'ace-jump-mode)
 
 ;; ---------------------------------------------------------------------------------------
-
-(add-hook 'csharp-mode-hook 'omnisharp-mode)
 
 (add-hook 'term-mode-hook
           '(lambda () (term-set-escape-char ?\C-x)))
