@@ -76,6 +76,7 @@
 (global-set-key "\C-@"  'er/expand-region)
 (global-set-key "\C-xg" 'ace-jump-mode)
 (global-set-key "\C-xb" 'helm-mini)
+(global-set-key "\C-xk" 'kill-this-buffer)
 
 ;; ---------------------------------------------------------------------------------------
 
