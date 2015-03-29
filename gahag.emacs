@@ -40,7 +40,7 @@
                                     194 196 198 200)))
 
 
-(setq-default c-default-style "c#")
+(setq-default c-default-style "awk")
 (setq-default c-basic-offset 2)
 (c-set-offset 'substatement-open 0)
 
@@ -79,6 +79,10 @@
 (global-set-key "\C-xk" 'kill-this-buffer)
 
 ;; ---------------------------------------------------------------------------------------
+
+(add-hook 'c++-mode-hook
+          (lambda () (setq flycheck-gcc-language-standard "c++11")))
+
 
 (add-hook 'term-mode-hook
           '(lambda () (term-set-escape-char ?\C-x)))
