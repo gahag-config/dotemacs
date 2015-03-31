@@ -75,10 +75,13 @@
 
 ;; ---------------------------------------------------------------------------------------
 
-(global-set-key "\M-x"  'helm-M-x)
+(global-set-key "\M-x"     'helm-M-x)
+(global-set-key "\M-y"     'helm-show-kill-ring)
+(global-set-key "\C-x\C-f" 'helm-find-files)
+(global-set-key "\C-xb"    'helm-mini)
+
 (global-set-key "\C-@"  'er/expand-region)
 (global-set-key "\C-xg" 'ace-jump-mode)
-(global-set-key "\C-xb" 'helm-mini)
 (global-set-key "\C-xk" 'kill-this-buffer)
 
 ;; ---------------------------------------------------------------------------------------
