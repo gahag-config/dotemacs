@@ -17,6 +17,7 @@
 
 (setq-default make-backup-files nil)
 (setq-default x-select-enable-clipboard t)
+(set-default 'truncate-lines t)
 
 (setq recentf-save-file       "~/.emacs.d/.cache/recent-files"
       recentf-max-saved-items 200
@@ -54,7 +55,7 @@
 
 
 (global-linum-mode)
-(global-fci-mode)
+;;(global-fci-mode)
 (nyan-mode)
 (column-number-mode)
 (tool-bar-mode -1)
@@ -63,6 +64,7 @@
 (global-auto-complete-mode)
 (global-flycheck-mode)
 (yas-global-mode)
+(semantic-mode)
 
 (delete-selection-mode)
 (show-paren-mode)
@@ -73,6 +75,7 @@
 
 ;; ---------------------------------------------------------------------------------------
 
+(global-set-key "\M-x"  'helm-M-x)
 (global-set-key "\C-@"  'er/expand-region)
 (global-set-key "\C-xg" 'ace-jump-mode)
 (global-set-key "\C-xb" 'helm-mini)
