@@ -65,6 +65,7 @@
 (global-flycheck-mode)
 (yas-global-mode)
 (semantic-mode)
+(electric-pair-mode)
 
 (delete-selection-mode)
 (show-paren-mode)
