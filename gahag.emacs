@@ -41,13 +41,13 @@
                                     194 196 198 200)))
 
 
-(setq-default c-default-style "awk")
+(setq-default c-default-style "c#")
 (setq-default c-basic-offset 2)
 (c-set-offset 'substatement-open 0)
 
 (setq-default haskell-font-lock-symbols t)
 (setq-default haskell-indent-offset 2)
-(setq-default haskell-mode-hook (quote (turn-on-haskell-indentation)))
+(setq-default haskell-mode-hook (quote (turn-on-haskell-indent)))
 
 ;; ---------------------------------------------------------------------------------------
 
