@@ -86,9 +86,11 @@
 (global-set-key "\C-x\C-f" 'helm-find-files)
 (global-set-key "\C-xb"    'helm-mini)
 
-(global-set-key "\C-@"  'er/expand-region)
-(global-set-key "\C-xg" 'ace-jump-mode)
-(global-set-key "\C-xk" 'kill-this-buffer)
+(global-set-key "\C-@"        'er/expand-region)
+(global-set-key "\C-xg"       'ace-jump-mode)
+(global-set-key "\C-x\C-n"    'mc/mark-next-lines)
+(global-set-key "\C-x\C-\M-n" 'mc/mark-next-like-this)
+(global-set-key "\C-xk"       'kill-this-buffer)
 
 ;; ---------------------------------------------------------------------------------------
 
