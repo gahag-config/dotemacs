@@ -112,6 +112,12 @@
 
 (add-hook 'inferior-haskell-mode-hook 'my-inf-haskell-hook)
 
+
+(eval-after-load 'haskell-font-lock
+ '(progn (defconst haskell-font-lock-symbols-alist
+                   '(("\\" . "λ") ("." "∘" haskell-font-lock-dot-is-not-composition)))
+         (setq haskell-font-lock-keywords (haskell-font-lock-keywords-create nil))))
+
 ;; ---------------------------------------------------------------------------------------
 
 (defun create-tags (dir-name)
