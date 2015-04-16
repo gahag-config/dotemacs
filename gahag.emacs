@@ -88,6 +88,7 @@
 
 (global-set-key "\C-@"     'er/expand-region)
 (global-set-key "\C-xg"    'ace-jump-mode)
+(global-set-key "\M-p"     'mc/mark-previous-lines)
 (global-set-key "\M-n"     'mc/mark-next-lines)
 (global-set-key "\C-x\C-n" 'mc/mark-next-like-this)
 (global-set-key "\C-xk"    'kill-this-buffer)
