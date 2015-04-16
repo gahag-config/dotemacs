@@ -10,6 +10,14 @@
 
 ;; ---------------------------------------------------------------------------------------
 
+(autoload 'zap-up-to-char "misc"
+    "Kill up to, but not including ARGth occurrence of CHAR.
+  
+  \(fn arg char)"
+    'interactive)
+
+;; ---------------------------------------------------------------------------------------
+
 (load-theme (if (eq system-type 'windows-nt) 'monokai 'misterioso) t)
 
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -88,6 +96,7 @@
 
 (global-set-key "\C-@"     'er/expand-region)
 (global-set-key "\C-xg"    'ace-jump-mode)
+(global-set-key "M-z"      'zap-up-to-char)
 (global-set-key "\M-p"     'mc/mark-previous-lines)
 (global-set-key "\M-n"     'mc/mark-next-lines)
 (global-set-key "\C-x\C-n" 'mc/mark-next-like-this)
