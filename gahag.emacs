@@ -68,7 +68,8 @@
 
 (global-linum-mode)
 ;;(global-fci-mode)
-(nyan-mode)
+;;(nyan-mode)
+(powerline-center-theme)
 (column-number-mode)
 (tool-bar-mode -1)
 (menu-bar-mode -1)
