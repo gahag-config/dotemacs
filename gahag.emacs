@@ -84,7 +84,7 @@
 (show-paren-mode)
 
 (helm-mode)
-(projectile-global-mode)
+;;(projectile-global-mode)
 (recentf-mode t)
 (desktop-save-mode t)
 
