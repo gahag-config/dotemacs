@@ -115,15 +115,6 @@
           '(lambda () (term-set-escape-char ?\C-x)))
 
 
-(load-library "inf-haskell")
-
-(defun my-inf-haskell-hook ()
-  (setq comint-prompt-regexp 
-        (concat comint-prompt-regexp "\\|^.> ")))
-
-(add-hook 'inferior-haskell-mode-hook 'my-inf-haskell-hook)
-
-
 (eval-after-load 'haskell-font-lock
  '(progn (defconst haskell-font-lock-symbols-alist
                    '(("\\" . "λ") ("." "∘" haskell-font-lock-dot-is-not-composition)))
