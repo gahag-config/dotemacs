@@ -80,13 +80,14 @@
 (global-set-key "\C-x\C-f" 'helm-find-files)
 (global-set-key "\C-xb"    'helm-mini)
 
-(global-set-key "\C-@"     'er/expand-region)
-(global-set-key "\C-xg"    'ace-jump-mode)
-(global-set-key "\M-z"     'zap-up-to-char)
-(global-set-key "\M-p"     'mc/mark-previous-lines)
-(global-set-key "\M-n"     'mc/mark-next-lines)
-(global-set-key "\C-x\C-n" 'mc/mark-next-like-this)
-(global-set-key "\C-xk"    'kill-this-buffer)
+(setq expand-region-contract-fast-key ".")
+(global-set-key (kbd "C-,") 'er/expand-region)
+(global-set-key "\C-xg"     'ace-jump-mode)
+(global-set-key "\M-z"      'zap-up-to-char)
+(global-set-key "\M-p"      'mc/mark-previous-lines)
+(global-set-key "\M-n"      'mc/mark-next-lines)
+(global-set-key "\C-x\C-n"  'mc/mark-next-like-this)
+(global-set-key "\C-xk"     'kill-this-buffer)
 
 ;; ---------------------------------------------------------------------------------------
 
