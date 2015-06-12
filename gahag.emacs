@@ -72,6 +72,7 @@
 ;;(projectile-global-mode)
 (recentf-mode t)
 (desktop-save-mode t)
+(global-auto-revert-mode t)
 
 ;; ---------------------------------------------------------------------------------------
 
