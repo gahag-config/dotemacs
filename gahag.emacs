@@ -76,6 +76,8 @@
 
 ;; ---------------------------------------------------------------------------------------
 
+(set-register ?e '(file . "~/.emacs"))
+
 (global-set-key "\M-x"     'helm-M-x)
 (global-set-key "\M-y"     'helm-show-kill-ring)
 (global-set-key "\C-x\C-f" 'helm-find-files)
@@ -93,7 +95,7 @@
 ;; ---------------------------------------------------------------------------------------
 
 (add-hook 'c++-mode-hook
-          (lambda () (setq flycheck-gcc-language-standard "c++11")))
+          (lambda () (setq flycheck-gcc-language-standard "c++14")))
 (add-hook 'c-mode-hook
           (lambda () (setq flycheck-gcc-language-standard "c99")))
 
