@@ -91,6 +91,7 @@
 (global-set-key "\M-n"      'mc/mark-next-lines)
 (global-set-key "\C-x\C-n"  'mc/mark-next-like-this)
 (global-set-key "\C-xk"     'kill-this-buffer)
+(global-set-key "\M- "      'cycle-spacing)
 
 ;; ---------------------------------------------------------------------------------------
 
