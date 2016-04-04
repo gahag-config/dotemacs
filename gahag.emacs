@@ -78,6 +78,8 @@
 
 (set-register ?e '(file . "~/.emacs"))
 
+(global-unset-key "")
+
 (global-set-key "\M-x"     'helm-M-x)
 (global-set-key "\M-y"     'helm-show-kill-ring)
 (global-set-key "\C-x\C-f" 'helm-find-files)
