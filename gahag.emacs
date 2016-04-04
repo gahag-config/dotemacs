@@ -100,7 +100,10 @@
 (add-hook 'c++-mode-hook
           (lambda () (setq flycheck-gcc-language-standard "c++14")))
 (add-hook 'c-mode-hook
-          (lambda () (setq flycheck-gcc-language-standard "c99")))
+          (lambda ()
+                  (setq flycheck-gcc-language-standard "c99"
+                        comment-start "//"
+                        comment-end   ""                     )))
 
 
 (add-hook 'term-mode-hook
