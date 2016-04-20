@@ -46,6 +46,8 @@
 (setq-default haskell-indent-offset 2)
 (setq-default haskell-mode-hook (quote (turn-on-haskell-indent)))
 
+(setq org-log-done 'note)
+
 ;; ---------------------------------------------------------------------------------------
 
 (define-globalized-minor-mode real-global-auto-complete-mode
@@ -95,6 +97,10 @@
 (global-set-key "\C-xk"     'kill-this-buffer)
 (global-set-key "\M- "      'cycle-spacing)
 
+(define-key org-mode-map (kbd "<M-up>")    nil)
+(define-key org-mode-map (kbd "<M-down>")  nil)
+(define-key org-mode-map (kbd "<M-left>")  nil)
+(define-key org-mode-map (kbd "<M-right>") nil) 
 ;; ---------------------------------------------------------------------------------------
 
 (add-hook 'c++-mode-hook
