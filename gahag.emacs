@@ -48,6 +48,7 @@
 
 (setq org-log-done 'note)
 
+(put 'narrow-to-region 'disabled nil)
 ;; ---------------------------------------------------------------------------------------
 
 (define-globalized-minor-mode real-global-auto-complete-mode
