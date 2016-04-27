@@ -47,6 +47,7 @@
 (setq-default haskell-mode-hook (quote (turn-on-haskell-indent)))
 
 (setq org-log-done 'note)
+(setq org-src-fontify-natively t)
 
 (put 'narrow-to-region 'disabled nil)
 ;; ---------------------------------------------------------------------------------------
