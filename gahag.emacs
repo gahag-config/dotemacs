@@ -50,6 +50,7 @@
 (setq org-src-fontify-natively t)
 
 (put 'narrow-to-region 'disabled nil)
+
 ;; ---------------------------------------------------------------------------------------
 
 (define-globalized-minor-mode real-global-auto-complete-mode
@@ -102,16 +103,22 @@
 (define-key org-mode-map (kbd "<M-up>")    nil)
 (define-key org-mode-map (kbd "<M-down>")  nil)
 (define-key org-mode-map (kbd "<M-left>")  nil)
-(define-key org-mode-map (kbd "<M-right>") nil) 
+(define-key org-mode-map (kbd "<M-right>") nil)
+
+(defun fix-parenthesis () (local-set-key "\(" 'self-insert-command)
+                          (local-set-key "\)" 'self-insert-command))
+
 ;; ---------------------------------------------------------------------------------------
 
 (add-hook 'c++-mode-hook
           (lambda () (setq flycheck-gcc-language-standard "c++14")))
 (add-hook 'c-mode-hook
-          (lambda ()
-                  (setq flycheck-gcc-language-standard "c99"
-                        comment-start "//"
-                        comment-end   ""                     )))
+          (lambda () (setq comment-start "//"
+                           comment-end   ""
+                           flycheck-gcc-language-standard "c99")
+                     (fix-parenthesis)))
+
+(add-hook 'csharp-mode-hook 'fix-parenthesis)
 
 
 (add-hook 'term-mode-hook
