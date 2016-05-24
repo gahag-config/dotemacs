@@ -151,4 +151,18 @@
   (setq-local c-basic-offset size)
   (setq-local haskell-indent-offset size))
 
+(defun find-temp-file (filename)
+  "Find new temporary file"
+
+  (interactive "sFile name: ") ; String
+  
+  (find-file (make-temp-file filename)))
+
+(defun align-whitespace (size)
+  "Align columns delimited by whitespace."
+  
+  (interactive "NSize: ") ; Number
+  
+  (align-regexp (point-min) (point-max) "\\(\\s-*\\)\\s-" 1 size 't))
+
 ;; ---------------------------------------------------------------------------------------
