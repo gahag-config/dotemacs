@@ -163,6 +163,6 @@
   
   (interactive "NSize: ") ; Number
   
-  (align-regexp (point-min) (point-max) "\\(\\s-*\\)\\s-" 1 size 't))
+  (align-regexp (region-beginning) (region-end) "\\(\\s-*\\)\\s-" 1 size 't))
 
 ;; ---------------------------------------------------------------------------------------
