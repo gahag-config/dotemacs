@@ -85,20 +85,21 @@
 
 (global-unset-key "")
 
-(global-set-key "\M-x"     'helm-M-x)
-(global-set-key "\M-y"     'helm-show-kill-ring)
-(global-set-key "\C-x\C-f" 'helm-find-files)
-(global-set-key "\C-xb"    'helm-mini)
+(global-set-key (kbd "M-x"    ) 'helm-M-x)
+(global-set-key (kbd "M-y"    ) 'helm-show-kill-ring)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-x b"  ) 'helm-mini)
 
 (setq expand-region-contract-fast-key ".")
-(global-set-key (kbd "C-,") 'er/expand-region)
-(global-set-key "\C-xg"     'ace-jump-mode)
-(global-set-key "\M-z"      'zap-up-to-char)
-(global-set-key "\M-p"      'mc/mark-previous-lines)
-(global-set-key "\M-n"      'mc/mark-next-lines)
-(global-set-key "\C-x\C-n"  'mc/mark-next-like-this)
-(global-set-key "\C-xk"     'kill-this-buffer)
-(global-set-key "\M- "      'cycle-spacing)
+(global-set-key (kbd "C-,"    ) 'er/expand-region)
+(global-set-key (kbd "C-x g"  ) 'ace-jump-mode)
+(global-set-key (kbd "M-z"    ) 'zap-up-to-char)
+(global-set-key (kbd "M-p"    ) 'mc/mark-previous-lines)
+(global-set-key (kbd "M-n"    ) 'mc/mark-next-lines)
+(global-set-key (kbd "C-x C-n") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-x k"  ) 'kill-this-buffer)
+(global-set-key (kbd "M-SPC"  ) 'cycle-spacing)
+(global-set-key (kbd "C-."    ) (lambda () (interactive) (set-mark-command 4)))
 
 (define-key org-mode-map (kbd "<M-up>")    nil)
 (define-key org-mode-map (kbd "<M-down>")  nil)
@@ -138,7 +139,7 @@
   (interactive "DDirectory: ")  ; Directory
   
   (let ((dir (directory-file-name dir-name)))
-       (shell-command (format "%s -e -R -f %s/TAGS %s" ctags dir dir))))
+       (shell-command (format "%s -e -R -f \"%s\"/TAGS \"%s\"" ctags dir dir))))
 
 
 (defun set-tab-size (size)
