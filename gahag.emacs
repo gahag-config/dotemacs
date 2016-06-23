@@ -50,6 +50,8 @@
 (setq org-src-fontify-natively t)
 
 (put 'narrow-to-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
 
 ;; ---------------------------------------------------------------------------------------
 
@@ -99,7 +101,7 @@
 (global-set-key (kbd "C-x C-n") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-x k"  ) 'kill-this-buffer)
 (global-set-key (kbd "M-SPC"  ) 'cycle-spacing)
-(global-set-key (kbd "C-."    ) (lambda () (interactive) (set-mark-command 4)))
+(global-set-key (kbd "C-."    ) 'pop-tag-mark)
 
 (define-key org-mode-map (kbd "<M-up>")    nil)
 (define-key org-mode-map (kbd "<M-down>")  nil)
@@ -139,8 +141,15 @@
   (interactive "DDirectory: ")  ; Directory
   
   (let ((dir (directory-file-name dir-name)))
-       (shell-command (format "%s -e -R -f \"%s\"/TAGS \"%s\"" ctags dir dir))))
+       (shell-command (format "%s -e -R -f \"%s\"/TAGS \"%s\"" ctags-program dir dir))))
 
+(defun desktop-switch (dir-name)
+  "Switch to desktop"
+  
+  (interactive (list (read-directory-name "Directory: "
+                                          desktops-dir)))
+  
+  (desktop-change-dir dir-name))
 
 (defun set-tab-size (size)
   "Set the tab size for the current buffer."
@@ -154,7 +163,7 @@
 
 (defun find-temp-file (filename)
   "Find new temporary file"
-
+  
   (interactive "sFile name: ") ; String
   
   (find-file (make-temp-file filename)))
