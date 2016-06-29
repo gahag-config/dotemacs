@@ -13,6 +13,7 @@
 (global-flycheck-mode)
 (yas-global-mode)
 (semantic-mode)
+(eldoc-mode)
 (electric-pair-mode)
 (delete-selection-mode)
 (show-paren-mode)
