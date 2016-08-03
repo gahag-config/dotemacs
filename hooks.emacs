@@ -2,7 +2,7 @@
                           (local-set-key "\)" 'self-insert-command))
 
 (add-hook 'c++-mode-hook
-          (lambda () (setq flycheck-gcc-language-standard "c++14")))
+          (lambda () (setq flycheck-gcc-language-standard "c++17")))
 
 
 (add-hook 'c-mode-hook
