@@ -11,17 +11,9 @@
 
 
 (require 'cl)
-(require 'package)
-
-(add-to-list 'package-archives
-             '("marmalade" . "https://marmalade-repo.org/packages/"))
-
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/"))
-
-(package-initialize)
 
 (cl-flet ((dotemacs (name) (concat dotemacs-dir name)))
+  (load (dotemacs "packages.emacs"))
   (load (dotemacs "config.emacs"))
   (load (dotemacs "modes.emacs"))
   (load (dotemacs "keys.emacs"))
