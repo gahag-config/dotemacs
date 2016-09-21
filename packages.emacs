@@ -6,6 +6,8 @@
                          flycheck
                          yasnippet
                          semantic
+                         expand-region
+                         multiple-cursors
                          helm))
 
 
