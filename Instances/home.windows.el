@@ -5,7 +5,7 @@
 (defconst ctags-program "C:/Users/gahag/Desktop/gahag/OSs/Windows/Programs/ctags.exe")
 (defconst desktop-home  "C:/Users/gahag/Desktop/gahag/Programming/Emacs/desktops/")
 (defconst dotemacs-dir  "C:/Users/gahag/Desktop/gahag/Programming/Emacs/dotemacs/")
-(defconst dotemacs-file (concat dotemacs-dir "gahag.emacs"))
+(defconst dotemacs-file (concat dotemacs-dir "gahag.el"))
 
 (load dotemacs-file)
 

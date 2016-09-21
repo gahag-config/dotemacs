@@ -1,7 +1,7 @@
 ;; The .emacs should declare the following constants:
 ;; 
 ;; dotemacs-dir  - the directory of this file.
-;; dotemacs-file - the path of this file, roughly (concat dotemacs-dir "gahag.emacs")
+;; dotemacs-file - the path of this file, roughly (concat dotemacs-dir "gahag.el")
 
 ;; The following constants are optional, and
 ;; are only required by specific functions:
@@ -13,11 +13,11 @@
 (require 'cl)
 
 (cl-flet ((dotemacs (name) (concat dotemacs-dir name)))
-  (load (dotemacs "packages.emacs"))
-  (load (dotemacs "config.emacs"))
-  (load (dotemacs "modes.emacs"))
-  (load (dotemacs "keys.emacs"))
-  (load (dotemacs "defuns.emacs"))
-  (load (dotemacs "hooks.emacs"))
-  (load (dotemacs "registers.emacs"))
-  (load (dotemacs "etc.emacs")))
+  (load (dotemacs "packages.el"))
+  (load (dotemacs "config.el"))
+  (load (dotemacs "modes.el"))
+  (load (dotemacs "keys.el"))
+  (load (dotemacs "defuns.el"))
+  (load (dotemacs "hooks.el"))
+  (load (dotemacs "registers.el"))
+  (load (dotemacs "etc.el")))
