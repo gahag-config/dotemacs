@@ -13,6 +13,7 @@
         cycle-spacing
         dabbrev-expand
         delete-horizontal-space
+        electric-pair-delete-pair
         forward-sexp
         helm-confirm-and-exit-minibuffer
         kill-region
