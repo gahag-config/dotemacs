@@ -8,7 +8,8 @@
                          semantic
                          expand-region
                          multiple-cursors
-                         helm))
+                         helm
+                         org))
 
 
 (add-to-list 'package-archives
