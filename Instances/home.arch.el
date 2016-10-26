@@ -3,13 +3,13 @@
 (load-theme 'misterioso t)
 
 (defconst ctags-program "ctags")
-(defconst desktop-home  "/gahag/Programming/Emacs/desktops/")
-(defconst dotemacs-dir  "/gahag/Programming/Emacs/dotemacs/")
+(defconst desktop-home  "/gahag/Programming/Config/emacs/desktops/")
+(defconst dotemacs-dir  "/gahag/Programming/Config/emacs/dotemacs/")
 (defconst dotemacs-file (concat dotemacs-dir "gahag.el"))
 
 (load dotemacs-file)
 
-(setq omnisharp-server-executable-path "/gahag/Programming/Emacs/OmniSharpServer/OmniSharp/bin/Debug/OmniSharp.exe")
+(setq omnisharp-server-executable-path "/gahag/Programming/Config/emacs/OmniSharpServer/OmniSharp/bin/Debug/OmniSharp.exe")
 
 
 ;; ---------------------------------------------------------------------------------------
@@ -32,4 +32,7 @@
  '(flycheck-gcc-include-path
    (quote
     ("/gahag/Programming/Compiled/Cpp/Functional/Proto/Lib/" "/gahag/Programming/Compiled/Cpp/")))
- '(flycheck-gcc-language-standard "gnu++1z"))
+ '(flycheck-gcc-language-standard "gnu++1z")
+ '(package-selected-packages
+   (quote
+    (yasnippet sr-speedbar projectile powerline perspective paredit omnisharp nyan-mode multiple-cursors monokai-theme molokai-theme lua-mode heroku-theme helm haskell-mode fsharp-mode flatui-theme fill-column-indicator expand-region elm-mode company color-theme-solarized c-eldoc ace-jump-mode))))

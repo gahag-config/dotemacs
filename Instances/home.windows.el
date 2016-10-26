@@ -3,13 +3,13 @@
 (load-theme 'monokai t)
 
 (defconst ctags-program "C:/Users/gahag/Desktop/gahag/OSs/Windows/Programs/ctags.exe")
-(defconst desktop-home  "C:/Users/gahag/Desktop/gahag/Programming/Emacs/desktops/")
-(defconst dotemacs-dir  "C:/Users/gahag/Desktop/gahag/Programming/Emacs/dotemacs/")
+(defconst desktop-home  "C:/Users/gahag/Desktop/gahag/Programming/Config/emacs/desktops/")
+(defconst dotemacs-dir  "C:/Users/gahag/Desktop/gahag/Programming/Config/emacs/dotemacs/")
 (defconst dotemacs-file (concat dotemacs-dir "gahag.el"))
 
 (load dotemacs-file)
 
-(setq omnisharp-server-executable-path "C:/Users/gahag/Desktop/gahag/Programming/Emacs/OmniSharpServer/OmniSharp/bin/Debug/OmniSharp.exe")
+(setq omnisharp-server-executable-path "C:/Users/gahag/Desktop/gahag/Programming/Config/emacs/OmniSharpServer/OmniSharp/bin/Debug/OmniSharp.exe")
 
 
 ;; ---------------------------------------------------------------------------------------
