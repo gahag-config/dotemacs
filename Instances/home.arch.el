@@ -29,9 +29,10 @@
  '(custom-safe-themes
    (quote
     ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
+ '(flycheck-clang-include-path (quote ("/gahag/Programming/Langs/Cpp/AEDS/1/TP/src/")))
  '(flycheck-gcc-include-path
    (quote
-    ("/gahag/Programming/Compiled/Cpp/Functional/Proto/Lib/" "/gahag/Programming/Compiled/Cpp/")))
+    ("/gahag/Programming/Langs/Cpp/Functional/Proto/Lib/" "/gahag/Programming/Langs/Cpp/" "/gahag/Programming/Langs/Cpp/AEDS/1/TP/src/")))
  '(flycheck-gcc-language-standard "gnu++1z")
  '(package-selected-packages
    (quote

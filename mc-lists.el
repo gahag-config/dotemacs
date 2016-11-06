@@ -42,6 +42,7 @@
         2C-two-columns
         ace-jump-mode
         delete-rectangle
+        helm-M-x
         helm-confirm-and-exit-minibuffer
         helm-find-files
         helm-show-kill-ring
