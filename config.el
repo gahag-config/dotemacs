@@ -40,4 +40,4 @@
       recentf-max-menu-items  15)
 
 ;; Flycheck
-(setq-default flycheck-disabled-checkers '(c/c++-clang))
+(setq-default flycheck-clang-language-standard "c++14")
