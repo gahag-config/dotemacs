@@ -29,11 +29,12 @@
  '(custom-safe-themes
    (quote
     ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
- '(flycheck-clang-include-path (quote ("/gahag/Programming/Langs/Cpp/AEDS/1/TP/src/")))
+ '(flycheck-clang-include-path
+   (quote
+    ("/gahag/Programming/Langs/Cpp/AEDS/1/TP/src/" "/gahag/Programming/Langs/Cpp/")))
  '(flycheck-gcc-include-path
    (quote
     ("/gahag/Programming/Langs/Cpp/Functional/Proto/Lib/" "/gahag/Programming/Langs/Cpp/" "/gahag/Programming/Langs/Cpp/AEDS/1/TP/src/")))
- '(flycheck-gcc-language-standard "gnu++1z")
  '(package-selected-packages
    (quote
     (yasnippet sr-speedbar projectile powerline perspective paredit omnisharp nyan-mode multiple-cursors monokai-theme molokai-theme lua-mode heroku-theme helm haskell-mode fsharp-mode flatui-theme fill-column-indicator expand-region elm-mode company color-theme-solarized c-eldoc ace-jump-mode))))
