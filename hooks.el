@@ -10,7 +10,8 @@
 (add-hook 'c-mode-hook
           (lambda () (setq comment-start "//"
                            comment-end   ""
-                           flycheck-gcc-language-standard "c99")
+                           flycheck-gcc-language-standard "c99"
+                           flycheck-clang-language-standard "c99")
                      (fix-parenthesis)))
 
 

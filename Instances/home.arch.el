@@ -37,4 +37,4 @@
     ("/gahag/Programming/Langs/Cpp/Functional/Proto/Lib/" "/gahag/Programming/Langs/Cpp/" "/gahag/Programming/Langs/Cpp/AEDS/1/TP/src/")))
  '(package-selected-packages
    (quote
-    (yasnippet sr-speedbar projectile powerline perspective paredit omnisharp nyan-mode multiple-cursors monokai-theme molokai-theme lua-mode heroku-theme helm haskell-mode fsharp-mode flatui-theme fill-column-indicator expand-region elm-mode company color-theme-solarized c-eldoc ace-jump-mode))))
+    (java-snippets yasnippet sr-speedbar projectile powerline perspective paredit omnisharp nyan-mode multiple-cursors monokai-theme molokai-theme lua-mode heroku-theme helm haskell-mode fsharp-mode flatui-theme fill-column-indicator expand-region elm-mode company color-theme-solarized c-eldoc ace-jump-mode))))
