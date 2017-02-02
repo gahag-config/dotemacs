@@ -38,6 +38,3 @@
 (setq recentf-save-file       "~/.emacs.d/.cache/recent-files"
       recentf-max-saved-items 50
       recentf-max-menu-items  15)
-
-;; Flycheck
-(setq-default flycheck-clang-language-standard "c++14")
