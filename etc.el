@@ -18,3 +18,9 @@
 (define-key org-mode-map (kbd "<M-down>")  nil)
 (define-key org-mode-map (kbd "<M-left>")  nil)
 (define-key org-mode-map (kbd "<M-right>") nil)
+
+;(require 'markdown-mode) TODO
+;(define-key markdown-mode-map (kbd "<M-up>")    nil)
+;(define-key markdown-mode-map (kbd "<M-down>")  nil)
+;(define-key markdown-mode-map (kbd "<M-left>")  nil)
+;(define-key markdown-mode-map (kbd "<M-right>") nil)

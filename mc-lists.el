@@ -14,6 +14,7 @@
         c-electric-slash
         c-electric-star
         c-end-of-statement
+        c-indent-line-or-region
         comment-dwim
         csharp-maybe-insert-codedoc
         cycle-spacing
