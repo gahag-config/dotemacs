@@ -12,7 +12,7 @@
 (real-global-auto-complete-mode)
 (global-flycheck-mode)
 (yas-global-mode)
-(semantic-mode)
+;;(semantic-mode)
 (eldoc-mode)
 (electric-pair-mode)
 (delete-selection-mode)

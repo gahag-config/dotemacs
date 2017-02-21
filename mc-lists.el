@@ -20,6 +20,7 @@
         cycle-spacing
         dabbrev-expand
         delete-horizontal-space
+        down-list
         electric-newline-and-maybe-indent
         electric-pair-delete-pair
         forward-sexp

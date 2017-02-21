@@ -27,6 +27,8 @@
  '(custom-safe-themes
    (quote
     ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
+ '(flycheck-clang-include-path (quote ("/home/gahag/gahag/programming/langs/cpp/")))
+ '(flycheck-gcc-include-path (quote ("/home/gahag/gahag/programming/langs/cpp/")))
  '(package-selected-packages
    (quote
-    (helm multiple-cursors expand-region yasnippet flycheck powerline auto-complete))))
+    (markdown-mode helm multiple-cursors expand-region yasnippet flycheck powerline auto-complete))))
