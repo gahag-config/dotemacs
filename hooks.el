@@ -19,5 +19,4 @@
 
 
 (add-hook 'term-mode-hook
-          (lambda () (setq yas-dont-activate t)
-                     (term-set-escape-char ?\C-x)))
+          (lambda () (setq yas-dont-activate t)))

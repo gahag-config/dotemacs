@@ -49,6 +49,7 @@
         helm-find-files
         helm-show-kill-ring
         kmacro-end-or-call-macro
+        list-directory
         mc/mark-next-lines
         mc/mark-previous-lines
         repeat
