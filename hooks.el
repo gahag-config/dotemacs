@@ -1,6 +1,9 @@
 (defun fix-parenthesis () (local-set-key "\(" 'self-insert-command)
                           (local-set-key "\)" 'self-insert-command))
 
+
+(add-hook 'haskell-mode-hook 'intero-mode)
+
 (add-hook 'c++-mode-hook
           (lambda () (setq flycheck-gcc-language-standard "c++17"
                            flycheck-clang-language-standard "c++1z")

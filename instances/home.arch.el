@@ -34,4 +34,4 @@
  '(flycheck-gcc-include-path (quote ("/gahag/programming/langs/cpp/")))
  '(package-selected-packages
    (quote
-    (lorem-ipsum gh-md markdown-preview-mode markdown-mode java-snippets yasnippet sr-speedbar projectile powerline perspective paredit omnisharp nyan-mode multiple-cursors monokai-theme molokai-theme lua-mode heroku-theme helm haskell-mode fsharp-mode flatui-theme fill-column-indicator expand-region elm-mode company color-theme-solarized c-eldoc ace-jump-mode))))
+    (intero xlicense lorem-ipsum gh-md markdown-preview-mode markdown-mode java-snippets yasnippet sr-speedbar projectile powerline perspective paredit omnisharp nyan-mode multiple-cursors monokai-theme molokai-theme lua-mode heroku-theme helm haskell-mode fsharp-mode flatui-theme fill-column-indicator expand-region elm-mode company color-theme-solarized c-eldoc ace-jump-mode))))
