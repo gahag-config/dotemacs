@@ -24,6 +24,7 @@
         electric-newline-and-maybe-indent
         electric-pair-delete-pair
         forward-sexp
+        haskell-indentation-common-electric-command
         haskell-indentation-delete-backward-char
         haskell-indentation-delete-char
         helm-mini
@@ -35,6 +36,8 @@
         tab-to-tab-stop
         transpose-sexps
         transpose-words
+        wdired-capitalize-word
+        wdired-downcase-word
         yas-expand
         zap-up-to-char
         ))
