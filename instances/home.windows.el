@@ -3,7 +3,7 @@
 (load-theme 'monokai t)
 
 (defconst ctags-program "C:/Users/gahag/Desktop/gahag/OSs/Windows/Programs/ctags.exe")
-(defconst desktop-home  "C:/Users/gahag/Desktop/gahag/Programming/Config/emacs/desktops/")
+(defconst desktop-home  "C:/Users/gahag/Desktop/gahag/Programming/Config/emacs/desktops-win/")
 (defconst dotemacs-dir  "C:/Users/gahag/Desktop/gahag/Programming/Config/emacs/dotemacs/")
 (defconst dotemacs-file (concat dotemacs-dir "gahag.el"))
 

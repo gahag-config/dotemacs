@@ -21,6 +21,7 @@
         dabbrev-expand
         delete-horizontal-space
         down-list
+        downcase-region
         electric-newline-and-maybe-indent
         electric-pair-delete-pair
         forward-sexp
