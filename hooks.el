@@ -15,7 +15,8 @@
                            comment-end   ""
                            flycheck-gcc-language-standard "c99"
                            flycheck-clang-language-standard "c99")
-                     (fix-parenthesis)))
+                     (fix-parenthesis)
+                     (c-turn-on-eldoc-mode)))
 
 
 (add-hook 'csharp-mode-hook 'fix-parenthesis)
