@@ -31,4 +31,4 @@
  '(flycheck-gcc-include-path (quote ("/home/gahag/gahag/programming/langs/cpp/")))
  '(package-selected-packages
    (quote
-    (markdown-mode helm multiple-cursors expand-region yasnippet flycheck powerline auto-complete))))
+    (pdf-tools latex-preview-pane markdown-mode helm multiple-cursors expand-region yasnippet flycheck powerline auto-complete))))
