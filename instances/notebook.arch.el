@@ -3,8 +3,8 @@
 (load-theme 'misterioso t)
 
 (defconst ctags-program "ctags")
-(defconst desktop-home  "~/gahag/programming/config/emacs/desktops/")
-(defconst dotemacs-dir  "~/gahag/programming/config/emacs/dotemacs/")
+(defconst desktop-home  "/gahag/programming/config/emacs/desktops/")
+(defconst dotemacs-dir  "/gahag/programming/config/emacs/dotemacs/")
 (defconst dotemacs-file (concat dotemacs-dir "gahag.el"))
 
 (load dotemacs-file)
@@ -27,8 +27,8 @@
  '(custom-safe-themes
    (quote
     ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
- '(flycheck-clang-include-path (quote ("/home/gahag/gahag/programming/langs/cpp/")))
- '(flycheck-gcc-include-path (quote ("/home/gahag/gahag/programming/langs/cpp/")))
+ '(flycheck-clang-include-path (quote ("/gahag/programming/projects/aeds/")))
+ '(flycheck-gcc-include-path (quote ("/gahag/programming/projects/aeds/")))
  '(package-selected-packages
    (quote
-    (pdf-tools latex-preview-pane markdown-mode helm multiple-cursors expand-region yasnippet flycheck powerline auto-complete))))
+    (intero flymake-haskell-multi haskell-mode c-eldoc pdf-tools latex-preview-pane markdown-mode helm multiple-cursors expand-region yasnippet flycheck powerline auto-complete))))

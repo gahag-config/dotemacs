@@ -9,7 +9,8 @@
                          expand-region
                          multiple-cursors
                          helm
-                         org))
+                         org
+                         latex-preview-pane))
 
 
 (add-to-list 'package-archives
