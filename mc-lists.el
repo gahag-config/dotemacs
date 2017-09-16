@@ -15,6 +15,7 @@
         c-electric-star
         c-end-of-statement
         c-indent-line-or-region
+        c-indent-new-comment-line
         comment-dwim
         csharp-maybe-insert-codedoc
         cycle-spacing
@@ -29,6 +30,7 @@
         haskell-indentation-delete-backward-char
         haskell-indentation-delete-char
         helm-mini
+        indent-for-tab-command
         kill-region
         kill-sentence
         org-delete-char

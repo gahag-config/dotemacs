@@ -1,16 +1,23 @@
 (require 'package)
 
 
-(defconst package-list '(auto-complete
-                         powerline
-                         flycheck
-                         yasnippet
-                         semantic
+(defconst package-list '(ace-jump-mode
+                         auto-complete
+                         c-eldoc
+                         color-theme
+                         csharp-mode
                          expand-region
-                         multiple-cursors
+                         fill-column-indicator
+                         flycheck
+                         gh-md
+                         haskell-mode
                          helm
+                         latex-preview-pane
+                         multiple-cursors
                          org
-                         latex-preview-pane))
+                         powerline
+                         projectile
+                         yasnippet))
 
 
 (add-to-list 'package-archives
