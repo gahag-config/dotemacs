@@ -25,6 +25,7 @@
         downcase-region
         electric-newline-and-maybe-indent
         electric-pair-delete-pair
+        eval-print-last-sexp
         forward-sexp
         haskell-indentation-common-electric-command
         haskell-indentation-delete-backward-char

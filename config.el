@@ -40,6 +40,9 @@
 (setq org-log-done 'note)
 (setq org-src-fontify-natively t)
 
+;; DocView
+(setq doc-view-continuous t)
+
 ;; Recentf
 (setq recentf-save-file       "~/.emacs.d/.cache/recent-files"
       recentf-max-saved-items 50
