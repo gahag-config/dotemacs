@@ -15,6 +15,7 @@
         c-electric-star
         c-end-of-statement
         c-indent-line-or-region
+        c-indent-new-comment-line
         comment-dwim
         csharp-maybe-insert-codedoc
         cycle-spacing
@@ -24,11 +25,13 @@
         downcase-region
         electric-newline-and-maybe-indent
         electric-pair-delete-pair
+        eval-print-last-sexp
         forward-sexp
         haskell-indentation-common-electric-command
         haskell-indentation-delete-backward-char
         haskell-indentation-delete-char
         helm-mini
+        indent-for-tab-command
         kill-region
         kill-sentence
         org-delete-char
