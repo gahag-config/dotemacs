@@ -33,6 +33,9 @@
 ;; Shell style
 (setq-default sh-basic-offset 2)
 
+;; Python style
+(setq-default python-indent-offset 2)
+
 ;; Org
 (setq org-log-done 'note)
 (setq org-src-fontify-natively t)
