@@ -25,6 +25,7 @@
         downcase-region
         electric-newline-and-maybe-indent
         electric-pair-delete-pair
+        end-of-visual-line
         eval-print-last-sexp
         forward-sexp
         haskell-indentation-common-electric-command
@@ -37,6 +38,8 @@
         org-delete-char
         org-self-insert-command
         org-todo
+        sgml-maybe-name-self
+        sgml-slash
         tab-to-tab-stop
         transpose-sexps
         transpose-words
@@ -57,6 +60,7 @@
         helm-show-kill-ring
         kmacro-end-or-call-macro
         list-directory
+        mark-page
         mc/mark-next-lines
         mc/mark-previous-lines
         repeat
