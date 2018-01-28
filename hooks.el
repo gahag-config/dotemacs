@@ -4,7 +4,6 @@
 
 (add-hook 'haskell-mode-hook 'intero-mode)
 
-(add-hook 'intero-mode (auto-complete-mode 0))
 
 (add-hook 'c++-mode-hook
           (lambda () (setq flycheck-gcc-language-standard "c++17"

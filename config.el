@@ -20,6 +20,9 @@
 (setq-default indent-tabs-mode  nil)
 (setq-default tab-stop-list (number-sequence 0 200 2))
 
+;; Company
+(setq-default company-idle-delay t)
+
 ;; C style
 (setq-default c-default-style "c#")
 (setq-default c-basic-offset 2)

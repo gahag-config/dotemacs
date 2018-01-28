@@ -45,6 +45,8 @@
         transpose-words
         wdired-capitalize-word
         wdired-downcase-word
+        yaml-electric-backspace
+        yaml-electric-dash-and-dot
         yas-expand
         zap-up-to-char
         ))

@@ -2,7 +2,7 @@
 
 
 (defconst package-list '(ace-jump-mode
-                         auto-complete
+                         company
                          c-eldoc
                          color-theme
                          csharp-mode
