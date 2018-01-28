@@ -30,8 +30,9 @@
  '(custom-safe-themes
    (quote
     ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
- '(flycheck-clang-include-path (quote ("/gahag/programming/projects/aeds/3/tp0/src")))
+ '(flycheck-clang-include-path (quote ("/gahag/programming/projects/aeds/3/tp1/src")))
  '(flycheck-gcc-include-path (quote ("/gahag/programming/langs/cpp/")))
  '(package-selected-packages
    (quote
-    (pdf-tools latex-preview-pane intero xlicense lorem-ipsum gh-md markdown-preview-mode markdown-mode java-snippets yasnippet sr-speedbar projectile powerline perspective paredit omnisharp nyan-mode multiple-cursors monokai-theme molokai-theme lua-mode heroku-theme helm haskell-mode fsharp-mode flatui-theme fill-column-indicator expand-region elm-mode company color-theme-solarized c-eldoc ace-jump-mode))))
+    (flycheck-haskell yaml-mode magit impatient-mode rudel pdf-tools latex-preview-pane intero xlicense lorem-ipsum gh-md markdown-preview-mode markdown-mode java-snippets yasnippet sr-speedbar projectile powerline perspective paredit omnisharp nyan-mode multiple-cursors monokai-theme molokai-theme lua-mode heroku-theme helm haskell-mode fsharp-mode flatui-theme fill-column-indicator expand-region elm-mode company color-theme-solarized c-eldoc ace-jump-mode)))
+ '(shell-escape-mode "-shell-escape"))
