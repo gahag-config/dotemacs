@@ -111,7 +111,9 @@ determine the exact padding."
 
   ;; --- extra faces ------------------------
   ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
-
+   
+   ((font-lock-keyword-face &override) :weight 'semi-bold )
+   
    (font-lock-comment-face
     :foreground comments
     :background (if doom-gahag-comment-bg (doom-lighten bg 0.05)))
@@ -126,18 +128,18 @@ determine the exact padding."
    (tooltip              :background bg-alt :foreground fg)
 
    ;; company
-    (company-tooltip            :inherit 'tooltip)
-    (company-tooltip-common                           :foreground highlight)
-    (company-tooltip-search     :background highlight :foreground bg :distant-foreground fg)
-    (company-tooltip-selection  :background selection)
-    (company-tooltip-mouse      :background magenta   :foreground bg :distant-foreground fg)
-    (company-tooltip-annotation                       :foreground violet)
-    (company-scrollbar-bg       :inherit 'tooltip)
-    (company-scrollbar-fg       :background highlight)
-    (company-preview                                  :foreground highlight)
-    (company-preview-common     :background base3 :foreground magenta)
-    (company-preview-search     :inherit 'company-tooltip-search)
-    (company-template-field     :inherit 'match)
+   (company-tooltip            :inherit 'tooltip)
+   (company-tooltip-common                           :foreground highlight)
+   (company-tooltip-search     :background highlight :foreground bg :distant-foreground fg)
+   (company-tooltip-selection  :background selection)
+   (company-tooltip-mouse      :background magenta   :foreground bg :distant-foreground fg)
+   (company-tooltip-annotation                       :foreground violet)
+   (company-scrollbar-bg       :inherit 'tooltip)
+   (company-scrollbar-fg       :background highlight)
+   (company-preview                                  :foreground highlight)
+   (company-preview-common     :background base3 :foreground magenta)
+   (company-preview-search     :inherit 'company-tooltip-search)
+   (company-template-field     :inherit 'match)
 
    ;; popup
    (popup-face :inherit 'tooltip)
