@@ -14,7 +14,10 @@
                          helm
                          latex-preview-pane
                          multiple-cursors
+                         nlinum
+                         doom-themes
                          org
+                         org-bullets
                          powerline
                          projectile
                          yasnippet))

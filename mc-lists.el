@@ -35,9 +35,12 @@
         indent-for-tab-command
         kill-region
         kill-sentence
+        markdown-enter-key
+        markdown-outdent-or-delete
         org-delete-char
         org-self-insert-command
         org-todo
+        org-yank
         sgml-maybe-name-self
         sgml-slash
         tab-to-tab-stop

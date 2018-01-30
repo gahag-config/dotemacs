@@ -1,6 +1,7 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
-(global-linum-mode)
+(scroll-bar-mode -1)
+(global-nlinum-mode)
 (powerline-center-theme)
 (column-number-mode)
 
@@ -12,6 +13,7 @@
 (electric-pair-mode)
 (delete-selection-mode)
 (show-paren-mode)
+(doom-themes-org-config)
 
 ;;(projectile-global-mode)
 (helm-mode)

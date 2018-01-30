@@ -2,6 +2,9 @@
                           (local-set-key "\)" 'self-insert-command))
 
 
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+
 (add-hook 'haskell-mode-hook 'intero-mode)
 
 

@@ -20,8 +20,12 @@
 (setq-default indent-tabs-mode  nil)
 (setq-default tab-stop-list (number-sequence 0 200 2))
 
+;; nlinum
+(setq-default nlinum-highlight-current-line t)
+(setq-default nlinum-format " %d")
+
 ;; Company
-(setq-default company-idle-delay t)
+(setq-default company-idle-delay 0.3)
 
 ;; C style
 (setq-default c-default-style "c#")
