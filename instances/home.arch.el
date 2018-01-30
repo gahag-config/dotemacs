@@ -36,5 +36,5 @@
  '(flycheck-gcc-include-path (quote ("/gahag/programming/langs/cpp/")))
  '(package-selected-packages
    (quote
-    (gruvbox-theme nlinum doom-themes org-bullets flymd flycheck-haskell yaml-mode magit impatient-mode pdf-tools latex-preview-pane intero lorem-ipsum gh-md markdown-preview-mode markdown-mode java-snippets yasnippet projectile powerline omnisharp multiple-cursors heroku-theme helm haskell-mode fsharp-mode flatui-theme fill-column-indicator expand-region elm-mode company c-eldoc ace-jump-mode)))
+    (rainbow-delimiters haskell-snippets gruvbox-theme nlinum doom-themes org-bullets flymd flycheck-haskell yaml-mode magit impatient-mode pdf-tools latex-preview-pane intero lorem-ipsum gh-md markdown-preview-mode markdown-mode java-snippets yasnippet projectile powerline omnisharp multiple-cursors heroku-theme helm haskell-mode fsharp-mode flatui-theme fill-column-indicator expand-region elm-mode company c-eldoc ace-jump-mode)))
  '(shell-escape-mode "-shell-escape"))

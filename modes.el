@@ -2,7 +2,7 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (global-nlinum-mode)
-(powerline-center-theme)
+(powerline-gahag-theme)
 (column-number-mode)
 
 (global-company-mode)

@@ -24,6 +24,10 @@
 (setq-default nlinum-highlight-current-line t)
 (setq-default nlinum-format " %d")
 
+;; Powerline
+(setq-default powerline-height 18)
+(setq-default powerline-default-separator 'slant)
+
 ;; Company
 (setq-default company-idle-delay 0.3)
 
