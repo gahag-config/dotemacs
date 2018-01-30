@@ -60,7 +60,7 @@ determine the exact padding."
    (violet     '("#a9a1e1" "#a9a1e1" "brightmagenta"))
    (cyan       '("#46D9FF" "#46D9FF" "brightcyan"   ))
    (dark-cyan  '("#5699AF" "#5699AF" "cyan"         ))
-   (yellow2    '("#f1c40f" "#ECBE7B" "yellow"       ))
+   (yellow2    '("#ffd73a" "#ECBE7B" "yellow"       ))
    (coral-popup  '("#a60033" "#f6bfbc" "coral-popup"         ))
 
    ;; face categories -- required for all themes
@@ -76,7 +76,7 @@ determine the exact padding."
    (methods        white)      ;; not sure how to test this.
    (operators      yellow)     ;; not showing up on `=` etc.
    (type           blue)       ;;
-   (strings        yellow)
+   (strings        yellow2)
    (variables      white)      ;; done
    (numbers        red)        ;; done
 
