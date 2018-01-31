@@ -1,11 +1,14 @@
 (package-initialize)
 
-(load-theme 'flatui t)
-
 (defconst ctags-program "C:/Users/gahag/Desktop/gahag/OSs/Windows/Programs/ctags.exe")
-(defconst desktop-home  "C:/Users/gahag/Desktop/gahag/Programming/Config/emacs/desktops-win/")
-(defconst dotemacs-dir  "C:/Users/gahag/Desktop/gahag/Programming/Config/emacs/dotemacs/")
+(defconst emacs-home  "C:/Users/gahag/Desktop/gahag/programming/config/emacs")
+(defconst desktop-home  (concat emacs-home "/desktops-win/"))
+(defconst dotemacs-dir  (concat emacs-home "/dotemacs/"))
 (defconst dotemacs-file (concat dotemacs-dir "gahag.el"))
+(defconst themes-dir    (concat dotemacs-dir "themes/"))
+
+(add-to-list 'custom-theme-load-path themes-dir)
+(load-theme 'doom-gahag t)
 
 (load dotemacs-file)
 

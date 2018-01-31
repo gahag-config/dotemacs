@@ -19,6 +19,7 @@
 (setq-default tab-always-indent nil)
 (setq-default indent-tabs-mode  nil)
 (setq-default tab-stop-list (number-sequence 0 200 2))
+(setq-default comment-column 0)
 
 ;; nlinum
 (setq-default nlinum-highlight-current-line t)
