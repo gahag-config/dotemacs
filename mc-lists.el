@@ -25,6 +25,7 @@
         downcase-region
         electric-newline-and-maybe-indent
         electric-pair-delete-pair
+        end-of-visual-line
         eval-print-last-sexp
         forward-sexp
         haskell-indentation-common-electric-command
@@ -34,14 +35,21 @@
         indent-for-tab-command
         kill-region
         kill-sentence
+        markdown-enter-key
+        markdown-outdent-or-delete
         org-delete-char
         org-self-insert-command
         org-todo
+        org-yank
+        sgml-maybe-name-self
+        sgml-slash
         tab-to-tab-stop
         transpose-sexps
         transpose-words
         wdired-capitalize-word
         wdired-downcase-word
+        yaml-electric-backspace
+        yaml-electric-dash-and-dot
         yas-expand
         zap-up-to-char
         ))
@@ -58,6 +66,7 @@
         jump-to-register
         kmacro-end-or-call-macro
         list-directory
+        mark-page
         mc/mark-next-lines
         mc/mark-previous-lines
         repeat

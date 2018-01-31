@@ -1,12 +1,14 @@
 (package-initialize)
 
-(load-theme 'misterioso t)
-
 (defconst ctags-program "ctags")
-(defconst emacs-home  "/gahag/programming/config/emacs/")
-(defconst desktop-home  (concat emacs-home "desktops/"))
-(defconst dotemacs-dir  (concat emacs-home "dotemacs/"))
+(defconst emacs-home  "/gahag/programming/config/emacs")
+(defconst desktop-home  (concat emacs-home "/desktops/"))
+(defconst dotemacs-dir  (concat emacs-home "/dotemacs/"))
 (defconst dotemacs-file (concat dotemacs-dir "gahag.el"))
+(defconst themes-dir    (concat dotemacs-dir "themes/"))
+
+(add-to-list 'custom-theme-load-path themes-dir)
+(load-theme 'doom-gahag t)
 
 (load dotemacs-file)
 
@@ -29,9 +31,10 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
- '(flycheck-clang-include-path (quote ("/gahag/programming/projects/aeds/3/tp0/src")))
+    ("a8810eb3e7166f6d1c5825d6de963c45d6d9ea5eb037728c2ff2e0349c4a3a28" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
+ '(flycheck-clang-include-path (quote ("/gahag/programming/projects/aeds/3/tp1/src")))
  '(flycheck-gcc-include-path (quote ("/gahag/programming/langs/cpp/")))
  '(package-selected-packages
    (quote
-    (pdf-tools latex-preview-pane intero xlicense lorem-ipsum gh-md markdown-preview-mode markdown-mode java-snippets yasnippet sr-speedbar projectile powerline perspective paredit omnisharp nyan-mode multiple-cursors monokai-theme molokai-theme lua-mode heroku-theme helm haskell-mode fsharp-mode flatui-theme fill-column-indicator expand-region elm-mode company color-theme-solarized c-eldoc ace-jump-mode))))
+    (rainbow-delimiters haskell-snippets gruvbox-theme nlinum doom-themes org-bullets flymd flycheck-haskell yaml-mode magit impatient-mode pdf-tools latex-preview-pane intero lorem-ipsum gh-md markdown-preview-mode markdown-mode java-snippets yasnippet projectile powerline omnisharp multiple-cursors heroku-theme helm haskell-mode fsharp-mode flatui-theme fill-column-indicator expand-region elm-mode company c-eldoc ace-jump-mode)))
+ '(shell-escape-mode "-shell-escape"))

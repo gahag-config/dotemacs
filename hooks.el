@@ -2,7 +2,11 @@
                           (local-set-key "\)" 'self-insert-command))
 
 
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+
 (add-hook 'haskell-mode-hook 'intero-mode)
+
 
 (add-hook 'c++-mode-hook
           (lambda () (setq flycheck-gcc-language-standard "c++17"

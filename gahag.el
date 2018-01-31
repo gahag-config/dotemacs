@@ -15,6 +15,7 @@
 (cl-flet ((dotemacs (name) (concat dotemacs-dir name)))
   (load (dotemacs "packages.el"))
   (load (dotemacs "config.el"))
+  (load (dotemacs "themes/powerline-theme.el"))
   (load (dotemacs "modes.el"))
   (load (dotemacs "keys.el"))
   (load (dotemacs "defuns.el"))

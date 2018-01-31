@@ -2,7 +2,7 @@
 
 
 (defconst package-list '(ace-jump-mode
-                         auto-complete
+                         company
                          c-eldoc
                          color-theme
                          csharp-mode
@@ -14,7 +14,10 @@
                          helm
                          latex-preview-pane
                          multiple-cursors
+                         nlinum
+                         doom-themes
                          org
+                         org-bullets
                          powerline
                          projectile
                          yasnippet))

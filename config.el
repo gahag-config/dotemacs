@@ -19,6 +19,18 @@
 (setq-default tab-always-indent nil)
 (setq-default indent-tabs-mode  nil)
 (setq-default tab-stop-list (number-sequence 0 200 2))
+(setq-default comment-column 0)
+
+;; nlinum
+(setq-default nlinum-highlight-current-line t)
+(setq-default nlinum-format " %d")
+
+;; Powerline
+(setq-default powerline-height 18)
+(setq-default powerline-default-separator 'slant)
+
+;; Company
+(setq-default company-idle-delay 0.3)
 
 ;; C style
 (setq-default c-default-style "c#")
@@ -36,8 +48,8 @@
 ;; Shell style
 (setq-default sh-basic-offset 2)
 
-;; Python style
-(setq-default python-indent-offset 2)
+;; Css style
+(setq-default css-indent-offset 2)
 
 ;; Org
 (setq org-log-done 'note)
