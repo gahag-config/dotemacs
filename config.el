@@ -52,7 +52,7 @@
 (setq-default css-indent-offset 2)
 
 ;; Org
-(setq org-log-done 'note)
+;(setq org-log-done 'note)
 (setq org-src-fontify-natively t)
 
 ;; DocView
