@@ -63,6 +63,7 @@
         helm-confirm-and-exit-minibuffer
         helm-find-files
         helm-show-kill-ring
+        jump-to-register
         kmacro-end-or-call-macro
         list-directory
         mark-page
