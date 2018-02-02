@@ -16,21 +16,19 @@
   :type 'boolean)
 
 (defcustom doom-gahag-comment-bg doom-gahag-brighter-comments
-  "If non-nil, comments will have a subtle, darker background. Enhancing their
-legibility."
+  "If non-nil, comments will have a subtle, darker background. Enhancing their legibility."
   :group 'doom-gahag-theme
   :type 'boolean)
 
 (defcustom doom-gahag-padded-modeline nil
-  "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
-determine the exact padding."
+  "If non-nil, adds a 4px padding to the mode-line. Can be an integer to determine the exact padding."
   :group 'doom-gahag-theme
   :type '(or integer boolean))
 
 ;;
 (def-doom-theme doom-gahag
   "gahag theme!"
-
+  
   ;; name        default   256       16
   ((bg         '("#2b2a27" nil       nil            ))
    (bg-alt     '("#282725" nil       nil            )) ;; arbitrarily picked this colour to change hline
@@ -179,11 +177,14 @@ determine the exact padding."
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
-   (markdown-code-face :background (doom-lighten base3 0.05)))
-
-
+   (markdown-code-face :background (doom-lighten base3 0.05))
+   
+   ;; org-mode
+   (org-level-1 :background bg :foreground blue :weight 'ultra-bold :height 1.15)
+   (org-level-2 :background bg :foreground teal :weight 'extra-bold)
+  )
   ;; --- extra variables ---------------------
   ;; ()
-  )
+)
 
 ;;; doom-gahag-theme.el ends here
