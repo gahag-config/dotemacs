@@ -20,7 +20,8 @@
                          org-bullets
                          powerline
                          projectile
-                         yasnippet))
+                         yasnippet
+                         yasnippet-snippets))
 
 
 (add-to-list 'package-archives
