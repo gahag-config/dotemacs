@@ -28,3 +28,8 @@
 
 (add-hook 'term-mode-hook
           (lambda () (setq yas-dont-activate t)))
+
+
+(add-hook 'pdf-tools-enabled-hook
+          (lambda() (nlinum-mode -1)
+                    (auto-revert-mode t)))

@@ -37,6 +37,7 @@
         kill-sentence
         markdown-enter-key
         markdown-outdent-or-delete
+        org-cycle
         org-delete-char
         org-self-insert-command
         org-todo
