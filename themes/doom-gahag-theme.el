@@ -180,7 +180,7 @@
    (markdown-code-face :background (doom-lighten base3 0.05))
    
    ;; org-mode
-   (org-level-1 :background bg :foreground blue :weight 'ultra-bold :height 1.15)
+   (org-level-1 :background bg :foreground blue :weight 'ultra-bold)
    (org-level-2 :background bg :foreground teal :weight 'extra-bold)
   )
   ;; --- extra variables ---------------------
