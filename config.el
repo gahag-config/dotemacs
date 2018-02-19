@@ -43,6 +43,7 @@
 (setq-default haskell-mode-hook 'turn-on-haskell-indent)
 
 ;; Python style
+(setq-default python-guess-indent nil)
 (setq-default python-indent-offset 2)
 
 ;; Shell style

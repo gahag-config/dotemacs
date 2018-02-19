@@ -5,6 +5,7 @@
       '(
         backward-kill-sentence
         backward-sexp
+        beginning-of-buffer
         c-electric-brace
         c-electric-colon
         c-electric-delete-forward
@@ -44,6 +45,7 @@
         org-yank
         sgml-maybe-name-self
         sgml-slash
+        shell-command
         tab-to-tab-stop
         transpose-sexps
         transpose-words
