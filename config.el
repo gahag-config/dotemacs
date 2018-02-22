@@ -55,6 +55,9 @@
 ;; Org
 (setq org-log-done 'time)
 (setq org-src-fontify-natively t)
+(setq-default org-highest-priority ?1)
+(setq-default org-default-priority ?2)
+(setq-default org-lowest-priority  ?3)
 
 ;; DocView
 (setq doc-view-continuous t)
