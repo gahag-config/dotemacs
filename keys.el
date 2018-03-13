@@ -15,6 +15,7 @@
 (global-set-key (kbd "C-x k"  ) 'kill-this-buffer)
 (global-set-key (kbd "M-SPC"  ) 'cycle-spacing)
 (global-set-key (kbd "C-."    ) 'pop-tag-mark)
+(global-set-key (kbd "C-x m"  ) 'magit-status)
 
 
 ;; These conflict with windmove.

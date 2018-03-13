@@ -34,5 +34,5 @@
  '(flycheck-gcc-include-path (quote ("/gahag/programming/projects/aeds/")))
  '(package-selected-packages
    (quote
-    (intero nyan-mode ace-jump-mode flymake-haskell-multi haskell-mode c-eldoc pdf-tools latex-preview-pane markdown-mode helm multiple-cursors expand-region yasnippet flycheck powerline auto-complete)))
+    (magit intero nyan-mode ace-jump-mode flymake-haskell-multi haskell-mode c-eldoc pdf-tools latex-preview-pane markdown-mode helm multiple-cursors expand-region yasnippet flycheck powerline auto-complete)))
  '(shell-escape-mode "-shell-escape"))
