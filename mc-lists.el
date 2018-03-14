@@ -38,6 +38,7 @@
         kill-sentence
         markdown-enter-key
         markdown-outdent-or-delete
+        org-beginning-of-line
         org-cycle
         org-delete-char
         org-self-insert-command
