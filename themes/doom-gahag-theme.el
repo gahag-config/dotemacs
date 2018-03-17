@@ -45,6 +45,7 @@
    (fg-alt     '("#5B6268" "#2d2d2d" "white"        ))
 
    (grey       base5)
+   (bright     '("#fBfBfB" "white"   "white"        ))
    (white      '("#f8f8f0" "base4"   "base4"        ))
    (red        '("#ff5d38" "#ff6655" "red"          )) ;; peacock todo 16
    (orange     '("#cb4b16" "#dd8844" "brightred"    ))
@@ -182,6 +183,7 @@
    ;; org-mode
    (org-level-1 :background bg :foreground blue :weight 'ultra-bold)
    (org-level-2 :background bg :foreground teal :weight 'extra-bold)
+   (org-tag     :background bg :foreground bright)
   )
   ;; --- extra variables ---------------------
   ;; ()

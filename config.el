@@ -55,6 +55,8 @@
 ;; Org
 (setq org-log-done 'time)
 (setq org-src-fontify-natively t)
+(setq org-tags-column 0)
+(setq org-agenda-tags-column 0)
 (setq-default org-highest-priority ?1)
 (setq-default org-default-priority ?2)
 (setq-default org-lowest-priority  ?3)
