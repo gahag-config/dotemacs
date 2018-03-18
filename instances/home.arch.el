@@ -6,6 +6,7 @@
 (defconst dotemacs-dir  (concat emacs-home "/dotemacs/"))
 (defconst dotemacs-file (concat dotemacs-dir "gahag.el"))
 (defconst themes-dir    (concat dotemacs-dir "themes/"))
+(setq-default org-agenda-files '("/gahag/programming/org"))
 
 (add-to-list 'custom-theme-load-path themes-dir)
 (load-theme 'doom-gahag t)
@@ -36,5 +37,5 @@
  '(flycheck-gcc-include-path (quote ("/gahag/programming/langs/cpp/")))
  '(package-selected-packages
    (quote
-    (yasnippet-snippets yasnippet rainbow-delimiters gruvbox-theme nlinum doom-themes org-bullets flymd flycheck-haskell yaml-mode magit impatient-mode pdf-tools latex-preview-pane intero lorem-ipsum gh-md markdown-preview-mode markdown-mode projectile powerline omnisharp multiple-cursors heroku-theme helm haskell-mode fsharp-mode flatui-theme fill-column-indicator expand-region elm-mode company c-eldoc ace-jump-mode)))
+    (csv-mode yasnippet-snippets yasnippet rainbow-delimiters gruvbox-theme nlinum doom-themes org-bullets flymd flycheck-haskell yaml-mode magit impatient-mode pdf-tools latex-preview-pane intero lorem-ipsum gh-md markdown-preview-mode markdown-mode projectile powerline omnisharp multiple-cursors heroku-theme helm haskell-mode fsharp-mode flatui-theme fill-column-indicator expand-region elm-mode company c-eldoc ace-jump-mode)))
  '(shell-escape-mode "-shell-escape"))
