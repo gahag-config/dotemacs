@@ -6,6 +6,7 @@
 (defconst dotemacs-dir  (concat emacs-home "/dotemacs/"))
 (defconst dotemacs-file (concat dotemacs-dir "gahag.el"))
 (defconst themes-dir    (concat dotemacs-dir "themes/"))
+(setq-default org-agenda-files '("/gahag/programming/org"))
 
 (add-to-list 'custom-theme-load-path themes-dir)
 (load-theme 'doom-gahag t)
