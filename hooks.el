@@ -2,6 +2,8 @@
                           (local-set-key "\)" 'self-insert-command))
 
 
+(add-hook 'docview-mode-hook (lambda () (nlinum-mode -1)))
+
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 
@@ -27,9 +29,9 @@
 
 
 (add-hook 'term-mode-hook
-          (lambda () (setq yas-dont-activate t)))
+          (lambda () (setq yas-dont-activate t)
+                     (nlinum-mode -1)))
 
 
 (add-hook 'pdf-tools-enabled-hook
-          (lambda() (nlinum-mode -1)
-                    (auto-revert-mode t)))
+          (lambda() (nlinum-mode -1)))
