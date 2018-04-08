@@ -1,9 +1,9 @@
 (package-initialize)
 
 (defconst ctags-program "C:/Users/gahag/Desktop/gahag/OSs/Windows/Programs/ctags.exe")
-(defconst emacs-home  "C:/Users/gahag/Desktop/gahag/programming/config/emacs")
-(defconst desktop-home  (concat emacs-home "/desktops-win/"))
-(defconst dotemacs-dir  (concat emacs-home "/dotemacs/"))
+(defconst emacs-home  "C:/Users/gahag/Desktop/gahag/programming/config/emacs/")
+(defconst desktop-home  (concat emacs-home "desktops-win/"))
+(defconst dotemacs-dir  (concat emacs-home "dotemacs/"))
 (defconst dotemacs-file (concat dotemacs-dir "gahag.el"))
 (defconst themes-dir    (concat dotemacs-dir "themes/"))
 

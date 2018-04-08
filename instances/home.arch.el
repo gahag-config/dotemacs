@@ -1,9 +1,10 @@
 (package-initialize)
 
 (defconst ctags-program "ctags")
-(defconst emacs-home  "/gahag/programming/config/emacs")
-(defconst desktop-home  (concat emacs-home "/desktops/"))
-(defconst dotemacs-dir  (concat emacs-home "/dotemacs/"))
+(defconst emacs-home  "/gahag/programming/config/emacs/")
+(defconst desktop-home  (concat emacs-home "desktops/"))
+;; (defconst packages-home (concat emacs-home "packages/"))
+(defconst dotemacs-dir  (concat emacs-home "dotemacs/"))
 (defconst dotemacs-file (concat dotemacs-dir "gahag.el"))
 (defconst themes-dir    (concat dotemacs-dir "themes/"))
 (setq-default org-agenda-files '("/gahag/programming/org"))
@@ -15,6 +16,7 @@
 
 (setq omnisharp-server-executable-path (concat emacs-home "OmniSharpServer/OmniSharp/bin/Debug/OmniSharp.exe"))
 
+(desktop-read)
 
 ;; ---------------------------------------------------------------------------------------
 
