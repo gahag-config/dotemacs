@@ -1,11 +1,13 @@
 (package-initialize)
 
 (defconst ctags-program "ctags")
-(defconst emacs-home    "/gahag/programming/config/emacs")
-(defconst desktop-home  (concat emacs-home "/desktops/"))
-(defconst dotemacs-dir  (concat emacs-home "/dotemacs/"))
+(defconst emacs-home    "/gahag/programming/config/emacs/")
+(defconst desktop-home  (concat emacs-home "desktops/"))
+(defconst packages-home (concat emacs-home "packages/"))
+(defconst dotemacs-dir  (concat emacs-home "dotemacs/"))
 (defconst dotemacs-file (concat dotemacs-dir "gahag.el"))
 (defconst themes-dir    (concat dotemacs-dir "themes/"))
+(setq-default org-agenda-files '("/gahag/programming/org"))
 
 (add-to-list 'custom-theme-load-path themes-dir)
 (load-theme 'doom-gahag t)
@@ -34,5 +36,5 @@
  '(flycheck-gcc-include-path (quote ("/gahag/programming/projects/aeds/")))
  '(package-selected-packages
    (quote
-    (magit intero nyan-mode ace-jump-mode flymake-haskell-multi haskell-mode c-eldoc pdf-tools latex-preview-pane markdown-mode helm multiple-cursors expand-region yasnippet flycheck powerline auto-complete)))
+    (magit intero nyan-mode ace-jump-mode flymake-haskell-multi haskell-mode c-eldoc pdf-tools markdown-mode helm multiple-cursors expand-region yasnippet flycheck powerline auto-complete)))
  '(shell-escape-mode "-shell-escape"))

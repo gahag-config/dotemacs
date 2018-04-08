@@ -8,9 +8,14 @@
 ;; 
 ;; ctags-program - the ctags executable
 ;; desktop-home  - the parent directory to save desktops
+;; packages-home - the parent directory of custom packages
 
 
 (require 'cl)
+
+;; Add custom packages to load-path
+(mapc (lambda (x) (add-to-list 'load-path (expand-file-name x packages-home)))
+      (delete ".." (directory-files packages-home)))
 
 (cl-flet ((dotemacs (name) (concat dotemacs-dir name)))
   (load (dotemacs "packages.el"))
