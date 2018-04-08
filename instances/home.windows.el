@@ -13,7 +13,8 @@
 (load dotemacs-file)
 
 (setq omnisharp-server-executable-path "C:/Users/gahag/Desktop/gahag/Programming/Config/emacs/OmniSharpServer/OmniSharp/bin/Debug/OmniSharp.exe")
-
+;; (setq doc-view-ghostscript-program "gswin32c") ;; Fix doc-view on windows.
+(setq find-program "C:/Users/usuario/Desktop/Gabriel/Emacs/Emacs 24.5/bin/find.exe")
 
 ;; ---------------------------------------------------------------------------------------
 

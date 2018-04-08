@@ -33,7 +33,7 @@
  '(custom-safe-themes
    (quote
     ("a8810eb3e7166f6d1c5825d6de963c45d6d9ea5eb037728c2ff2e0349c4a3a28" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
- '(flycheck-clang-include-path (quote ("/gahag/programming/projects/aeds/3/tp1/src")))
+ '(flycheck-clang-include-path (quote ("/gahag/programming/projects/")))
  '(flycheck-gcc-include-path (quote ("/gahag/programming/langs/cpp/")))
  '(package-selected-packages
    (quote
