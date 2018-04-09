@@ -52,6 +52,9 @@
 ;; Css style
 (setq-default css-indent-offset 2)
 
+;; Javascript style
+(setq-default js-indent-level 2)
+
 ;; Org
 (setq org-log-done 'time)
 (setq org-src-fontify-natively t)
