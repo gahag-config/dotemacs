@@ -60,12 +60,15 @@
 (setq org-src-fontify-natively t)
 (setq org-tags-column 0)
 (setq org-agenda-tags-column 0)
-(setq-default org-highest-priority ?1)
-(setq-default org-default-priority ?2)
-(setq-default org-lowest-priority  ?3)
+(setq org-highest-priority ?1)
+(setq org-default-priority ?2)
+(setq org-lowest-priority  ?3)
 
 ;; DocView
 (setq doc-view-continuous t)
+
+;; Dired
+(setq dired-listing-switches "-lh")
 
 ;; Recentf
 (setq recentf-save-file       "~/.emacs.d/.cache/recent-files"
