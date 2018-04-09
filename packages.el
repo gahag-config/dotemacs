@@ -12,7 +12,6 @@
                          gh-md
                          haskell-mode
                          helm
-                         latex-preview-pane
                          multiple-cursors
                          nlinum
                          doom-themes
