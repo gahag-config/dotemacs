@@ -6,11 +6,11 @@
                          c-eldoc
                          color-theme
                          csharp-mode
+                         haskell-mode
+                         elpy
                          expand-region
                          fill-column-indicator
                          flycheck
-                         gh-md
-                         haskell-mode
                          helm
                          multiple-cursors
                          nlinum
