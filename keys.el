@@ -24,17 +24,29 @@
 (global-set-key (kbd "s-a") 'windmove-left)
 
 
-(require 'org)
-;; These conflict with windmove.
-(define-key org-mode-map (kbd "<M-up>")    nil)
-(define-key org-mode-map (kbd "<M-down>")  nil)
-(define-key org-mode-map (kbd "<M-left>")  nil)
-(define-key org-mode-map (kbd "<M-right>") nil)
-;; Expand region.
-(define-key org-mode-map (kbd "C-,") nil)
+(add-hook 'org-mode-hook
+          (lambda ()
+            ;; These conflict with windmove.
+            (define-key org-mode-map (kbd "<M-up>")    nil)
+            (define-key org-mode-map (kbd "<M-down>")  nil)
+            (define-key org-mode-map (kbd "<M-left>")  nil)
+            (define-key org-mode-map (kbd "<M-right>") nil)
+            ;; Expand region.
+            (define-key org-mode-map (kbd "C-,") nil)))
 
-;(require 'markdown-mode) TODO
-;(define-key markdown-mode-map (kbd "<M-up>")    nil)
-;(define-key markdown-mode-map (kbd "<M-down>")  nil)
-;(define-key markdown-mode-map (kbd "<M-left>")  nil)
-;(define-key markdown-mode-map (kbd "<M-right>") nil)
+(add-hook 'elpy-mode-hook
+          (lambda ()
+            ;; These conflict with windmove.
+            (define-key elpy-mode-map (kbd "<M-up>")    nil)
+            (define-key elpy-mode-map (kbd "<M-down>")  nil)
+            (define-key elpy-mode-map (kbd "<M-left>")  nil)
+            (define-key elpy-mode-map (kbd "<M-right>") nil)))
+
+
+(add-hook 'markdown-mode-hook
+          (lambda ()
+            ;; These conflict with windmove.
+            (define-key python-mode-map (kbd "<M-up>")    nil)
+            (define-key python-mode-map (kbd "<M-down>")  nil)
+            (define-key python-mode-map (kbd "<M-left>")  nil)
+            (define-key python-mode-map (kbd "<M-right>") nil)))
