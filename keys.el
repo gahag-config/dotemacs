@@ -17,6 +17,12 @@
 (global-set-key (kbd "C-."    ) 'pop-tag-mark)
 (global-set-key (kbd "C-x m"  ) 'magit-status)
 
+;; windmove
+(global-set-key (kbd "s-w") 'windmove-up)
+(global-set-key (kbd "s-d") 'windmove-right)
+(global-set-key (kbd "s-s") 'windmove-down)
+(global-set-key (kbd "s-a") 'windmove-left)
+
 
 (require 'org)
 ;; These conflict with windmove.
