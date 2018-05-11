@@ -1,4 +1,4 @@
-(package-initialize)
+;(package-initialize)
 
 (defconst ctags-program "ctags")
 (defconst emacs-home    "/gahag/programming/config/emacs/")
@@ -9,10 +9,10 @@
 (defconst themes-dir    (concat dotemacs-dir "themes/"))
 (setq-default org-agenda-files '("/gahag/programming/org"))
 
+(load dotemacs-file)
+
 (add-to-list 'custom-theme-load-path themes-dir)
 (load-theme 'doom-gahag t)
-
-(load dotemacs-file)
 
 
 ;; ---------------------------------------------------------------------------------------

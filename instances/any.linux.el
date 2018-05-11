@@ -1,4 +1,4 @@
-(package-initialize)
+;(package-initialize)
 
 (defconst ctags-program "ctags")
 (defconst desktop-home  "~/desktops/")
@@ -8,11 +8,10 @@
 
 (defvar org-mode-map (make-sparse-keymap)) ;; Fix for org mode in Emacs 24.3
 
-(add-to-list 'custom-theme-load-path themes-dir)
-(load-theme 'doom-gahag t)
-
 (load dotemacs-file)
 
+(add-to-list 'custom-theme-load-path themes-dir)
+(load-theme 'doom-gahag t)
 
 ;; ---------------------------------------------------------------------------------------
 
