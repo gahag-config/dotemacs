@@ -74,3 +74,10 @@
 (setq recentf-save-file       "~/.emacs.d/.cache/recent-files"
       recentf-max-saved-items 50
       recentf-max-menu-items  15)
+
+;; Magit
+(setq-default magit-log-margin (quote (t
+                                       "%Y-%m-%d %H:%M "
+                                       magit-log-margin-width
+                                       t
+                                       10)))
