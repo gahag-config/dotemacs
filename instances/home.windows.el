@@ -14,7 +14,7 @@
 
 (setq omnisharp-server-executable-path "C:/Users/gahag/Desktop/gahag/Programming/Config/emacs/OmniSharpServer/OmniSharp/bin/Debug/OmniSharp.exe")
 ;; (setq doc-view-ghostscript-program "gswin32c") ;; Fix doc-view on windows.
-(setq find-program "C:/Users/usuario/Desktop/Gabriel/Emacs/Emacs 24.5/bin/find.exe")
+;; (setq find-program "C:/Users/gahag/Desktop/gahag/oss/windows/programs/emacs-24.4/bin/find.exe")
 
 ;; ---------------------------------------------------------------------------------------
 
@@ -37,4 +37,4 @@
     ("c:/Users/gahag/Desktop/gahag/programming/langs/c/aeds/3/tp1/src")))
  '(package-selected-packages
    (quote
-    (flatui-theme solarized-theme tango-plus-theme spaceline org-bullets doom-themes magit intero monokai-theme yasnippet projectile powerline multiple-cursors latex-preview-pane helm haskell-mode gh-md flycheck fill-column-indicator expand-region csharp-mode color-theme c-eldoc ace-jump-mode company))))
+    (pdf-tools flatui-theme solarized-theme tango-plus-theme spaceline org-bullets doom-themes magit intero monokai-theme yasnippet powerline multiple-cursors latex-preview-pane helm haskell-mode gh-md flycheck expand-region csharp-mode color-theme c-eldoc ace-jump-mode company))))

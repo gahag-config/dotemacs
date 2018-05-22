@@ -81,3 +81,7 @@
                                        magit-log-margin-width
                                        t
                                        10)))
+
+
+;; Calfw
+(setq-default cfw:org-overwrite-default-keybinding t)

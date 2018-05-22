@@ -14,7 +14,6 @@
 (delete-selection-mode)
 (show-paren-mode)
 (doom-themes-org-config)
-;;(projectile-global-mode)
 (helm-mode)
 (recentf-mode t)
 (desktop-save-mode t)

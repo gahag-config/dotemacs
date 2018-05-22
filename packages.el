@@ -9,7 +9,6 @@
                          haskell-mode
                          elpy
                          expand-region
-                         fill-column-indicator
                          flycheck
                          helm
                          multiple-cursors
@@ -17,8 +16,9 @@
                          doom-themes
                          org
                          org-bullets
+                         calfw
+                         calfw-org
                          powerline
-                         projectile
                          yasnippet
                          yasnippet-snippets))
 
@@ -38,3 +38,7 @@
 (dolist (package package-list)
   (unless (package-installed-p package)
     (package-install package)))
+
+
+(require 'calfw)
+(require 'calfw-org)
