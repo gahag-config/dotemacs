@@ -63,6 +63,7 @@
 (setq org-highest-priority ?1)
 (setq org-default-priority ?2)
 (setq org-lowest-priority  ?3)
+(setq org-todo-keywords '((sequence "TODO" "NEXT" "DONE")))
 
 ;; DocView
 (setq doc-view-continuous t)
