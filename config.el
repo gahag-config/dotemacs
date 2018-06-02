@@ -69,7 +69,7 @@
 (setq doc-view-continuous t)
 
 ;; Dired
-(setq dired-listing-switches "-alh --group-directories-first")
+(setq dired-listing-switches "-alhG1v --group-directories-first")
 
 ;; Recentf
 (setq recentf-save-file       "~/.emacs.d/.cache/recent-files"
