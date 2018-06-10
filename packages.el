@@ -18,6 +18,7 @@
                          org-bullets
                          calfw
                          calfw-org
+                         magit
                          powerline
                          yasnippet
                          yasnippet-snippets))

@@ -109,7 +109,8 @@
 
 
   ;; --- extra faces ------------------------
-  ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+  ((cursor :background white)
+   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
    
    ((font-lock-keyword-face &override) :weight 'semi-bold )
    
