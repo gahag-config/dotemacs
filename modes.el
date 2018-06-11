@@ -1,7 +1,7 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
-;(global-nlinum-mode)
+; (global-display-line-numbers-mode) ; (global-linum-mode)
 (column-number-mode)
 (powerline-gahag-theme)
 

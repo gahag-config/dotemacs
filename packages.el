@@ -12,7 +12,6 @@
                          flycheck
                          helm
                          multiple-cursors
-                         nlinum
                          doom-themes
                          org
                          org-bullets
