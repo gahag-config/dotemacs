@@ -60,6 +60,10 @@
 (setq org-default-priority ?2)
 (setq org-lowest-priority  ?3)
 (setq org-todo-keywords '((sequence "TODO" "NEXT" "DONE")))
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (python . t)))
 
 ;; DocView
 (setq doc-view-continuous t)
