@@ -7,6 +7,7 @@
                          color-theme
                          csharp-mode
                          haskell-mode
+                         intero
                          elpy
                          expand-region
                          flycheck
