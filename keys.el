@@ -46,7 +46,7 @@
 (add-hook 'markdown-mode-hook
           (lambda ()
             ;; These conflict with windmove.
-            (define-key python-mode-map (kbd "<M-up>")    nil)
-            (define-key python-mode-map (kbd "<M-down>")  nil)
-            (define-key python-mode-map (kbd "<M-left>")  nil)
-            (define-key python-mode-map (kbd "<M-right>") nil)))
+            (define-key markdown-mode-map (kbd "<M-up>")    nil)
+            (define-key markdown-mode-map (kbd "<M-down>")  nil)
+            (define-key markdown-mode-map (kbd "<M-left>")  nil)
+            (define-key markdown-mode-map (kbd "<M-right>") nil)))

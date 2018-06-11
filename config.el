@@ -21,10 +21,6 @@
 (setq-default tab-stop-list (number-sequence 0 200 2))
 (setq-default comment-column 0)
 
-;; nlinum
-(setq-default nlinum-highlight-current-line t)
-(setq-default nlinum-format " %d")
-
 ;; Powerline
 (setq-default powerline-height 18)
 (setq-default powerline-default-separator 'slant)
