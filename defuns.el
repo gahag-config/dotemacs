@@ -62,3 +62,12 @@
   (interactive "NSize: ") ;; Number
   
   (align-regexp (region-beginning) (region-end) "\\(\\s-*\\)\\s-" 1 size 't))
+
+
+(defun context-kill-buffer (arg)
+  "Kill buffer, taking gnuclient into account."
+  (interactive "p")
+  (if (and (boundp 'gnuserv-minor-mode)
+           gnuserv-minor-mode)
+      (gnuserv-edit)
+      (kill-buffer (current-buffer))))

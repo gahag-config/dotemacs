@@ -16,6 +16,7 @@
 (global-set-key (kbd "M-SPC"  ) 'cycle-spacing)
 (global-set-key (kbd "C-."    ) 'pop-tag-mark)
 (global-set-key (kbd "C-x m"  ) 'magit-status)
+(global-set-key (kbd "C-x k"  ) 'context-kill-buffer)
 
 ;; windmove
 (global-set-key (kbd "s-w") 'windmove-up)
