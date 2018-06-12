@@ -67,7 +67,8 @@
 (defun context-kill-buffer (arg)
   "Kill buffer, taking gnuclient into account."
   (interactive "p")
-  (if (and (boundp 'gnuserv-minor-mode)
-           gnuserv-minor-mode)
-      (gnuserv-edit)
-      (kill-buffer (current-buffer))))
+  (if (daemonp)
+      (condition-case nil
+                      (server-edit)
+                      (error (kill-buffer (current-buffer)))))
+  (kill-buffer (current-buffer)))
