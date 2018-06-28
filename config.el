@@ -86,3 +86,7 @@
 
 ;; Calfw
 (setq-default cfw:org-overwrite-default-keybinding t)
+
+
+;; Latex
+(setq-default shell-escape-mode "-shell-escape")

@@ -1,20 +1,19 @@
 (package-initialize)
 
 (defconst ctags-program "C:/Users/gahag/Desktop/gahag/OSs/Windows/Programs/ctags.exe")
-(defconst emacs-home  "C:/Users/gahag/Desktop/gahag/programming/config/emacs/")
+(defconst emacs-home  "C:/Users/gahag/Desktop/gahag/config/emacs/")
 (defconst desktop-home  (concat emacs-home "desktops-win/"))
 (defconst dotemacs-dir  (concat emacs-home "dotemacs/"))
 (defconst dotemacs-file (concat dotemacs-dir "gahag.el"))
 (defconst themes-dir    (concat dotemacs-dir "themes/"))
-
-(add-to-list 'custom-theme-load-path themes-dir)
-(load-theme 'doom-gahag t)
+(setq omnisharp-server-executable-path "C:/Users/gahag/Desktop/gahag/config/emacs/OmniSharpServer/OmniSharp/bin/Debug/OmniSharp.exe")
+;; (setq doc-view-ghostscript-program "gswin32c") ;; Fix doc-view on windows.
+;; (setq find-program "C:/Users/gahag/Desktop/gahag/oss/windows/programs/emacs-24.4/bin/find.exe")
 
 (load dotemacs-file)
 
-(setq omnisharp-server-executable-path "C:/Users/gahag/Desktop/gahag/Programming/Config/emacs/OmniSharpServer/OmniSharp/bin/Debug/OmniSharp.exe")
-;; (setq doc-view-ghostscript-program "gswin32c") ;; Fix doc-view on windows.
-;; (setq find-program "C:/Users/gahag/Desktop/gahag/oss/windows/programs/emacs-24.4/bin/find.exe")
+(add-to-list 'custom-theme-load-path themes-dir)
+(load-theme 'doom-gahag t)
 
 ;; ---------------------------------------------------------------------------------------
 
