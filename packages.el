@@ -21,7 +21,8 @@
                          magit
                          powerline
                          yasnippet
-                         yasnippet-snippets))
+                         yasnippet-snippets
+                         transpose-frame))
 
 
 (add-to-list 'package-archives
