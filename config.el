@@ -70,6 +70,7 @@
 
 ;; Dired
 (setq dired-listing-switches "-alhG1v --group-directories-first")
+(setq dired-dwim-target t)
 
 ;; Recentf
 (setq recentf-save-file       "~/.emacs.d/.cache/recent-files"
