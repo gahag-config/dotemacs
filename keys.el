@@ -3,7 +3,6 @@
 ;; (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "C-x k") 'context-kill-buffer)
 (global-set-key (kbd "C-;"  ) 'comment-line)
-(global-set-key (kbd "M-z"  ) 'zap-up-to-char)
 (global-set-key (kbd "M-SPC") 'cycle-spacing)
 (global-set-key (kbd "C-."  ) 'pop-tag-mark)
 
@@ -11,46 +10,3 @@
 (global-set-key (kbd "s-d") 'windmove-right)
 (global-set-key (kbd "s-s") 'windmove-down)
 (global-set-key (kbd "s-a") 'windmove-left)
-
-(global-set-key (kbd "M-x"    ) 'helm-M-x)
-(global-set-key (kbd "M-y"    ) 'helm-show-kill-ring)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-x b"  ) 'helm-mini)
-
-(setq expand-region-contract-fast-key ".")
-(global-set-key (kbd "C-,"    ) 'er/expand-region)
-(global-set-key (kbd "C-x g"  ) 'ace-jump-mode)
-(global-set-key (kbd "M-p"    ) 'mc/mark-previous-lines)
-(global-set-key (kbd "M-n"    ) 'mc/mark-next-lines)
-(global-set-key (kbd "C-x C-n") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-x m"  ) 'magit-status)
-(global-set-key (kbd "C-x |"  ) 'transpose-frame)
-
-
-(add-hook 'org-mode-hook
-          (lambda ()
-            ;; These conflict with windmove.
-            (define-key org-mode-map (kbd "<M-up>")    nil)
-            (define-key org-mode-map (kbd "<M-down>")  nil)
-            (define-key org-mode-map (kbd "<M-left>")  nil)
-            (define-key org-mode-map (kbd "<M-right>") nil)
-            ;; Expand region.
-            (define-key org-mode-map (kbd "C-,") nil)))
-
-
-(add-hook 'elpy-mode-hook
-          (lambda ()
-            ;; These conflict with windmove.
-            (define-key elpy-mode-map (kbd "<M-up>")    nil)
-            (define-key elpy-mode-map (kbd "<M-down>")  nil)
-            (define-key elpy-mode-map (kbd "<M-left>")  nil)
-            (define-key elpy-mode-map (kbd "<M-right>") nil)))
-
-
-(add-hook 'markdown-mode-hook
-          (lambda ()
-            ;; These conflict with windmove.
-            (define-key markdown-mode-map (kbd "<M-up>")    nil)
-            (define-key markdown-mode-map (kbd "<M-down>")  nil)
-            (define-key markdown-mode-map (kbd "<M-left>")  nil)
-            (define-key markdown-mode-map (kbd "<M-right>") nil)))

@@ -1,4 +1,4 @@
-(package-initialize)
+;(package-initialize)
 
 (defconst ctags-program "ctags")
 (defconst emacs-home  "/gahag/config/emacs/")
@@ -14,6 +14,7 @@
 
 (add-to-list 'custom-theme-load-path themes-dir)
 (load-theme 'doom-gahag t)
+(powerline-gahag-theme)
 
 ;; ---------------------------------------------------------------------------------------
 
@@ -36,4 +37,4 @@
  '(flycheck-gcc-include-path (quote ("/gahag/programming/langs/cpp/")))
  '(package-selected-packages
    (quote
-    (transpose-frame calfw-org calfw elpy csv-mode yasnippet-snippets yasnippet rainbow-delimiters gruvbox-theme doom-themes org-bullets flymd flycheck-haskell yaml-mode magit impatient-mode pdf-tools latex-preview-pane intero lorem-ipsum gh-md markdown-preview-mode markdown-mode powerline omnisharp multiple-cursors heroku-theme helm haskell-mode fsharp-mode flatui-theme expand-region elm-mode company c-eldoc ace-jump-mode))))
+    (flycheck markdown-mode use-package transpose-frame calfw-org calfw elpy csv-mode yasnippet-snippets yasnippet rainbow-delimiters gruvbox-theme doom-themes flymd flycheck-haskell yaml-mode magit impatient-mode pdf-tools latex-preview-pane intero lorem-ipsum gh-md markdown-preview-mode powerline omnisharp multiple-cursors heroku-theme helm haskell-mode fsharp-mode flatui-theme expand-region elm-mode company c-eldoc ace-jump-mode))))

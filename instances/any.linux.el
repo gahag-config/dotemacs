@@ -12,6 +12,7 @@
 
 (add-to-list 'custom-theme-load-path themes-dir)
 (load-theme 'doom-gahag t)
+(powerline-gahag-theme)
 
 ;; ---------------------------------------------------------------------------------------
 
