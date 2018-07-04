@@ -53,20 +53,19 @@
 ;; Yasnippet -----------------------------------------------------------------------------
 (use-package yasnippet
   :ensure t
-  :defer 2
+  :defer 4
   :config (yas-global-mode))
 
 (use-package yasnippet-snippets
-  :defer 2
+  :defer 4
   :ensure t)
 
 ;; Flycheck ------------------------------------------------------------------------------
 (use-package flycheck
   :ensure t
-  :defer t
   :config
   (global-flycheck-mode)
-  (add-to-list 'flycheck-disabled-checkers 'emacs-lisp-checkdoc))
+  (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
 
 
 ;; Magit ---------------------------------------------------------------------------------
@@ -110,6 +109,11 @@
   :ensure t
   :config (setq cfw:org-overwrite-default-keybinding t))
 
+
+;; Pdf-tools -----------------------------------------------------------------------------
+(use-package pdf-tools
+  :ensure t
+  :config (pdf-tools-install))
 
 ;; Latex ---------------------------------------------------------------------------------
 (use-package latex-preview-pane
@@ -216,6 +220,7 @@
   :bind   ("C-x |" . transpose-frame))
 
 
+;; ---------------------------------------------------------------------------------------
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
 ;; End:

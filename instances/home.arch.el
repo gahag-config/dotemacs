@@ -3,7 +3,6 @@
 (defconst ctags-program "ctags")
 (defconst emacs-home  "/gahag/config/emacs/")
 (defconst desktop-home  (concat emacs-home "desktops/"))
-;; (defconst packages-home (concat emacs-home "packages/"))
 (defconst dotemacs-dir  (concat emacs-home "dotemacs/"))
 (defconst dotemacs-file (concat dotemacs-dir "gahag.el"))
 (defconst themes-dir    (concat dotemacs-dir "themes/"))
@@ -37,4 +36,4 @@
  '(flycheck-gcc-include-path (quote ("/gahag/programming/langs/cpp/")))
  '(package-selected-packages
    (quote
-    (flycheck markdown-mode use-package transpose-frame calfw-org calfw elpy csv-mode yasnippet-snippets yasnippet rainbow-delimiters gruvbox-theme doom-themes flymd flycheck-haskell yaml-mode magit impatient-mode pdf-tools latex-preview-pane intero lorem-ipsum gh-md markdown-preview-mode powerline omnisharp multiple-cursors heroku-theme helm haskell-mode fsharp-mode flatui-theme expand-region elm-mode company c-eldoc ace-jump-mode))))
+    (csharp-mode flycheck markdown-mode use-package transpose-frame calfw-org calfw elpy csv-mode yasnippet-snippets yasnippet rainbow-delimiters gruvbox-theme doom-themes flymd flycheck-haskell yaml-mode magit impatient-mode pdf-tools latex-preview-pane intero lorem-ipsum gh-md markdown-preview-mode powerline omnisharp multiple-cursors heroku-theme helm haskell-mode fsharp-mode flatui-theme expand-region elm-mode company c-eldoc ace-jump-mode))))

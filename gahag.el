@@ -8,7 +8,6 @@
 ;; 
 ;; ctags-program - the ctags executable
 ;; desktop-home  - the parent directory to save desktops
-;; packages-home - the parent directory of custom packages
 
 
 (require 'cl)
@@ -24,7 +23,6 @@
   (load (dotemacs "modes.el"))
   (load (dotemacs "keys.el"))
   (load (dotemacs "defuns.el"))
-  ;; (load (dotemacs "hooks.el"))
   (load (dotemacs "registers.el"))
   (load (dotemacs "etc.el"))
   (load (dotemacs "packages.el"))

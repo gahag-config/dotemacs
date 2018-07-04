@@ -6,7 +6,7 @@
 (defconst dotemacs-file (concat dotemacs-dir "gahag.el"))
 (defconst themes-dir    (concat dotemacs-dir "themes/"))
 
-(defvar org-mode-map (make-sparse-keymap)) ;; Fix for org mode in Emacs 24.3
+;; (defvar org-mode-map (make-sparse-keymap)) ;; Fix for org mode in Emacs 24.3
 
 (load dotemacs-file)
 
