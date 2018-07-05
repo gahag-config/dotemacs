@@ -12,12 +12,12 @@
 
 (require 'cl)
 
-;; Add custom packages to load-path
-(when (boundp 'packages-home)
-      (mapc (lambda (x) (add-to-list 'load-path (expand-file-name x packages-home)))
-            (delete ".." (directory-files packages-home))))
+;; Relax gc during init 
+(setq gc-cons-threshold 50000000)
+(add-hook 'emacs-startup-hook (lambda () (setq gc-cons-threshold 800000)))
 
-(cl-flet ((dotemacs (name) (concat dotemacs-dir name)))
+(cl-flet ((file-name-handler-alist nil) ; Dont run regexes on filenames.
+          (dotemacs (name) (concat dotemacs-dir name)))
   (load (dotemacs "aliases.el"))
   (load (dotemacs "config.el"))
   (load (dotemacs "modes.el"))
