@@ -53,18 +53,19 @@
 ;; Yasnippet -----------------------------------------------------------------------------
 (use-package yasnippet
   :ensure t
-  :defer 4
-  :config (yas-global-mode))
+  :defer  t
+  :hook   (prog-mode . yas-global-mode))
 
 (use-package yasnippet-snippets
-  :defer 4
-  :ensure t)
+  :ensure t
+  :defer  t)
 
 ;; Flycheck ------------------------------------------------------------------------------
 (use-package flycheck
   :ensure t
+  :defer  t
+  :hook   (prog-mode . global-flycheck-mode)
   :config
-  (global-flycheck-mode)
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
 
 
@@ -82,6 +83,7 @@
 ;; Org -----------------------------------------------------------------------------------
 (use-package org
   :ensure t
+  :defer  t
   :config
   (setq org-log-done 'time
         org-src-fontify-natively t
@@ -103,26 +105,32 @@
 
 
 (use-package calfw
-  :ensure t)
+  :ensure t
+  :after  org)
 
 (use-package calfw-org
   :ensure t
+  :after  calfw
   :config (setq cfw:org-overwrite-default-keybinding t))
 
 
 ;; Pdf-tools -----------------------------------------------------------------------------
 (use-package pdf-tools
   :ensure t
+  :defer  t
+  :magic  ("%PDF" . pdf-view-mode)
   :config (pdf-tools-install))
 
 ;; Latex ---------------------------------------------------------------------------------
 (use-package latex-preview-pane
+  :defer t
   :config (setq shell-escape-mode "-shell-escape"))
 
 
 ;; C -------------------------------------------------------------------------------------
 (use-package c-eldoc
   :ensure t
+  :defer t
   :hook (c-mode . c-turn-on-eldoc-mode))
 
 
@@ -130,18 +138,21 @@
 ;; Bash ----------------------------------------------------------------------------------
 (use-package sh-script
   :ensure t
+  :defer  t
   :config (setq sh-basic-offset 2))
 
 
 ;; Javscript -----------------------------------------------------------------------------
 (use-package js
   :ensure t
+  :defer  t
   :config (setq js-indent-level 2))
 
 
 ;; Python---------------------------------------------------------------------------------
 (use-package python
   :ensure t
+  :defer  t
   :config (setq python-indent-offset 2
                 python-guess-indent nil))
 
@@ -159,6 +170,7 @@
 
 ;; Haskell -------------------------------------------------------------------------------
 (use-package haskell-mode
+  :defer t
   :config
   (setq haskell-font-lock-symbols t
         haskell-indent-offset 2)
@@ -179,6 +191,7 @@
 
 ;; Markdown ------------------------------------------------------------------------------
 (use-package markdown-mode
+  :defer t
   :bind (:map markdown-mode-map
               ;; These conflict with windmove:
               ("<M-up>"    . nil)
