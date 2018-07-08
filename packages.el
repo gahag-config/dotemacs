@@ -66,7 +66,27 @@
   :defer  t
   :hook   (prog-mode . global-flycheck-mode)
   :config
-  (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
+  (setq flycheck-disabled-checkers '(emacs-lisp-checkdoc))
+  (setq flycheck-global-modes '(not c-mode ; These are covered by eglot
+                                    c++-mode
+                                    rust-mode
+                                    shell-mode
+                                    python-mode
+                                    javascript-mode)))
+
+
+;; Eglot ---------------------------------------------------------------------------------
+(use-package eglot
+  :ensure t
+  :bind   (("C-c r" . eglot-rename)
+           ("C-c h" . eglot-help-at-point))
+  :hook   ((javascript-mode . eglot-ensure)
+           (rust-mode       . eglot-ensure)
+           (python-mode     . eglot-ensure)
+           (shell-mode      . eglot-ensure)
+           (c-mode          . eglot-ensure)
+           (c++-mode        . eglot-ensure))
+  :config (setq eglot-ignored-server-capabilites '(:documentHighlightProvider)))
 
 
 ;; Magit ---------------------------------------------------------------------------------
