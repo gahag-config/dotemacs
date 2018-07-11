@@ -109,11 +109,12 @@
         org-src-fontify-natively t
         org-tags-column 0
         org-agenda-tags-column 0
-        org-todo-keywords '((sequence "TODO" "NEXT" "DONE")))
+        org-todo-keywords '((sequence "TODO" "NEXT" "|" "DONE" "DISMISSED")))
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((emacs-lisp . t)
-     (python . t)))
+     (python . t)
+     (shell . t)))
   :bind (:map org-mode-map
               ;; These conflict with windmove:
               ("<M-up>"    . nil)
