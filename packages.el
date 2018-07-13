@@ -186,7 +186,9 @@
               ("<M-up>"    . nil)
               ("<M-down>"  . nil)
               ("<M-left>"  . nil)
-              ("<M-right>" . nil)))
+              ("<M-right>" . nil)
+              ;; Conflict with ace-jump:
+              ("C-x g" . nil)))
 
 
 ;; Haskell -------------------------------------------------------------------------------
