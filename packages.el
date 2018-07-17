@@ -86,7 +86,10 @@
            (shell-mode      . eglot-ensure)
            (c-mode          . eglot-ensure)
            (c++-mode        . eglot-ensure))
-  :config (setq eglot-ignored-server-capabilites '(:documentHighlightProvider)))
+  :config
+  (setq eglot-ignored-server-capabilites '(:documentHighlightProvider))
+  (add-to-list 'eglot-server-programs '(c-mode . ("clangd")))
+  (add-to-list 'eglot-server-programs '(c++-mode . ("clangd"))))
 
 
 ;; Magit ---------------------------------------------------------------------------------
