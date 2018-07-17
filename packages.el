@@ -71,7 +71,7 @@
                                     c++-mode
                                     rust-mode
                                     shell-mode
-                                    python-mode
+                                    ;; python-mode
                                     javascript-mode)))
 
 
@@ -125,7 +125,8 @@
               ("<M-left>"  . nil)
               ("<M-right>" . nil)
               ;; Expand region:
-              ("C-," . nil)))
+              ("C-," . nil)
+              ("C-c a" . org-agenda)))
 
 
 (use-package calfw
