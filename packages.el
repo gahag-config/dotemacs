@@ -25,6 +25,11 @@
                 powerline-default-separator 'slant))
 
 
+;; Try -----------------------------------------------------------------------------------
+(use-package try
+  :ensure t)
+
+
 ;; Doom themes ---------------------------------------------------------------------------
 (use-package doom-themes
   :ensure t
