@@ -205,7 +205,7 @@
   (setq haskell-indent-offset 2
         haskell-font-lock-symbols t)
   
-  ;; (add-hook 'haskell-mode-hook 'turn-on-haskell-indent) ; Replace by structured-haskell-mode.
+  (add-hook 'haskell-mode-hook 'turn-on-haskell-indent) ; Replace by structured-haskell-mode.
   
   (eval-after-load 'haskell-font-lock
     '(progn
@@ -218,9 +218,9 @@
   :ensure t
   :hook (haskell-mode . intero-mode))
 
-(use-package shm
-  :ensure t
-  :hook (haskell-mode . structured-haskell-mode))
+;; (use-package shm
+;;   :ensure t
+;;   :hook (haskell-mode . structured-haskell-mode))
 
 
 ;; Markdown ------------------------------------------------------------------------------
