@@ -4,7 +4,8 @@
 
 (setq-default make-backup-files nil
               x-select-enable-clipboard t
-              truncate-lines t) ;; disable word-wrap.
+              truncate-lines t ;; disable word-wrap.
+              require-final-newline t)
 
 
 (put 'narrow-to-region 'disabled nil)

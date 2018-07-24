@@ -18,6 +18,7 @@
         c-indent-line-or-region
         c-indent-new-comment-line
         comment-dwim
+        comment-line
         csharp-maybe-insert-codedoc
         cycle-spacing
         dabbrev-expand
