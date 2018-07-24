@@ -216,7 +216,7 @@
   
 (use-package intero
   :ensure t
-  :hook haskell-mode)
+  :hook (haskell-mode . intero-mode))
 
 (use-package shm
   :ensure t
