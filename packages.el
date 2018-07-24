@@ -53,7 +53,6 @@
 ;; Yasnippet -----------------------------------------------------------------------------
 (use-package yasnippet
   :ensure t
-  :defer  t
   :hook   (prog-mode . yas-global-mode))
 
 (use-package yasnippet-snippets
@@ -63,7 +62,6 @@
 ;; Flycheck ------------------------------------------------------------------------------
 (use-package flycheck
   :ensure t
-  :defer  t
   :hook   (prog-mode . global-flycheck-mode)
   :config
   (setq flycheck-disabled-checkers '(emacs-lisp-checkdoc))
@@ -115,7 +113,15 @@
 ;; Org -----------------------------------------------------------------------------------
 (use-package org
   :ensure t
-  :defer  t
+  :bind (:map org-mode-map
+              ;; These conflict with windmove:
+              ("<M-up>"    . nil)
+              ("<M-down>"  . nil)
+              ("<M-left>"  . nil)
+              ("<M-right>" . nil)
+              ;; Expand region:
+              ("C-," . nil)
+              ("C-c a" . org-agenda))
   :config
   (setq org-log-done 'time
         org-src-fontify-natively t
@@ -126,17 +132,7 @@
    'org-babel-load-languages
    '((emacs-lisp . t)
      (python . t)
-     (shell . t)))
-  :bind (:map org-mode-map
-              ;; These conflict with windmove:
-              ("<M-up>"    . nil)
-              ("<M-down>"  . nil)
-              ("<M-left>"  . nil)
-              ("<M-right>" . nil)
-              ;; Expand region:
-              ("C-," . nil)
-              ("C-c a" . org-agenda)))
-
+     (shell . t))))
 
 (use-package calfw
   :ensure t
@@ -164,9 +160,7 @@
 ;; C -------------------------------------------------------------------------------------
 (use-package c-eldoc
   :ensure t
-  :defer t
   :hook (c-mode . c-turn-on-eldoc-mode))
-
 
 
 ;; Bash ----------------------------------------------------------------------------------
@@ -208,26 +202,29 @@
 (use-package haskell-mode
   :defer t
   :config
-  (setq haskell-font-lock-symbols t
-        haskell-indent-offset 2)
+  (setq haskell-indent-offset 2
+        haskell-font-lock-symbols t)
   
-  (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+  ;; (add-hook 'haskell-mode-hook 'turn-on-haskell-indent) ; Replace by structured-haskell-mode.
   
   (eval-after-load 'haskell-font-lock
     '(progn
        (defconst haskell-font-lock-symbols-alist
                  '(("\\" . "λ") ("." "∘" haskell-font-lock-dot-is-not-composition)))
        ;; (setq haskell-font-lock-keywords (haskell-font-lock-keywords-create nil))
-       ))
+       )))
   
-  (use-package intero
-    :ensure t
-    :hook haskell-mode))
+(use-package intero
+  :ensure t
+  :hook haskell-mode)
+
+(use-package shm
+  :ensure t
+  :hook (haskell-mode . structured-haskell-mode))
 
 
 ;; Markdown ------------------------------------------------------------------------------
 (use-package markdown-mode
-  :defer t
   :bind (:map markdown-mode-map
               ;; These conflict with windmove:
               ("<M-up>"    . nil)
