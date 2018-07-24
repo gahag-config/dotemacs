@@ -103,6 +103,15 @@
                                          10))))
 
 
+;; Dired ---------------------------------------------------------------------------------
+(use-package dired-ranger
+  :ensure t
+  :bind (:map dired-mode-map
+              ("C" . dired-ranger-copy)
+              ("Y" . dired-ranger-paste)
+              ("y" . dired-ranger-move)))
+
+
 ;; Org -----------------------------------------------------------------------------------
 (use-package org
   :ensure t
