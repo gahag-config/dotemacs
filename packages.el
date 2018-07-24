@@ -269,6 +269,19 @@
   :bind   ("C-x |" . transpose-frame))
 
 
+;; Ledger --------------------------------------------------------------------------------
+(use-package ledger-mode
+  :ensure t
+  :mode "\\.ledger\\'"
+  :bind (:map ledger-mode-map
+              ("C-c a" . ledger-add-transaction)
+              ("C-c r" . ledger-report)
+              ("M-p"   . nil)
+              ("M-n"   . nil)
+              ("C-M-p" . ledger-navigate-prev-xact-or-directive)
+              ("C-M-n" . ledger-navigate-next-xact-or-directive)))
+
+
 ;; ---------------------------------------------------------------------------------------
 ;; Local Variables:
 ;; byte-compile-warnings: (not free-vars)
