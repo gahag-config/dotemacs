@@ -286,7 +286,13 @@
               ("M-p"   . nil)
               ("M-n"   . nil)
               ("C-M-p" . ledger-navigate-prev-xact-or-directive)
-              ("C-M-n" . ledger-navigate-next-xact-or-directive)))
+              ("C-M-n" . ledger-navigate-next-xact-or-directive))
+  :config
+  (setq ledger-reports  ; All default, but removing income from report.
+        '(("bal"     "%(binary) -f %(ledger-file) bal not income")
+          ("reg"     "%(binary) -f %(ledger-file) reg not income")
+          ("payee"   "%(binary) -f %(ledger-file) reg @%(payee) not income")
+          ("account" "%(binary) -f %(ledger-file) reg %(account) not income"))))
 
 
 ;; ---------------------------------------------------------------------------------------
