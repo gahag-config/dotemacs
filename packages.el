@@ -91,8 +91,9 @@
            (c++-mode        . eglot-ensure))
   :config
   (setq eglot-ignored-server-capabilites '(:documentHighlightProvider))
-  (add-to-list 'eglot-server-programs '(c-mode . ("clangd")))
-  (add-to-list 'eglot-server-programs '(c++-mode . ("clangd"))))
+  (setq help-at-pt-timer-delay 0.3)
+  (setq help-at-pt-display-when-idle '(flymake-diagnostic))
+  (help-at-pt-set-timer))
 
 
 ;; Magit ---------------------------------------------------------------------------------
@@ -163,12 +164,6 @@
 (use-package latex-preview-pane
   :defer t
   :config (setq shell-escape-mode "-shell-escape"))
-
-
-;; C -------------------------------------------------------------------------------------
-(use-package c-eldoc
-  :ensure t
-  :hook (c-mode . c-turn-on-eldoc-mode))
 
 
 ;; Bash ----------------------------------------------------------------------------------
