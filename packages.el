@@ -69,7 +69,8 @@
   :ensure t
   :hook   (prog-mode . global-flycheck-mode)
   :config
-  (setq flycheck-disabled-checkers '(emacs-lisp-checkdoc))
+  ; For some reason, the following does not work with setq, only with setq-default.
+  (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
   (setq flycheck-global-modes '(not c-mode ; These are covered by eglot
                                     c++-mode
                                     rust-mode
