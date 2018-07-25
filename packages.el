@@ -118,6 +118,12 @@
               ("Y" . dired-ranger-paste)
               ("y" . dired-ranger-move)))
 
+(use-package dired-quick-sort
+  :ensure t
+  :hook dired-mode
+  :bind (:map dired-mode-map
+              ("s" . hydra-dired-quick-sort/body)))
+
 
 ;; Org -----------------------------------------------------------------------------------
 (use-package org
