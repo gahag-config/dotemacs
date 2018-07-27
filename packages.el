@@ -145,6 +145,7 @@
         org-src-fontify-natively t
         org-tags-column 0
         org-agenda-tags-column 0
+        org-export-with-toc nil
         org-todo-keywords '((sequence "TODO" "NEXT" "|" "DONE" "DISMISSED")))
   (org-babel-do-load-languages
    'org-babel-load-languages
