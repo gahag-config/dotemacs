@@ -110,7 +110,9 @@
 
 ;; Dired ---------------------------------------------------------------------------------
 (use-package wdired ; This is necessary so the keybindings of dired-ranger won't be
-  :ensure t)        ; overriden by a late dired loading.
+  :ensure t         ; overriden by a late dired loading.
+  :bind (:map dired-mode-map
+              ("K" dired-kill-subdir)))
 
 (use-package dired-ranger
   :ensure t
