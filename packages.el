@@ -44,6 +44,7 @@
   (("M-x"     . helm-M-x)
    ("M-y"     . helm-show-kill-ring)
    ("C-x C-f" . helm-find-files)
+   ("C-x C-b" . helm-mini)
    ("C-x b"   . helm-mini)))
 
 
