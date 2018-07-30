@@ -39,7 +39,14 @@
 ;; Helm ----------------------------------------------------------------------------------
 (use-package helm
   :ensure t
-  :config (helm-mode)
+  :config
+  (helm-mode)
+  (setq helm-boring-buffer-regexp-list '("\\` "
+                                         "\\`\\*helm"
+                                         "\\`\\*Echo Area"
+                                         "\\`\\*Minibuf"
+                                         "\\`\\*EGLOT"
+                                         "\\`\\*Flymake"))
   :bind
   (("M-x"     . helm-M-x)
    ("M-y"     . helm-show-kill-ring)
