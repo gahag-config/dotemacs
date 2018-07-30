@@ -46,7 +46,8 @@
                                          "\\`\\*Echo Area"
                                          "\\`\\*Minibuf"
                                          "\\`\\*EGLOT"
-                                         "\\`\\*Flymake"))
+                                         "\\`\\*Flymake"
+                                         "\\`magit.*:"))
   :bind
   (("M-x"     . helm-M-x)
    ("M-y"     . helm-show-kill-ring)
