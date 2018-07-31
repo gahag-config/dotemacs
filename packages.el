@@ -47,7 +47,8 @@
                                          "\\`\\*Minibuf"
                                          "\\`\\*EGLOT"
                                          "\\`\\*Flymake"
-                                         "\\`magit.*:"))
+                                         "\\`magit.*:"
+                                         "\\`\\*tramp"))
   :bind
   (("M-x"     . helm-M-x)
    ("M-y"     . helm-show-kill-ring)
