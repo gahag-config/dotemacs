@@ -41,7 +41,8 @@
   :ensure t
   :config
   (helm-mode)
-  (setq helm-boring-buffer-regexp-list '("\\` "
+  (setq helm-buffer-skip-remote-checking t ; Prevent helm-mini from querying remote buffers
+        helm-boring-buffer-regexp-list '("\\` "
                                          "\\`\\*helm"
                                          "\\`\\*Echo Area"
                                          "\\`\\*Minibuf"
@@ -101,9 +102,9 @@
            (c-mode          . eglot-ensure)
            (c++-mode        . eglot-ensure))
   :config
-  (setq eglot-ignored-server-capabilites '(:documentHighlightProvider))
-  (setq help-at-pt-timer-delay 0.3)
-  (setq help-at-pt-display-when-idle '(flymake-diagnostic))
+  (setq help-at-pt-timer-delay 0.3
+        help-at-pt-display-when-idle '(flymake-diagnostic)
+        eglot-ignored-server-capabilites '(:documentHighlightProvider))
   (help-at-pt-set-timer))
 
 
