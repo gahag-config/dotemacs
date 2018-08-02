@@ -10,3 +10,5 @@
 (global-set-key (kbd "s-d") 'windmove-right)
 (global-set-key (kbd "s-s") 'windmove-down)
 (global-set-key (kbd "s-a") 'windmove-left)
+
+(global-set-key (kbd "C-x t") 'term)

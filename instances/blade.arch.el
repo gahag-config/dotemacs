@@ -33,4 +33,4 @@
     ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
  '(package-selected-packages
    (quote
-    (htmlize ledger-mode calfw calfw-org company doom-themes eglot shm transpose-frame use-package yasnippet-snippets dired-ranger latex-preview-pane elpy magit intero nyan-mode ace-jump-mode flymake-haskell-multi haskell-mode pdf-tools markdown-mode helm multiple-cursors expand-region yasnippet flycheck powerline auto-complete))))
+    (dired-quick-sort try htmlize ledger-mode calfw calfw-org company doom-themes eglot shm transpose-frame use-package yasnippet-snippets dired-ranger latex-preview-pane elpy magit intero nyan-mode ace-jump-mode flymake-haskell-multi haskell-mode pdf-tools markdown-mode helm multiple-cursors expand-region yasnippet flycheck powerline auto-complete))))

@@ -19,12 +19,11 @@
 
 
 ;; Style ---------------------------------------------------------------------------------
-(set-fill-column 90)
-
 (setq-default tab-width 2
               tab-always-indent nil
               indent-tabs-mode  nil
               tab-stop-list (number-sequence 0 200 2)
+              fill-column 90
               comment-column 0)
 
 
