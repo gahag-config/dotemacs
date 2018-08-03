@@ -48,6 +48,7 @@
                                          "\\`\\*Minibuf"
                                          "\\`\\*EGLOT"
                                          "\\`\\*Flymake"
+                                         "\\`\\*Flycheck"
                                          "\\`magit.*:"
                                          "\\`\\*tramp"))
   :bind
