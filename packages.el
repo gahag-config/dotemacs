@@ -46,7 +46,7 @@
                                          "\\`\\*helm"
                                          "\\`\\*Echo Area"
                                          "\\`\\*Minibuf"
-                                         "\\`\\*EGLOT"
+                                         "\\`\\*lsp" ;; "\\`\\*EGLOT"
                                          "\\`\\*Flymake"
                                          "\\`\\*Flycheck"
                                          "\\`magit.*:"
@@ -82,31 +82,48 @@
   :hook   (prog-mode . global-flycheck-mode)
   :config
   ; For some reason, the following does not work with setq, only with setq-default.
-  (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
-  (setq flycheck-global-modes '(not c-mode ; These are covered by eglot
-                                    c++-mode
-                                    rust-mode
-                                    shell-mode
-                                    ;; python-mode
-                                    javascript-mode)))
+  (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
 
 
-;; Eglot ---------------------------------------------------------------------------------
-(use-package eglot
+;; Lsp -----------------------------------------------------------------------------------
+;; (use-package eglot
+;;   :ensure t
+;;   :bind   (("C-c r" . eglot-rename)
+;;            ("C-c h" . eglot-help-at-point))
+;;   :hook   ((javascript-mode . eglot-ensure)
+;;            (rust-mode       . eglot-ensure)
+;;            (python-mode     . eglot-ensure)
+;;            (shell-mode      . eglot-ensure)
+;;            (c-mode          . eglot-ensure)
+;;            (c++-mode        . eglot-ensure))
+;;   :config
+;;   (setq help-at-pt-timer-delay 0.3
+;;         help-at-pt-display-when-idle '(flymake-diagnostic)
+;;         eglot-ignored-server-capabilites '(:documentHighlightProvider))
+;;   (help-at-pt-set-timer))
+
+(use-package lsp-mode
   :ensure t
-  :bind   (("C-c r" . eglot-rename)
-           ("C-c h" . eglot-help-at-point))
-  :hook   ((javascript-mode . eglot-ensure)
-           (rust-mode       . eglot-ensure)
-           (python-mode     . eglot-ensure)
-           (shell-mode      . eglot-ensure)
-           (c-mode          . eglot-ensure)
-           (c++-mode        . eglot-ensure))
+  :defer t
+  :bind (("C-c r" . lsp-rename)
+         ("C-c h" . lsp-describe-thing-at-point)))
+
+(use-package lsp-ui
+  :ensure t
+  :hook (lsp-mode . lsp-ui-mode)
+  :bind (:map lsp-ui-mode-map
+              ("C-M-." . lsp-ui-peek-find-references)
+              ("M-."   . lsp-ui-peek-find-definitions))
   :config
-  (setq help-at-pt-timer-delay 0.3
-        help-at-pt-display-when-idle '(flymake-diagnostic)
-        eglot-ignored-server-capabilites '(:documentHighlightProvider))
-  (help-at-pt-set-timer))
+  (setq lsp-ui-peek-always-show t
+        lsp-ui-doc-enable nil))
+
+(use-package company-lsp
+  :ensure t
+  :config (push 'company-lsp company-backends)
+  :config
+  (setq company-lsp-async t
+        company-lsp-enable-snippet t))
 
 
 ;; Magit ---------------------------------------------------------------------------------
@@ -196,6 +213,13 @@
   :config (setq shell-escape-mode "-shell-escape"))
 
 
+;; C-mode --------------------------------------------------------------------------------
+(use-package cquery
+  :ensure t
+  :hook ((c-mode   . lsp-cquery-enable)
+         (c++-mode . lsp-cquery-enable)))
+
+
 ;; Bash ----------------------------------------------------------------------------------
 (use-package sh-script
   :ensure t
@@ -217,18 +241,15 @@
   :config (setq python-indent-offset 2
                 python-guess-indent nil))
 
-(use-package elpy
+(use-package lsp-python
   :ensure t
-  :after  python
-  :config (elpy-enable)
-  :bind (:map elpy-mode-map
-              ;; These conflict with windmove:
-              ("<M-up>"    . nil)
-              ("<M-down>"  . nil)
-              ("<M-left>"  . nil)
-              ("<M-right>" . nil)
-              ;; Conflict with ace-jump:
-              ("C-x g" . nil)))
+  :hook (python-mode . lsp-python-enable)
+  :config
+  (use-package projectile
+    :ensure t)
+  (lsp-define-stdio-client lsp-python "python"
+                           #'projectile-project-root
+                           '("pyls")))
 
 
 ;; Haskell -------------------------------------------------------------------------------
