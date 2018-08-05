@@ -111,6 +111,7 @@
 (use-package lsp-ui
   :ensure t
   :hook (lsp-mode . lsp-ui-mode)
+  :config (setq lsp-ui-sideline-ignore-duplicate t)
   :bind (:map lsp-ui-mode-map
               ("C-M-." . lsp-ui-peek-find-references)
               ("M-."   . lsp-ui-peek-find-definitions))
