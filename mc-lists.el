@@ -43,8 +43,10 @@
         org-cycle
         org-delete-char
         org-end-of-line
+        org-return
         org-self-insert-command
         org-todo
+        org-transpose-words
         org-yank
         sgml-maybe-name-self
         sgml-slash

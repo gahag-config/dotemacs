@@ -131,6 +131,8 @@
 (use-package magit
   :ensure t
   :bind   ("C-x m" . magit-status)
+  :bind   (:map magit-file-mode-map
+                ("C-x g" . nil))
   :config (setq magit-log-margin (quote (t
                                          "%Y-%m-%d %H:%M "
                                          magit-log-margin-width
@@ -156,7 +158,7 @@
 (use-package dired-ranger
   :ensure t
   :bind (:map dired-mode-map
-              ("C" . dired-ranger-copy)
+              ("c" . dired-ranger-copy)
               ("Y" . dired-ranger-paste)
               ("y" . dired-ranger-move)))
 
