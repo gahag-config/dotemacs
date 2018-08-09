@@ -153,7 +153,8 @@
   ; dired loading:
   :demand t
   :bind (:map dired-mode-map
-              ("K" . dired-kill-subdir)))
+              ("K" . dired-kill-subdir)
+              ("e" . dired-toggle-read-only)))
 
 (use-package dired-ranger
   :ensure t
