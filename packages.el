@@ -232,7 +232,10 @@
 (use-package cquery
   :ensure t
   :hook ((c-mode   . lsp-cquery-enable)
-         (c++-mode . lsp-cquery-enable)))
+         (c++-mode . lsp-cquery-enable))
+  :init
+  (use-package projectile
+    :ensure t))
 
 
 ;; Bash ----------------------------------------------------------------------------------
