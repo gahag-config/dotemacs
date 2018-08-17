@@ -348,7 +348,7 @@
               ("C-M-n" . ledger-navigate-next-xact-or-directive))
   :config
   (setq ledger-reports  ; All default, but removing income from report.
-        '(("bal"     "ledger -f %(ledger-file) bal not income")
+        '(("bal"     "ledger -f %(ledger-file) bal")
           ("reg"     "ledger -f %(ledger-file) reg")
           ("account" "ledger -f %(ledger-file) reg %(account)"))))
 
