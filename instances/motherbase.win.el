@@ -37,4 +37,4 @@
     ("c:/Users/gahag/Desktop/gahag/programming/langs/c/aeds/3/tp1/src")))
  '(package-selected-packages
    (quote
-    (markdown-mode pdf-tools flatui-theme solarized-theme tango-plus-theme spaceline org-bullets doom-themes magit intero monokai-theme yasnippet powerline multiple-cursors latex-preview-pane helm haskell-mode gh-md flycheck expand-region csharp-mode color-theme c-eldoc ace-jump-mode company))))
+    (calfw calfw-org transpose-frame use-package yasnippet-snippets markdown-mode pdf-tools flatui-theme solarized-theme tango-plus-theme spaceline org-bullets doom-themes magit intero monokai-theme yasnippet powerline multiple-cursors latex-preview-pane helm haskell-mode gh-md flycheck expand-region csharp-mode color-theme c-eldoc ace-jump-mode company))))
