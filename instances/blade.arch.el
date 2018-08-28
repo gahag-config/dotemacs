@@ -9,9 +9,14 @@
 
 (load dotemacs-file)
 
-(add-to-list 'custom-theme-load-path themes-dir)
-(load-theme 'doom-gahag t)
+(if (display-graphic-p) 
+    (progn (add-to-list 'custom-theme-load-path themes-dir)
+           (load-theme 'doom-gahag t)))
+
 (powerline-gahag-theme)
+
+;; ---------------------------------------------------------------------------------------
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

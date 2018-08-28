@@ -1,18 +1,18 @@
 ;(package-initialize)
 
-(defconst ctags-program "ctags")
 (defconst emacs-home  "/gahag/config/emacs/")
 (defconst desktop-home  (concat emacs-home "desktops/"))
 (defconst dotemacs-dir  (concat emacs-home "dotemacs/"))
 (defconst dotemacs-file (concat dotemacs-dir "gahag.el"))
 (defconst themes-dir    (concat dotemacs-dir "themes/"))
 (setq-default org-agenda-files '("/gahag/org"))
-(setq omnisharp-server-executable-path (concat emacs-home "OmniSharpServer/OmniSharp/bin/Debug/OmniSharp.exe"))
 
 (load dotemacs-file)
 
-(add-to-list 'custom-theme-load-path themes-dir)
-(load-theme 'doom-gahag t)
+(if (display-graphic-p) 
+    (progn (add-to-list 'custom-theme-load-path themes-dir)
+           (load-theme 'doom-gahag t)))
+
 (powerline-gahag-theme)
 
 ;; ---------------------------------------------------------------------------------------

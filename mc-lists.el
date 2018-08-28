@@ -50,6 +50,7 @@
         org-yank
         sgml-maybe-name-self
         sgml-slash
+        sh-assignment
         shell-command
         tab-to-tab-stop
         transpose-sexps
