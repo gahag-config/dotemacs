@@ -44,6 +44,7 @@
         org-delete-char
         org-end-of-line
         org-return
+        org-return-indent
         org-self-insert-command
         org-todo
         org-transpose-words

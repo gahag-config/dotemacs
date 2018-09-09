@@ -9,10 +9,7 @@
 
 (load dotemacs-file)
 
-(if (display-graphic-p) 
-    (progn (add-to-list 'custom-theme-load-path themes-dir)
-           (load-theme 'doom-gahag t)))
-
+(load-X-theme 'doom-gahag)
 (powerline-gahag-theme)
 
 ;; ---------------------------------------------------------------------------------------
@@ -33,4 +30,4 @@
     ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
  '(package-selected-packages
    (quote
-    (org projectile company-lsp cquery lsp-mode lsp-python lsp-ui dired-quick-sort try htmlize ledger-mode calfw calfw-org company doom-themes shm transpose-frame use-package yasnippet-snippets dired-ranger latex-preview-pane magit intero nyan-mode ace-jump-mode flymake-haskell-multi haskell-mode pdf-tools markdown-mode helm multiple-cursors expand-region yasnippet flycheck powerline auto-complete))))
+    (arduino-mode company-arduino org projectile company-lsp cquery lsp-mode lsp-python lsp-ui dired-quick-sort try htmlize ledger-mode calfw calfw-org company doom-themes shm transpose-frame use-package yasnippet-snippets dired-ranger latex-preview-pane magit intero nyan-mode ace-jump-mode flymake-haskell-multi haskell-mode pdf-tools markdown-mode helm multiple-cursors expand-region yasnippet flycheck powerline auto-complete))))

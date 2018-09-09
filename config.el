@@ -1,21 +1,17 @@
 ;; Emacs ---------------------------------------------------------------------------------
-(fset 'yes-or-no-p 'y-or-n-p)
-(windmove-default-keybindings 'meta)
-
 (setq-default make-backup-files nil
               x-select-enable-clipboard t
               truncate-lines t ;; disable word-wrap.
               require-final-newline t)
 
 
+(fset 'yes-or-no-p 'y-or-n-p)
+(windmove-default-keybindings 'meta)
+
+
 (put 'narrow-to-region 'disabled nil)
 (put 'upcase-region    'disabled nil)
 (put 'downcase-region  'disabled nil)
-
-
-;; Cursor
-(setq-default cursor-type 'bar)
-(set-cursor-color "WhiteSmoke")
 
 
 ;; Style ---------------------------------------------------------------------------------

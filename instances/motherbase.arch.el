@@ -9,10 +9,7 @@
 
 (load dotemacs-file)
 
-(if (display-graphic-p) 
-    (progn (add-to-list 'custom-theme-load-path themes-dir)
-           (load-theme 'doom-gahag t)))
-
+(load-X-theme 'doom-gahag)
 (powerline-gahag-theme)
 
 ;; ---------------------------------------------------------------------------------------
