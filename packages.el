@@ -190,11 +190,28 @@
         org-agenda-tags-column 0
         org-export-with-toc nil
         org-export-with-planning t)
+  
+  (setq org-agenda-custom-commands
+        '(("1" "Week schedule" agenda "display scheduled and deadlines for the current week"
+           ((org-agenda-span 'week)
+            (org-agenda-time-grid nil)
+            (org-agenda-show-all-dates nil)
+            (org-agenda-entry-types '(:deadline :scheduled))
+            (org-deadline-warning-days 0)))
+          ("2" "Month schedule" agenda "display scheduled and deadlines for the current month"
+           ((org-agenda-span 'month)
+            (org-agenda-time-grid nil)
+            (org-agenda-show-all-dates nil)
+            (org-agenda-entry-types '(:deadline :scheduled))
+            (org-deadline-warning-days 0)))
+          ))
+  
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((emacs-lisp . t)
      (python . t)
      (shell . t))))
+
 
 (use-package calfw
   :ensure t
