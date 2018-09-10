@@ -185,11 +185,12 @@
   :config
   (setq org-todo-keywords '((sequence "TODO" "NEXT" "|" "DONE" "DISMISSED"))
         org-log-done 'time
-        org-src-fontify-natively t
         org-tags-column 0
         org-agenda-tags-column 0
         org-export-with-toc nil
-        org-export-with-planning t)
+        org-export-with-planning t
+        org-src-tab-acts-natively t
+        org-src-fontify-natively t)
   
   (setq org-agenda-custom-commands
         '(("1" "Week schedule" agenda "display scheduled and deadlines for the current week"
