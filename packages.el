@@ -1,3 +1,4 @@
+;; -*- byte-compile-warnings: (not free-vars); -*-
 ;; Package setup -------------------------------------------------------------------------
 (require 'package)
 
@@ -371,7 +372,9 @@
           ("account" "ledger -f %(ledger-file) reg %(account)"))))
 
 
+;; Togetherly ----------------------------------------------------------------------------
+(use-package togetherly
+  :ensure t)
+
+
 ;; ---------------------------------------------------------------------------------------
-;; Local Variables:
-;; byte-compile-warnings: (not free-vars)
-;; End:
