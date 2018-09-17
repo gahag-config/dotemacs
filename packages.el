@@ -1,12 +1,10 @@
+;; -*- byte-compile-warnings: (not free-vars); -*-
 ;; Package setup -------------------------------------------------------------------------
 (require 'package)
 
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/"))
-(add-to-list 'package-archives
-             '("marmalade" . "https://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives
-             '("org" . "https://orgmode.org/elpa/"))
+(setq-default package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+                                 ("org" . "https://orgmode.org/elpa/")
+                                 ("melpa" . "https://melpa.org/packages/")))
 
 (package-initialize)
 
@@ -188,16 +186,34 @@
   :config
   (setq org-todo-keywords '((sequence "TODO" "NEXT" "|" "DONE" "DISMISSED"))
         org-log-done 'time
-        org-src-fontify-natively t
         org-tags-column 0
         org-agenda-tags-column 0
         org-export-with-toc nil
-        org-export-with-planning t)
+        org-export-with-planning t
+        org-src-tab-acts-natively t
+        org-src-fontify-natively t)
+  
+  (setq org-agenda-custom-commands
+        '(("1" "Week schedule" agenda "display scheduled and deadlines for the current week"
+           ((org-agenda-span 'week)
+            (org-agenda-time-grid nil)
+            (org-agenda-show-all-dates nil)
+            (org-agenda-entry-types '(:deadline :scheduled))
+            (org-deadline-warning-days 0)))
+          ("2" "Month schedule" agenda "display scheduled and deadlines for the current month"
+           ((org-agenda-span 'month)
+            (org-agenda-time-grid nil)
+            (org-agenda-show-all-dates nil)
+            (org-agenda-entry-types '(:deadline :scheduled))
+            (org-deadline-warning-days 0)))
+          ))
+  
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((emacs-lisp . t)
      (python . t)
      (shell . t))))
+
 
 (use-package calfw
   :ensure t
@@ -356,7 +372,9 @@
           ("account" "ledger -f %(ledger-file) reg %(account)"))))
 
 
+;; Togetherly ----------------------------------------------------------------------------
+(use-package togetherly
+  :ensure t)
+
+
 ;; ---------------------------------------------------------------------------------------
-;; Local Variables:
-;; byte-compile-warnings: (not free-vars)
-;; End:

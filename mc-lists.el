@@ -47,6 +47,7 @@
         org-fill-paragraph
         org-kill-line
         org-return
+        org-return-indent
         org-self-insert-command
         org-todo
         org-transpose-words
@@ -55,6 +56,7 @@
         python-shell-send-buffer
         sgml-maybe-name-self
         sgml-slash
+        sh-assignment
         shell-command
         tab-to-tab-stop
         transpose-sexps

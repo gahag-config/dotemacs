@@ -1,3 +1,4 @@
+;; ctags ---------------------------------------------------------------------------------
 (defun create-tags (dir-name)
   "Create tags file."
   
@@ -7,6 +8,7 @@
        (shell-command (format "%s -e -R -f \"%s\"/TAGS \"%s\"" ctags-program dir dir))))
 
 
+;; desktops ------------------------------------------------------------------------------
 (defun desktop-save-in-desktop-dir-release ()
   "Save the desktop in directory `desktop-dirname' and release."
   (interactive)
@@ -14,6 +16,7 @@
       (desktop-save desktop-dirname t)
     (call-interactively 'desktop-save))
   (message "Desktop saved in %s" (abbreviate-file-name desktop-dirname)))
+
 
 (defun desktop-create (desktop-name)
   "Create new desktop"
@@ -37,6 +40,7 @@
   (desktop-change-dir dir-name))
 
 
+;; indent --------------------------------------------------------------------------------
 (defun set-tab-size (size)
   "Set the tab size for the current buffer."
   
@@ -48,20 +52,21 @@
   (setq-local haskell-indent-offset size))
 
 
-(defun find-temp-file (filename)
-  "Find new temporary file"
-  
-  (interactive "sFile name: ") ;; String
-  
-  (find-file (make-temp-file filename)))
-
-
 (defun align-whitespace (size)
   "Align columns delimited by whitespace."
   
   (interactive "NSize: ") ;; Number
   
   (align-regexp (region-beginning) (region-end) "\\(\\s-*\\)\\s-" 1 size 't))
+
+
+;; etc -----------------------------------------------------------------------------------
+(defun find-temp-file (filename)
+  "Find new temporary file"
+  
+  (interactive "sFile name: ") ;; String
+  
+  (find-file (make-temp-file filename)))
 
 
 (defun context-kill-buffer (arg)
