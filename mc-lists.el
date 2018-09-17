@@ -3,6 +3,7 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        *table--cell-self-insert-command
         backward-kill-sentence
         backward-sexp
         beginning-of-buffer
