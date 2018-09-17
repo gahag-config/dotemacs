@@ -43,11 +43,16 @@
         org-cycle
         org-delete-char
         org-end-of-line
+        org-export-dispatch
+        org-fill-paragraph
+        org-kill-line
         org-return
         org-self-insert-command
         org-todo
         org-transpose-words
         org-yank
+        pcomplete
+        python-shell-send-buffer
         sgml-maybe-name-self
         sgml-slash
         shell-command
