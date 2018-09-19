@@ -268,6 +268,15 @@
   :config (setq js-indent-level 2))
 
 
+;; Java-----------------------------------------------------------------------------------
+(use-package lsp-java
+  :ensure t
+  :hook (java-mode . lsp-java-enable)
+  :config
+  (setq lsp-java-server-install-dir "/usr/share/java/jdtls/"
+        lsp-java--workspace-folders (list "/gahag/programming/projects/pm/tp1/src")))
+
+
 ;; Python---------------------------------------------------------------------------------
 (use-package python
   :ensure t
