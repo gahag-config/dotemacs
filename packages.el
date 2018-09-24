@@ -191,7 +191,15 @@
         org-export-with-toc nil
         org-export-with-planning t
         org-src-tab-acts-natively t
-        org-src-fontify-natively t)
+        org-src-fontify-natively t
+
+        ;; Minted setup:
+        org-latex-listings 'minted
+        org-latex-packages-alist '(("" "minted"))
+        org-latex-pdf-process
+        '("%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
+          "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
+          "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"))
   
   (setq org-agenda-custom-commands
         '(("1" "Week schedule" agenda "display scheduled and deadlines for the current week"
