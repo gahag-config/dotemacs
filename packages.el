@@ -152,6 +152,7 @@
   ; This is necessary so the keybindings of dired-ranger won't be overriden by a late
   ; dired loading:
   :demand t
+  :config (setq delete-by-moving-to-trash t)
   :bind (:map dired-mode-map
               ("K" . dired-kill-subdir)
               ("e" . dired-toggle-read-only)))
