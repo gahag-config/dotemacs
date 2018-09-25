@@ -14,6 +14,11 @@
 (put 'downcase-region  'disabled nil)
 
 
+;; Local variables -----------------------------------------------------------------------
+(put 'before-save-hook 'safe-local-variable (lambda (_) t))
+(put 'after-save-hook  'safe-local-variable (lambda (_) t))
+
+
 ;; Style ---------------------------------------------------------------------------------
 (setq-default tab-width 2
               tab-always-indent nil
