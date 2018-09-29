@@ -197,10 +197,9 @@
         ;; Minted setup:
         org-latex-listings 'minted
         org-latex-packages-alist '(("" "minted"))
+        org-latex-minted-options '(("fontsize" "\\small"))
         org-latex-pdf-process
-        '("%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
-          "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
-          "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+         '("latexmk -pdflatex='pdflatex -shell-escape -interaction nonstopmode -output-directory %o' -pdf -f  %f"))
   
   (setq org-agenda-custom-commands
         '(("1" "Week schedule" agenda "display scheduled and deadlines for the current week"

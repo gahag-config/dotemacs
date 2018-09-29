@@ -80,5 +80,6 @@
         mark-page
         mc/mark-next-lines
         mc/mark-previous-lines
+        org-fill-paragraph
         repeat
         ))
