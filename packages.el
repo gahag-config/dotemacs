@@ -191,7 +191,15 @@
         org-export-with-toc nil
         org-export-with-planning t
         org-src-tab-acts-natively t
-        org-src-fontify-natively t)
+        org-src-fontify-natively t
+
+        ;; Minted setup:
+        org-latex-listings 'minted
+        org-latex-packages-alist '(("" "minted"))
+        org-latex-pdf-process
+        '("%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
+          "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
+          "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"))
   
   (setq org-agenda-custom-commands
         '(("1" "Week schedule" agenda "display scheduled and deadlines for the current week"
@@ -386,4 +394,12 @@
   :ensure t)
 
 
-;; ---------------------------------------------------------------------------------------
+;; Helm-Spotify-plus-----------------------------------------------------------------------
+(use-package helm-spotify-plus
+  :ensure t
+  :bind
+  (("C-c s s" . 'helm-spotify-plus)  ;; s for SEARCH
+   ("C-c s f" . 'helm-spotify-plus-next)
+   ("C-c s b" . 'helm-spotify-plus-previous)
+   ("C-c s p" . 'helm-spotify-plus-play) 
+   ("C-c s g" . 'helm-spotify-plus-pause)))
