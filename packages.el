@@ -403,7 +403,7 @@
   :ensure t)
 
 
-;; Helm-Spotify-plus-----------------------------------------------------------------------
+;; Helm-Spotify-plus----------------------------------------------------------------------
 (use-package helm-spotify-plus
   :ensure t
   :bind
@@ -412,3 +412,10 @@
    ("C-c s b" . 'helm-spotify-plus-previous)
    ("C-c s p" . 'helm-spotify-plus-play) 
    ("C-c s g" . 'helm-spotify-plus-pause)))
+
+
+;; Undo-Tree------------------------------------------------------------------------------
+(use-package undo-tree
+  :ensure t
+  :init
+  (global-undo-tree-mode))
