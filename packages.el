@@ -64,8 +64,17 @@
   :ensure t
   :config
   (setq company-idle-delay 0.3)
-  (global-company-mode))
+  (global-company-mode)
+)
 
+;; Company Jedi -------------------------------------------------------------------------------
+(use-package company-jedi
+  :ensure t
+  :init
+  (defun my/python-mode-hook ()
+  (add-to-list 'company-backends 'company-jedi))
+  (add-hook 'python-mode-hook 'my/python-mode-hook)  
+)
 
 ;; Yasnippet -----------------------------------------------------------------------------
 (use-package yasnippet
