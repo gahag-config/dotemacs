@@ -186,6 +186,7 @@
               ("C-c a" . org-agenda))
   :config
   (setq org-todo-keywords '((sequence "TODO" "NEXT" "|" "DONE" "DISMISSED"))
+        org-list-allow-alphabetical t
         org-log-done 'time
         org-tags-column 0
         org-agenda-tags-column 0
@@ -220,7 +221,9 @@
    'org-babel-load-languages
    '((emacs-lisp . t)
      (python . t)
-     (shell . t))))
+     (shell . t)))
+
+  (put 'org-html-htmlize-output-type 'safe-local-variable (lambda (_) t)))
 
 
 (use-package calfw

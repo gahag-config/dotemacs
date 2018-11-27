@@ -27,7 +27,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
+    ("07d6ef21ab59e51de10f36427758282b449ec4a28e04ebfd2c83bf4cb66aa28b" "4edd229ac234ab8682f54c4ec65995cff2951d6af107a8c183c041b63e9f7194" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
  '(package-selected-packages
    (quote
-    (togetherly arduino-mode company-arduino org projectile company-lsp cquery lsp-mode lsp-python lsp-ui dired-quick-sort try htmlize ledger-mode calfw calfw-org company doom-themes shm transpose-frame use-package yasnippet-snippets dired-ranger latex-preview-pane magit intero nyan-mode ace-jump-mode flymake-haskell-multi haskell-mode pdf-tools markdown-mode helm multiple-cursors expand-region yasnippet flycheck powerline auto-complete))))
+    (csv-mode lsp-java lsp-ui markdown-mode jsx-mode pdf-tools projectile rainbow-mode ox-reveal togetherly arduino-mode company-arduino org company-lsp cquery lsp-mode lsp-python dired-quick-sort try htmlize ledger-mode calfw calfw-org company doom-themes shm transpose-frame use-package yasnippet-snippets dired-ranger latex-preview-pane magit intero nyan-mode ace-jump-mode flymake-haskell-multi haskell-mode helm multiple-cursors expand-region flycheck powerline auto-complete))))
