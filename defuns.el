@@ -49,7 +49,8 @@
   (setq-local tab-width size)
   (setq-local tab-stop-list (number-sequence 0 200 size))
   (setq-local c-basic-offset size)
-  (setq-local haskell-indent-offset size))
+  (setq-local haskell-indent-offset size)
+  (setq-local python-indent-offset size))
 
 
 (defun align-whitespace (size)
