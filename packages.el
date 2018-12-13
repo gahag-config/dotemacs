@@ -67,15 +67,6 @@
   (global-company-mode)
 )
 
-;; Company Jedi -------------------------------------------------------------------------------
-(use-package company-jedi
-  :ensure t
-  :init
-  (defun my/python-mode-hook ()
-  (add-to-list 'company-backends 'company-jedi))
-  (add-hook 'python-mode-hook 'my/python-mode-hook)  
-)
-
 ;; Yasnippet -----------------------------------------------------------------------------
 (use-package yasnippet
   :ensure t
@@ -291,7 +282,7 @@
   :hook (java-mode . lsp-java-enable)
   :config
   (setq lsp-java-server-install-dir "/usr/share/java/jdtls/"
-        lsp-java--workspace-folders (list "/gahag/programming/projects/pm/tp1/src")))
+        lsp-java--workspace-folders (list "/home/effy/.emacs.d/workspace/")))
 
 
 ;; Python---------------------------------------------------------------------------------
