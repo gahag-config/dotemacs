@@ -78,3 +78,11 @@
                       (server-edit)
                       (error (kill-buffer (current-buffer)))))
   (kill-buffer (current-buffer)))
+
+
+(defun shell-command-on-buffer ()
+  (interactive)
+  (shell-command-on-region (point-min)
+                           (point-max)
+                           (read-shell-command "Shell command on buffer: ")
+                           (current-buffer)))

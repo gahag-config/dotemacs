@@ -133,7 +133,8 @@
   :bind   ("C-x m" . magit-status)
   :bind   (:map magit-file-mode-map
                 ("C-x g" . nil))
-  :config (setq magit-log-margin (quote (t
+  :config (setq-default magit-diff-refine-hunk 'all)
+          (setq magit-log-margin (quote (t
                                          "%Y-%m-%d %H:%M "
                                          magit-log-margin-width
                                          t
@@ -285,7 +286,7 @@
   :hook (java-mode . lsp-java-enable)
   :config
   (setq lsp-java-server-install-dir "/usr/share/java/jdtls/"
-        lsp-java--workspace-folders (list "/gahag/programming/projects/pm/tp1/src")))
+        lsp-java-workspace-dir "/gahag/programming/eclipse-workspace/"))
 
 
 ;; Python---------------------------------------------------------------------------------

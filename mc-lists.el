@@ -43,6 +43,7 @@
         org-beginning-of-line
         org-cycle
         org-delete-char
+        org-demote-subtree
         org-end-of-line
         org-return
         org-return-indent
@@ -50,6 +51,8 @@
         org-todo
         org-transpose-words
         org-yank
+        python-indent-shift-left
+        rectangle-mark-mode
         sgml-maybe-name-self
         sgml-slash
         sh-assignment
@@ -57,6 +60,7 @@
         tab-to-tab-stop
         transpose-sexps
         transpose-words
+        upcase-region
         wdired-capitalize-word
         wdired-downcase-word
         yaml-electric-backspace
