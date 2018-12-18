@@ -176,6 +176,8 @@
 (use-package org
   :ensure t
   :pin org
+  :hook (org-babel-after-execute . (lambda () (when org-inline-image-overlays
+                                                (org-redisplay-inline-images))))
   :bind (:map org-mode-map
               ;; These conflict with windmove:
               ("<M-up>"    . nil)
