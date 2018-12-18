@@ -312,11 +312,10 @@
 ;; Haskell -------------------------------------------------------------------------------
 (use-package haskell-mode
   :defer t
+  :hook (haskell-mode . turn-on-haskell-indent) ; Replace by structured-haskell-mode.
   :config
   (setq haskell-indent-offset 2
         haskell-font-lock-symbols t)
-  
-  (add-hook 'haskell-mode-hook 'turn-on-haskell-indent) ; Replace by structured-haskell-mode.
   
   (eval-after-load 'haskell-font-lock
     '(progn
