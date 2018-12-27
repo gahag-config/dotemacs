@@ -220,6 +220,7 @@
    'org-babel-load-languages
    '((emacs-lisp . t)
      (python . t)
+     (C . t)
      (shell . t))))
 
 
