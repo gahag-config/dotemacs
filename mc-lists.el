@@ -43,6 +43,7 @@
         org-beginning-of-line
         org-cycle
         org-delete-char
+        org-demote-subtree
         org-end-of-line
         org-export-dispatch
         org-fill-paragraph
@@ -53,8 +54,13 @@
         org-todo
         org-transpose-words
         org-yank
+<<<<<<< HEAD
         pcomplete
         python-shell-send-buffer
+=======
+        python-indent-shift-left
+        rectangle-mark-mode
+>>>>>>> fb4918cedb8484ab6d14b574047464e558b6ec56
         sgml-maybe-name-self
         sgml-slash
         sh-assignment
@@ -62,6 +68,7 @@
         tab-to-tab-stop
         transpose-sexps
         transpose-words
+        upcase-region
         wdired-capitalize-word
         wdired-downcase-word
         yaml-electric-backspace

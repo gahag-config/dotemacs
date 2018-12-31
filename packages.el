@@ -133,7 +133,8 @@
   :bind   ("C-x m" . magit-status)
   :bind   (:map magit-file-mode-map
                 ("C-x g" . nil))
-  :config (setq magit-log-margin (quote (t
+  :config (setq-default magit-diff-refine-hunk 'all)
+          (setq magit-log-margin (quote (t
                                          "%Y-%m-%d %H:%M "
                                          magit-log-margin-width
                                          t
@@ -174,6 +175,8 @@
 (use-package org
   :ensure t
   :pin org
+  :hook (org-babel-after-execute . (lambda () (when org-inline-image-overlays
+                                                (org-redisplay-inline-images))))
   :bind (:map org-mode-map
               ;; These conflict with windmove:
               ("<M-up>"    . nil)
@@ -283,7 +286,11 @@
   :hook (java-mode . lsp-java-enable)
   :config
   (setq lsp-java-server-install-dir "/usr/share/java/jdtls/"
+<<<<<<< HEAD
         lsp-java--workspace-folders (list "/home/effy/.emacs.d/workspace/")))
+=======
+        lsp-java-workspace-dir "/gahag/programming/eclipse-workspace/"))
+>>>>>>> fb4918cedb8484ab6d14b574047464e558b6ec56
 
 
 ;; Python---------------------------------------------------------------------------------
@@ -307,11 +314,10 @@
 ;; Haskell -------------------------------------------------------------------------------
 (use-package haskell-mode
   :defer t
+  :hook (haskell-mode . turn-on-haskell-indent) ; Replace by structured-haskell-mode.
   :config
   (setq haskell-indent-offset 2
         haskell-font-lock-symbols t)
-  
-  (add-hook 'haskell-mode-hook 'turn-on-haskell-indent) ; Replace by structured-haskell-mode.
   
   (eval-after-load 'haskell-font-lock
     '(progn
