@@ -311,6 +311,13 @@
                            '("pyls")))
 
 
+;; Rust-----------------------------------------------------------------------------------
+(use-package rust-mode
+  :ensure t
+  :defer  t
+  :config (setq rust-indent-offset 2))
+
+
 ;; Haskell -------------------------------------------------------------------------------
 (use-package haskell-mode
   :defer t
