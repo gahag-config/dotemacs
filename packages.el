@@ -286,11 +286,7 @@
   :hook (java-mode . lsp-java-enable)
   :config
   (setq lsp-java-server-install-dir "/usr/share/java/jdtls/"
-<<<<<<< HEAD
         lsp-java--workspace-folders (list "/home/effy/.emacs.d/workspace/")))
-=======
-        lsp-java-workspace-dir "/gahag/programming/eclipse-workspace/"))
->>>>>>> fb4918cedb8484ab6d14b574047464e558b6ec56
 
 
 ;; Python---------------------------------------------------------------------------------
