@@ -46,7 +46,7 @@
                                          "\\`\\*helm"
                                          "\\`\\*Echo Area"
                                          "\\`\\*Minibuf"
-                                         "\\`\\*lsp" ;; "\\`\\*EGLOT"
+                                         ;; "\\`\\*lsp" ;; "\\`\\*EGLOT"
                                          "\\`\\*Flymake"
                                          "\\`\\*Flycheck"
                                          "\\`magit.*:"
@@ -79,7 +79,7 @@
 ;; Flycheck ------------------------------------------------------------------------------
 (use-package flycheck
   :ensure t
-  :hook   (prog-mode . global-flycheck-mode)
+  :hook   (prog-mode . flycheck-mode)
   :config
   ; For some reason, the following does not work with setq, only with setq-default.
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
@@ -104,25 +104,27 @@
 
 (use-package lsp-mode
   :ensure t
-  :defer t
+  :commands lsp
   :bind (("C-c r" . lsp-rename)
-         ("C-c h" . lsp-describe-thing-at-point)))
+         ("C-c h" . lsp-describe-thing-at-point))
+  :config (setq-default lsp-prefer-flymake nil))
 
 (use-package lsp-ui
   :ensure t
-  :hook (lsp-mode . lsp-ui-mode)
-  :config (setq lsp-ui-sideline-ignore-duplicate t)
+  :commands lsp-ui-mode
   :bind (:map lsp-ui-mode-map
               ("C-M-." . lsp-ui-peek-find-references)
               ("M-."   . lsp-ui-peek-find-definitions))
   :config
-  (setq lsp-ui-peek-always-show t
+  (setq lsp-ui-sideline-ignore-duplicate t
+        lsp-ui-peek-always-show t
         lsp-ui-doc-enable nil))
 
 (use-package company-lsp
   :ensure t
-  :config (push 'company-lsp company-backends)
+  :commands company-lsp
   :config
+  (push 'company-lsp company-backends)
   (setq company-lsp-async t
         company-lsp-enable-snippet t))
 
@@ -261,11 +263,8 @@
 ;; C-mode --------------------------------------------------------------------------------
 (use-package cquery
   :ensure t
-  :hook ((c-mode   . lsp-cquery-enable)
-         (c++-mode . lsp-cquery-enable))
-  :init
-  (use-package projectile
-    :ensure t))
+  :hook ((c-mode   . (lambda () (require 'cquery) (lsp)))
+         (c++-mode . (lambda () (require 'cquery) (lsp)))))
 
 
 ;; Bash ----------------------------------------------------------------------------------
@@ -282,31 +281,30 @@
   :config (setq js-indent-level 2))
 
 
-;; Java-----------------------------------------------------------------------------------
+;; Java ----------------------------------------------------------------------------------
 (use-package lsp-java
   :ensure t
-  :hook (java-mode . lsp-java-enable)
+  :hook (java-mode . (lambda () (require 'lsp-java) (lsp)))
   :config
   (setq lsp-java-server-install-dir "/usr/share/java/jdtls/"
         lsp-java-workspace-dir "/gahag/programming/eclipse-workspace/"))
 
 
-;; Python---------------------------------------------------------------------------------
+;; Python --------------------------------------------------------------------------------
 (use-package python
   :ensure t
   :defer  t
+  :hook (python-mode . lsp)
   :config (setq python-indent-offset 2
                 python-guess-indent nil))
 
-(use-package lsp-python
+
+;; Rust ----------------------------------------------------------------------------------
+(use-package rust-mode
   :ensure t
-  :hook (python-mode . lsp-python-enable)
-  :config
-  (use-package projectile
-    :ensure t)
-  (lsp-define-stdio-client lsp-python "python"
-                           #'projectile-project-root
-                           '("pyls")))
+  :defer  t
+  :hook (rust-mode . lsp)
+  :config (setq-default rust-indent-offset 2))
 
 
 ;; Haskell -------------------------------------------------------------------------------
