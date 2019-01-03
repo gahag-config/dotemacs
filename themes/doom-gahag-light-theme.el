@@ -53,7 +53,7 @@ determine the exact padding."
    (fg '("#1c2028" "#2d2d2d" "white"))
    (fg-alt '("#2E3440" "#bfbfbf" "brightwhite"))
 
-   (grey base4)
+   (grey base6)
    (silver      '("#dfe6e9" "#dfe6e9" "grey"))
    (black       '("#000000" "#000000" "black"))
    (bright-red  '("#ff0000" "#ff6655" "red"))
@@ -73,7 +73,7 @@ determine the exact padding."
    ;; face categories -- required for all themes
    (highlight (doom-blend blue bg 0.8))
    (vertical-bar (doom-darken bg 0.15))
-   (selection (doom-blend blue bg 0.5))
+   (selection (doom-darken bg 0.05))
    (builtin blue)
    (comments (if doom-gahag-light-brighter-comments dark-cyan (doom-darken base5 0.2)))
    (doc-comments (doom-darken (if doom-gahag-light-brighter-comments dark-cyan base5) 0.25))
@@ -89,7 +89,7 @@ determine the exact padding."
    (region (pcase doom-gahag-light-region-highlight
              ((\` frost) (doom-lighten teal 0.5))
              ((\` snowstorm) base0)
-             (_ base4)))
+             (_ selection)))
    (error bright-red)
    (warning yellow)
    (success green)
