@@ -1,10 +1,5 @@
 ;; Cursor
 (setq-default cursor-type 'bar)
-(set-cursor-color "WhiteSmoke")
-
-
-(add-to-list 'custom-theme-load-path themes-dir)
-(load (concat themes-dir "powerline-theme.el"))
 
 
 (defadvice load-theme (before clear-previous-themes activate)
@@ -18,6 +13,19 @@
       (load-theme theme t)))
 
 
+(defun load-powerline-theme (theme)
+  "Load a powerline theme from the themes directory"
+  (load (concat themes-dir "powerline-" theme "-theme.el")))
+
 (defun powerline-gahag-theme ()
   "Setup a mode-line with major and minor modes centered."
   (setq-default mode-line-format powerline-gahag-format))
+
+(defun powerline-gahag-light-theme ()
+  "Setup a mode-line with major and minor modes centered."
+  (setq-default mode-line-format powerline-gahag-light-format))
+
+
+(add-to-list 'custom-theme-load-path themes-dir)
+(load-powerline-theme "gahag")
+(load-powerline-theme "gahag-light")

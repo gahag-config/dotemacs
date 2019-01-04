@@ -92,5 +92,8 @@
         mark-page
         mc/mark-next-lines
         mc/mark-previous-lines
+        mouse-buffer-menu
+        org-fill-paragraph
         repeat
+        write-file
         ))
