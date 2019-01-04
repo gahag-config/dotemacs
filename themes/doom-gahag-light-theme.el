@@ -139,7 +139,6 @@ determine the exact padding."
    ((font-lock-type-face &override) :weight 'semi-bold )
    ((font-lock-string-face &override) :weight 'bold )
 
-   ((lazy-highlight &override) :background (doom-blend teal bg 0.8))
    ((line-number &override) :foreground (doom-lighten 'base5 0.2))
    ((line-number-current-line &override) :foreground base7)
    ((paren-face-match &override) :foreground fg :background bg :weight 'ultra-bold)
@@ -152,6 +151,11 @@ determine the exact padding."
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
+
+
+   ;; isearch
+   (isearch :background dark-blue)
+   ((lazy-highlight &override) :background grey)
 
 
    ;; powerline
