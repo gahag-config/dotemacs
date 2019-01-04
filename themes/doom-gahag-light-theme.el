@@ -202,6 +202,10 @@ determine the exact padding."
    (helm-buffer-file :foreground fg)
    (helm-non-file-buffer :foreground (doom-lighten fg 0.5))
    (helm-candidate-number :background bright-blue)
+   (helm-minibuffer-prompt :foreground fg :weight 'semi-bold)
+
+   ;; minibuffer
+   (minibuffer-prompt :foreground fg :weight 'semi-bold)
 
    ;; magit
    (magit-filename :foreground fg)
@@ -219,6 +223,11 @@ determine the exact padding."
    (ivy-virtual :foreground (doom-blend blue bg 0.8))
    (ivy-minibuffer-match-face-1 :background nil :foreground (doom-blend fg bg 0.5) :weight 'light)
    (internal-border :foreground (doom-blend blue bg 0.2) :background (doom-blend blue bg 0.2))
+
+   ;; company
+   (company-tooltip :background base2)
+   (company-tooltip-selection :background bright-blue :foreground bg :weight 'semi-bold)
+   (company-preview-common :background base2 :foreground fg :inherit 'italic)
 
    ;; lsp
    (lsp-ui-sideline-code-action :foreground orange)
