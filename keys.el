@@ -1,5 +1,7 @@
 (global-unset-key "") ;; ESC ESC ESC
 
+(global-set-key (kbd "C-i") 'yank)
+
 ;; (global-set-key (kbd "C-x k") 'kill-this-buffer)
 (global-set-key (kbd "C-x k") 'context-kill-buffer)
 (global-set-key (kbd "C-;"  ) 'comment-line)
