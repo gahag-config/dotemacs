@@ -191,7 +191,7 @@
               ("C-," . nil)
               ("C-c a" . org-agenda)
               ;; Yank:
-              ("C-i" nil))
+              ("C-i" . nil))
   :config
   (setq org-todo-keywords '((sequence "TODO" "NEXT" "|" "DONE" "DISMISSED"))
         org-list-allow-alphabetical t
