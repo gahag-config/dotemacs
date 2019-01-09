@@ -125,7 +125,6 @@
   :ensure t
   :commands company-lsp
   :config
-  (push 'company-lsp company-backends)
   (setq company-lsp-async t
         company-lsp-enable-snippet t))
 
