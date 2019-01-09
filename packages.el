@@ -125,7 +125,6 @@
   :ensure t
   :commands company-lsp
   :config
-  (push 'company-lsp company-backends)
   (setq company-lsp-async t
         company-lsp-enable-snippet t))
 
@@ -189,9 +188,7 @@
               ("<M-right>" . nil)
               ;; Expand region:
               ("C-," . nil)
-              ("C-c a" . org-agenda)
-              ;; Yank:
-              ("C-i" . nil))
+              ("C-c a" . org-agenda))
   :config
   (setq org-todo-keywords '((sequence "TODO" "NEXT" "|" "DONE" "DISMISSED"))
         org-list-allow-alphabetical t
