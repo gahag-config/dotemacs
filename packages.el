@@ -305,11 +305,12 @@
   :config (setq-default rust-indent-offset 2))
 
 
-;; Rust-----------------------------------------------------------------------------------
-(use-package rust-mode
+;; Scala----------------------------------------------------------------------------------
+(use-package scala-mode
   :ensure t
   :defer  t
-  :config (setq rust-indent-offset 2))
+  :hook (scala-mode . lsp)
+  :config (setq scala-indent-offset 2))
 
 
 ;; Haskell -------------------------------------------------------------------------------
