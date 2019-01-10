@@ -23,7 +23,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("9aa31b4b4b84965818055d3fb80ffc2efa2a8d4ec068e202bd26a8da26415bd5" "4204531acf5fd16b257d7028fcbae9034021e06f1197527e01da34792380ebe4" "a8810eb3e7166f6d1c5825d6de963c45d6d9ea5eb037728c2ff2e0349c4a3a28" default)))
+    ("9aa31b4b4b84965818055d3fb80ffc2efa2a8d4ec068e202bd26a8da26415bd5" "a8810eb3e7166f6d1c5825d6de963c45d6d9ea5eb037728c2ff2e0349c4a3a28" default)))
  '(package-selected-packages
    (quote
     (lsp-java rust-mode undo-tree yasnippet-snippets rainbow-mode helm-spotify-plus latex-preview-pane togetherly htmlize ledger-mode transpose-frame multiple-cursors ace-jump-mode expand-region intero lsp-python projectile cquery pdf-tools ox-reveal calfw-org calfw dired-quick-sort dired-ranger magit company-lsp lsp-ui lsp-mode flycheck use-package try powerline helm doom-themes company))))
