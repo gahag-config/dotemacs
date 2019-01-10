@@ -30,6 +30,7 @@
         electric-pair-delete-pair
         end-of-visual-line
         eval-print-last-sexp
+        fb4918cedb8484ab6d14b574047464e558b6ec56
         forward-sexp
         haskell-indentation-common-electric-command
         haskell-indentation-delete-backward-char
@@ -54,13 +55,10 @@
         org-todo
         org-transpose-words
         org-yank
-<<<<<<< HEAD
         pcomplete
-        python-shell-send-buffer
-=======
         python-indent-shift-left
+        python-shell-send-buffer
         rectangle-mark-mode
->>>>>>> fb4918cedb8484ab6d14b574047464e558b6ec56
         sgml-maybe-name-self
         sgml-slash
         sh-assignment
@@ -81,6 +79,7 @@
       '(
         2C-two-columns
         ace-jump-mode
+        complete-symbol
         delete-rectangle
         helm-M-x
         helm-confirm-and-exit-minibuffer
