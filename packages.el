@@ -287,7 +287,7 @@
   :hook (java-mode . (lambda () (require 'lsp-java) (lsp)))
   :config
   (setq lsp-java-server-install-dir "/usr/share/java/jdtls/"
-        lsp-java-workspace-dir "/gahag/programming/eclipse-workspace/"))
+        lsp-java-workspace-dir (concat (getenv "XDG_CACHE_HOME") "/eclipse-workspace/")))
 
 
 ;; Python --------------------------------------------------------------------------------
