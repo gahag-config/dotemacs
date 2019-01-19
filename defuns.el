@@ -86,3 +86,9 @@
                            (point-max)
                            (read-shell-command "Shell command on buffer: ")
                            (current-buffer)))
+
+
+(defun reload-local-variables ()
+  "reload file local variables for the current buffer"
+  (interactive)
+  (hack-local-variables))
