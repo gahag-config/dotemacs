@@ -47,6 +47,7 @@
                                          "\\`\\*Echo Area"
                                          "\\`\\*Minibuf"
                                          "\\`\\*\\w+ls\\(::stderr\\)?\\*\\'"
+                                         "\\`\\*cquery\\(::stderr\\)?\\*\\'"
                                          ;; "\\`\\*EGLOT"
                                          "\\`\\*Flymake"
                                          "\\`\\*Flycheck"

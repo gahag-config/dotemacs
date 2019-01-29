@@ -231,6 +231,8 @@ determine the exact padding."
 
    ;; lsp
    (lsp-ui-sideline-code-action :foreground orange)
+   (lsp-ui-sideline-symbol :foreground base7 :box base7)
+   (lsp-ui-sideline-current-symbol :foreground fg :weight 'semi-bold :box fg)
 
    ;; --- major-mode faces -------------------
 
