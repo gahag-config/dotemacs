@@ -198,6 +198,7 @@ determine the exact padding."
    (org-level-2 :background bg :foreground teal :weight 'extra-bold)
    (org-block   :background (doom-darken bg 0.02))
    (org-block-begin-line :foreground fg-alt :weight 'bold)
+   (org-block :foreground fg-alt :background: bg)
 
    ;; lsp
    (lsp-ui-sideline-code-action :foreground orange)

@@ -47,6 +47,7 @@
                                          "\\`\\*Echo Area"
                                          "\\`\\*Minibuf"
                                          "\\`\\*\\w+ls\\(::stderr\\)?\\*\\'"
+                                         "\\`\\*cquery\\(::stderr\\)?\\*\\'"
                                          ;; "\\`\\*EGLOT"
                                          "\\`\\*Flymake"
                                          "\\`\\*Flycheck"
@@ -286,6 +287,7 @@
   :config
   (setq lsp-java-server-install-dir "/usr/share/java/jdtls/"
         lsp-java--workspace-folders (list "/home/effy/.emacs.d/workspace/")))
+
 
 
 ;; Python --------------------------------------------------------------------------------
