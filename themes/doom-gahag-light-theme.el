@@ -214,8 +214,12 @@ determine the exact padding."
    (magit-diff-file-heading-highlight :foreground bg :background bright-blue :weight 'bold)
    (magit-diff-hunk-heading :foreground bg :background base5)
    (magit-diff-hunk-heading-highlight :foreground bg :background base8 :weight 'bold)
+   (magit-diff-added :foreground green :background (doom-blend green bg 0.1))
+   (magit-diff-added-highlight :foreground fg :background (doom-blend green bg 0.3))
+   (diff-refine-added :foreground fg :background (doom-blend green bg 0.3) :weight 'bold)
    (magit-diff-removed :foreground red :background (doom-blend red bg 0.1))
-   (magit-diff-removed-highlight :foreground red :background (doom-blend red bg 0.3) :weight 'bold)
+   (magit-diff-removed-highlight :foreground fg :background (doom-blend red bg 0.3))
+   (diff-refine-removed :foreground fg :background (doom-blend red bg 0.3) :weight 'bold)
    (git-commit-overlong-summary :background bg :foreground bright-red)
 
    ;; ivy

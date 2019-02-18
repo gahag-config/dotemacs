@@ -27,4 +27,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (lsp-rust rust-mode csv-mode lsp-java lsp-ui markdown-mode jsx-mode pdf-tools projectile rainbow-mode ox-reveal togetherly arduino-mode company-arduino org company-lsp cquery lsp-mode lsp-python dired-quick-sort try htmlize ledger-mode calfw calfw-org company doom-themes shm transpose-frame use-package yasnippet-snippets dired-ranger latex-preview-pane magit intero nyan-mode ace-jump-mode flymake-haskell-multi haskell-mode helm multiple-cursors expand-region flycheck powerline auto-complete))))
+    (pdf-tools powerline rust-mode yasnippet-snippets yasnippet lsp-rust csv-mode lsp-java lsp-ui markdown-mode jsx-mode rainbow-mode ox-reveal togetherly arduino-mode company-arduino org company-lsp cquery lsp-mode lsp-python dired-quick-sort try htmlize ledger-mode calfw calfw-org company doom-themes shm transpose-frame use-package dired-ranger latex-preview-pane magit intero nyan-mode ace-jump-mode flymake-haskell-multi haskell-mode helm multiple-cursors expand-region flycheck auto-complete))))
