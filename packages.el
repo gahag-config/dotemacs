@@ -144,6 +144,13 @@
                                          10))))
 
 
+;; Ediff
+(use-package ediff
+  :ensure t
+  :config (setq ediff-window-setup-function 'ediff-setup-windows-plain
+                ediff-split-window-function 'split-window-horizontally))
+
+
 ;; Tramp ---------------------------------------------------------------------------------
 (use-package tramp
   :ensure t

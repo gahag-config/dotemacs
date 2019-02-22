@@ -87,5 +87,6 @@
         mouse-buffer-menu
         org-fill-paragraph
         repeat
+        wdired-finish-edit
         write-file
         ))
