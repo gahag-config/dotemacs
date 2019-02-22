@@ -141,7 +141,11 @@
                                          "%Y-%m-%d %H:%M "
                                          magit-log-margin-width
                                          t
-                                         10))))
+                                         10)))
+          (setq magit-git-global-arguments ; magit over tramp
+                (nconc magit-git-global-arguments
+                       '("-c" "color.ui=false"
+                         "-c" "color.diff=false"))))
 
 
 ;; Ediff
