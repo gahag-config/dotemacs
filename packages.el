@@ -211,6 +211,7 @@
         org-export-with-planning t
         org-src-tab-acts-natively t
         org-src-fontify-natively t
+        org-src-window-setup 'current-window
 
         ;; Minted setup:
         org-latex-listings 'minted
