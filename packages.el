@@ -219,7 +219,9 @@
         org-latex-minted-options '(("fontsize" "\\small"))
         org-latex-pdf-process
          '("latexmk -pdflatex='pdflatex -shell-escape -interaction nonstopmode -output-directory %o' -pdf -f  %f"))
-  
+
+  (require 'org-tempo)  ;; `<s` and like snippets
+
   (setq org-agenda-custom-commands
         '(("1" "Week schedule" agenda "display scheduled and deadlines for the current week"
            ((org-agenda-span 'week)
@@ -253,11 +255,11 @@
   :after  calfw
   :config (setq cfw:org-overwrite-default-keybinding t))
 
-(use-package ox-reveal
-  :ensure t
-  :after  org
-  :config
-  (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/"))
+;; (use-package ox-reveal ; TODO: replace with org-re-reveal or emacs-reveal
+;;   :ensure t
+;;   :after  org
+;;   :config
+;;   (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/"))
 
 
 ;; Pdf-tools -----------------------------------------------------------------------------
