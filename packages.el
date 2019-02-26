@@ -46,6 +46,7 @@
                                          "\\`\\*helm"
                                          "\\`\\*Echo Area"
                                          "\\`\\*Minibuf"
+                                         "\\`\\*lsp-log\\*"
                                          "\\`\\*\\w+ls\\(::stderr\\)?\\*\\'"
                                          "\\`\\*cquery\\(::stderr\\)?\\*\\'"
                                          ;; "\\`\\*EGLOT"
@@ -141,7 +142,18 @@
                                          "%Y-%m-%d %H:%M "
                                          magit-log-margin-width
                                          t
-                                         10))))
+                                         10)))
+          (setq magit-git-global-arguments ; magit over tramp
+                (nconc magit-git-global-arguments
+                       '("-c" "color.ui=false"
+                         "-c" "color.diff=false"))))
+
+
+;; Ediff
+(use-package ediff
+  :ensure t
+  :config (setq ediff-window-setup-function 'ediff-setup-windows-plain
+                ediff-split-window-function 'split-window-horizontally))
 
 
 ;; Tramp ---------------------------------------------------------------------------------
@@ -198,6 +210,7 @@
         org-export-with-planning t
         org-src-tab-acts-natively t
         org-src-fontify-natively t
+        org-src-window-setup 'current-window
 
         ;; Minted setup:
         org-latex-listings 'minted
@@ -207,6 +220,12 @@
           "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
           "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"))
   
+
+         '("latexmk -pdflatex='pdflatex -shell-escape -interaction nonstopmode -output-directory %o' -pdf -f  %f"))
+
+  (require 'org-tempo)  ;; `<s` and like snippets
+
+
   (setq org-agenda-custom-commands
         '(("1" "Week schedule" agenda "display scheduled and deadlines for the current week"
            ((org-agenda-span 'week)
@@ -239,11 +258,11 @@
   :after  calfw
   :config (setq cfw:org-overwrite-default-keybinding t))
 
-(use-package ox-reveal
-  :ensure t
-  :after  org
-  :config
-  (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/"))
+;; (use-package ox-reveal ; TODO: replace with org-re-reveal or emacs-reveal
+;;   :ensure t
+;;   :after  org
+;;   :config
+;;   (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/"))
 
 
 ;; Pdf-tools -----------------------------------------------------------------------------
@@ -405,6 +424,7 @@
   :ensure t)
 
 
+
 ;; Helm-Spotify-plus----------------------------------------------------------------------
 (use-package helm-spotify-plus
   :ensure t
@@ -419,5 +439,18 @@
 ;; Undo-Tree------------------------------------------------------------------------------
 (use-package undo-tree
   :ensure t
-  :init
+  :config
   (global-undo-tree-mode))
+
+
+;; Wakatime ------------------------------------------------------------------------------
+(use-package wakatime-mode
+  :ensure t
+  :defer t
+  :config
+  (setq wakatime-api-key "5d2997df-4fa1-4404-938e-3e119a18a426")
+  (global-wakatime-mode))
+
+
+;; ---------------------------------------------------------------------------------------
+
