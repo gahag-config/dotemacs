@@ -67,8 +67,7 @@
   :ensure t
   :config
   (setq company-idle-delay 0.3)
-  (global-company-mode)
-)
+  (global-company-mode))
 
 ;; Yasnippet -----------------------------------------------------------------------------
 (use-package yasnippet
@@ -216,11 +215,6 @@
         org-latex-listings 'minted
         org-latex-packages-alist '(("" "minted"))
         org-latex-pdf-process
-        '("%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
-          "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"
-          "%latex -shell-escape -interaction nonstopmode -output-directory %o %f"))
-  
-
          '("latexmk -pdflatex='pdflatex -shell-escape -interaction nonstopmode -output-directory %o' -pdf -f  %f"))
 
   (require 'org-tempo)  ;; `<s` and like snippets
