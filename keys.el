@@ -15,9 +15,9 @@
 (global-set-key (kbd "C-x t") 'term)
 
 
-;; GUI only keybindings:
-(if (window-system)
-    (progn
-      ;; Remap C-i to yank:
-      (define-key input-decode-map [?\C-i] [C-i])
-      (global-set-key (kbd "<C-i>") 'yank)))    ; Angled brackets required due to decoding.
+;; ;; GUI only keybindings:
+;; (if (window-system)
+;;     (progn
+;;       ;; Remap C-i to yank:
+;;       (define-key input-decode-map [?\C-i] [C-i])
+;;       (global-set-key (kbd "<C-i>") 'yank)))    ; Angled brackets required due to decoding.
