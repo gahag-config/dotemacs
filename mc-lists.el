@@ -45,6 +45,7 @@
         org-delete-char
         org-demote-subtree
         org-end-of-line
+        org-force-self-insert
         org-return
         org-return-indent
         org-self-insert-command
@@ -85,8 +86,10 @@
         mc/mark-next-lines
         mc/mark-previous-lines
         mouse-buffer-menu
+        org-ctrl-c-ctrl-c
         org-fill-paragraph
         repeat
+        revert-buffer
         wdired-finish-edit
         write-file
         ))
