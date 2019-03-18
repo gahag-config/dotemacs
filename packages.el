@@ -358,6 +358,15 @@
               ("<M-right>" . nil)))
 
 
+;; Highlight Indent Guides ---------------------------------------------------------------
+(use-package highlight-indent-guides
+  :ensure t
+  :hook (prog-mode . highlight-indent-guides-mode)
+  :config
+  (setq highlight-indent-guides-mode 'character
+        highlight-indent-guides-responsive 'top))
+
+
 ;; Expand region -------------------------------------------------------------------------
 (use-package expand-region
   :ensure t
