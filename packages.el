@@ -105,12 +105,17 @@
 ;;         eglot-ignored-server-capabilites '(:documentHighlightProvider))
 ;;   (help-at-pt-set-timer))
 
+(use-package projectile   ;; lsp uses projectile to detect the project root.
+  :ensure t)
+
 (use-package lsp-mode
   :ensure t
+  :after projectile
   :commands lsp
   :bind (("C-c r" . lsp-rename)
          ("C-c h" . lsp-describe-thing-at-point))
-  :config (setq-default lsp-prefer-flymake nil))
+  :config
+  (setq-default lsp-prefer-flymake nil))
 
 (use-package lsp-ui
   :ensure t
