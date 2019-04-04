@@ -104,12 +104,17 @@
 ;;         eglot-ignored-server-capabilites '(:documentHighlightProvider))
 ;;   (help-at-pt-set-timer))
 
+(use-package projectile   ;; lsp uses projectile to detect the project root.
+  :ensure t)
+
 (use-package lsp-mode
   :ensure t
+  :after projectile
   :commands lsp
   :bind (("C-c r" . lsp-rename)
          ("C-c h" . lsp-describe-thing-at-point))
-  :config (setq-default lsp-prefer-flymake nil))
+  :config
+  (setq-default lsp-prefer-flymake nil))
 
 (use-package lsp-ui
   :ensure t
@@ -240,7 +245,10 @@
    '((emacs-lisp . t)
      (python . t)
      (C . t)
-     (shell . t))))
+     (shell . t)))
+  (put 'org-html-htmlize-output-type 'safe-local-variable (lambda (_) t))
+  (put 'org-table-convert-region-max-lines 'safe-local-variable (lambda (_) t)))
+
 
 
 (use-package calfw
@@ -360,6 +368,15 @@
               ("<M-down>"  . nil)
               ("<M-left>"  . nil)
               ("<M-right>" . nil)))
+
+
+;; Highlight Indent Guides ---------------------------------------------------------------
+(use-package highlight-indent-guides
+  :ensure t
+  :hook (prog-mode . highlight-indent-guides-mode)
+  :config
+  (setq highlight-indent-guides-method 'character
+        highlight-indent-guides-responsive 'top))
 
 
 ;; Expand region -------------------------------------------------------------------------

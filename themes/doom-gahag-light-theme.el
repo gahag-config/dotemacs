@@ -260,6 +260,8 @@ determine the exact padding."
    (org-level-2 :background bg :foreground teal :weight 'extra-bold)
    (org-block   :background (doom-darken bg 0.02))
    (org-block-begin-line :foreground fg-alt :weight 'bold)
+   (org-code :foreground green)
+   (org-footnote :foreground blue)
    (solaire-org-hide-face :foreground hidden)
   )
 
