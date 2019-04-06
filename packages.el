@@ -316,7 +316,7 @@
   :ensure t
   :defer  t
   :hook (python-mode . lsp)
-  :config (setq python-indent-offset 2
+  :config (setq python-indent-offset 4
                 python-guess-indent nil))
 
 

@@ -10,7 +10,7 @@
 
 (load dotemacs-file)
 
-(load-theme 'doom-effy-light t)
+(load-X-theme 'doom-gahag-light)
 (powerline-gahag-light-theme)
 
 
