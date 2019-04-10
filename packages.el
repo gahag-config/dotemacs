@@ -296,10 +296,12 @@
   :config (setq sh-basic-offset 2))
 
 
-;; Javscript -----------------------------------------------------------------------------
-(use-package js
+;; Javascript ----------------------------------------------------------------------------
+(use-package js2-mode
   :ensure t
   :defer  t
+  :mode "\\.js$"
+  :hook (js2-mode . lsp)
   :config (setq js-indent-level 2))
 
 
@@ -361,6 +363,16 @@
               ("<M-down>"  . nil)
               ("<M-left>"  . nil)
               ("<M-right>" . nil)))
+
+
+;; Json ----------------------------------------------------------------------------------
+(use-package json-mode
+  :defer t)
+
+
+;; Dockerfile ----------------------------------------------------------------------------
+(use-package dockerfile-mode
+  :defer t)
 
 
 ;; Highlight Indent Guides ---------------------------------------------------------------
