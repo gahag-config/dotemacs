@@ -250,6 +250,10 @@ determine the exact padding."
    (ledger-font-xact-highlight-face :background bg)
    (ledger-font-payee-uncleared-face :foreground fg :weight 'bold)
 
+   ;; web-mode
+   (web-mode-html-tag-face :foreground blue)
+   (web-mode-html-tag-unclosed-face :foreground red)
+
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)

@@ -355,6 +355,16 @@
 ;;   :hook (haskell-mode . structured-haskell-mode))
 
 
+;; HTML ----------------------------------------------------------------------------------
+(use-package web-mode
+  :ensure t
+  :defer t
+  :mode ("\\.html\\'"
+         "\\.marko\\'")
+  :config
+  (setq web-mode-markup-indent-offset 2))
+
+
 ;; Markdown ------------------------------------------------------------------------------
 (use-package markdown-mode
   :bind (:map markdown-mode-map
