@@ -361,8 +361,14 @@
   :defer t
   :mode ("\\.html\\'"
          "\\.marko\\'")
+  :bind (:map web-mode-map
+              ("C-c C-c" . web-mode-element-close)
+              ("C-c C-n" . web-mode-tag-next)
+              ("C-c C-p" . web-mode-tag-previous)
+              ("C-<tab>" . web-mode-fold-or-unfold))
   :config
-  (setq web-mode-markup-indent-offset 2))
+  (setq web-mode-markup-indent-offset 2
+        web-mode-enable-current-element-highlight t))
 
 
 ;; Markdown ------------------------------------------------------------------------------
