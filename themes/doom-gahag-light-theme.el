@@ -267,6 +267,9 @@ determine the exact padding."
    (org-code :foreground green)
    (org-footnote :foreground blue)
    (solaire-org-hide-face :foreground hidden)
+
+   ;; js2-mode
+   (js2-external-variable :foreground green)
   )
 
 

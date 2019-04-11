@@ -300,7 +300,7 @@
 (use-package js2-mode
   :ensure t
   :defer  t
-  :mode "\\.js$"
+  :mode "\\.js\\'"
   :hook (js2-mode . lsp)
   :config (setq js-indent-level 2))
 
