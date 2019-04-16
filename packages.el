@@ -235,8 +235,6 @@
         org-latex-pdf-process
          '("latexmk -pdflatex='pdflatex -shell-escape -interaction nonstopmode -output-directory %o' -pdf -f  %f"))
 
-  (require 'org-tempo)  ;; `<s` and like snippets
-
   (setq org-agenda-custom-commands
         '(("1" "Week schedule" agenda "display scheduled and deadlines for the current week"
            ((org-agenda-span 'week)
