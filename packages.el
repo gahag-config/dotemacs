@@ -25,11 +25,6 @@
                 powerline-default-separator 'slant))
 
 
-;; Try -----------------------------------------------------------------------------------
-(use-package try
-  :ensure t)
-
-
 ;; Doom themes ---------------------------------------------------------------------------
 (use-package doom-themes
   :ensure t
@@ -275,11 +270,6 @@
   :defer  t
   :magic  ("%PDF" . pdf-view-mode)
   :config (pdf-tools-install))
-
-;; Latex ---------------------------------------------------------------------------------
-(use-package latex-preview-pane
-  :defer t
-  :config (setq shell-escape-mode "-shell-escape"))
 
 
 ;; C-mode --------------------------------------------------------------------------------
