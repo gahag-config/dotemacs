@@ -60,6 +60,7 @@
 ;; Company -------------------------------------------------------------------------------
 (use-package company
   :ensure t
+  :defer t
   :config
   (setq company-idle-delay 0.3)
   (global-company-mode))
@@ -68,6 +69,7 @@
 ;; Yasnippet -----------------------------------------------------------------------------
 (use-package yasnippet
   :ensure t
+  :defer t
   :hook   (prog-mode . yas-global-mode))
 
 (use-package yasnippet-snippets
@@ -77,6 +79,7 @@
 ;; Flycheck ------------------------------------------------------------------------------
 (use-package flycheck
   :ensure t
+  :defer t
   :hook   (prog-mode . flycheck-mode)
   :config
   ; For some reason, the following does not work with setq, only with setq-default.
@@ -101,7 +104,8 @@
 ;;   (help-at-pt-set-timer))
 
 (use-package projectile   ;; lsp uses projectile to detect the project root.
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package lsp-mode
   :ensure t
@@ -114,6 +118,7 @@
 
 (use-package lsp-ui
   :ensure t
+  :defer t
   :commands lsp-ui-mode
   :bind (:map lsp-ui-mode-map
               ("C-M-." . lsp-ui-peek-find-references)
@@ -125,6 +130,7 @@
 
 (use-package company-lsp
   :ensure t
+  :defer t
   :commands company-lsp
   :config
   (setq company-lsp-async t
@@ -134,6 +140,7 @@
 ;; Magit ---------------------------------------------------------------------------------
 (use-package magit
   :ensure t
+  :defer t
   :bind   ("C-x m" . magit-status)
   :bind   (:map magit-file-mode-map
                 ("C-x g" . nil))
@@ -152,6 +159,7 @@
 ;; Ediff
 (use-package ediff
   :ensure t
+  :defer t
   :config (setq ediff-window-setup-function 'ediff-setup-windows-plain
                 ediff-split-window-function 'split-window-horizontally))
 
@@ -159,6 +167,7 @@
 ;; Tramp ---------------------------------------------------------------------------------
 (use-package tramp
   :ensure t
+  :defer t
   :config (setq tramp-terminal-type "tramp")) ; Use specific terminal to prevent PS1
                                               ; parsing conflict.
 
@@ -175,6 +184,7 @@
 
 (use-package dired-ranger
   :ensure t
+  :defer t
   :bind (:map dired-mode-map
               ("c" . dired-ranger-copy)
               ("Y" . dired-ranger-paste)
@@ -182,6 +192,7 @@
 
 (use-package dired-quick-sort
   :ensure t
+  :defer t
   :hook dired-mode
   :bind (:map dired-mode-map
               ("s" . hydra-dired-quick-sort/body)))
@@ -190,6 +201,7 @@
 ;; Org -----------------------------------------------------------------------------------
 (use-package org
   :ensure t
+  :defer t
   :pin org
   :hook (org-babel-after-execute . (lambda () (when org-inline-image-overlays
                                                 (org-redisplay-inline-images))))
@@ -250,11 +262,13 @@
 
 (use-package calfw
   :ensure t
-  :after  org)
+  :defer t
+  :after org)
 
 (use-package calfw-org
   :ensure t
-  :after  calfw
+  :defer t
+  :after calfw
   :config (setq cfw:org-overwrite-default-keybinding t))
 
 ;; (use-package ox-reveal ; TODO: replace with org-re-reveal or emacs-reveal
@@ -275,6 +289,7 @@
 ;; C-mode --------------------------------------------------------------------------------
 (use-package cquery
   :ensure t
+  :defer t
   :hook ((c-mode   . (lambda () (require 'cquery) (lsp)))
          (c++-mode . (lambda () (require 'cquery) (lsp)))))
 
@@ -298,6 +313,7 @@
 ;; Java ----------------------------------------------------------------------------------
 (use-package lsp-java
   :ensure t
+  :defer t
   :hook (java-mode . (lambda () (require 'lsp-java) (lsp)))
   :config
   (setq lsp-java-server-install-dir "/usr/share/java/jdtls/"
@@ -323,6 +339,7 @@
 
 ;; Haskell -------------------------------------------------------------------------------
 (use-package haskell-mode
+  :ensure t
   :defer t
   :hook (haskell-mode . turn-on-haskell-indent) ; Replace by structured-haskell-mode.
   :config
@@ -338,6 +355,7 @@
   
 (use-package intero
   :ensure t
+  :defer t
   :hook (haskell-mode . intero-mode))
 
 ;; (use-package shm
@@ -363,6 +381,8 @@
 
 ;; Markdown ------------------------------------------------------------------------------
 (use-package markdown-mode
+  :ensure t
+  :defer t
   :bind (:map markdown-mode-map
               ;; These conflict with windmove:
               ("<M-up>"    . nil)
@@ -373,17 +393,20 @@
 
 ;; Json ----------------------------------------------------------------------------------
 (use-package json-mode
+  :ensure t
   :defer t)
 
 
 ;; Dockerfile ----------------------------------------------------------------------------
 (use-package dockerfile-mode
+  :ensure t
   :defer t)
 
 
 ;; Highlight Indent Guides ---------------------------------------------------------------
 (use-package highlight-indent-guides
   :ensure t
+  :defer t
   :hook (prog-mode . highlight-indent-guides-mode)
   :config
   (setq highlight-indent-guides-method 'character
@@ -393,19 +416,22 @@
 ;; Expand region -------------------------------------------------------------------------
 (use-package expand-region
   :ensure t
-  :bind   ("C-," . er/expand-region)
+  :defer t
+  :bind ("C-," . er/expand-region)
   :config (setq expand-region-contract-fast-key "."))
 
 
 ;; Ace jump ------------------------------------------------------------------------------
 (use-package ace-jump-mode
   :ensure t
+  :defer t
   :bind ("C-x g" . ace-jump-mode))
 
 
 ;; Multiple cursors ----------------------------------------------------------------------
 (use-package multiple-cursors
   :ensure t
+  :defer t
   :bind
   (("M-p"     . mc/mark-previous-lines)
    ("M-n"     . mc/mark-next-lines)
@@ -414,18 +440,22 @@
 
 ;; Misc ----------------------------------------------------------------------------------
 (use-package misc
+  :ensure t
+  :defer t
   :bind ("M-z" . zap-up-to-char))
 
 
 ;; Transpose frame -----------------------------------------------------------------------
 (use-package transpose-frame
   :ensure t
+  :defer t
   :bind   ("C-x |" . transpose-frame))
 
 
 ;; Ledger --------------------------------------------------------------------------------
 (use-package ledger-mode
   :ensure t
+  :defer t
   :mode "\\.ledger\\'"
   :bind (:map ledger-mode-map
               ("C-c a" . ledger-add-transaction)
@@ -443,4 +473,8 @@
 
 ;; Togetherly ----------------------------------------------------------------------------
 (use-package togetherly
-  :ensure t)
+  :ensure t
+  :defer t)
+
+
+;; ---------------------------------------------------------------------------------------
