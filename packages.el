@@ -201,7 +201,6 @@
 ;; Org -----------------------------------------------------------------------------------
 (use-package org
   :ensure t
-  :defer t
   :pin org
   :hook (org-babel-after-execute . (lambda () (when org-inline-image-overlays
                                                 (org-redisplay-inline-images))))
@@ -453,7 +452,6 @@
 
 ;; Misc ----------------------------------------------------------------------------------
 (use-package misc
-  :ensure t
   :defer t
   :bind ("M-z" . zap-up-to-char))
 
