@@ -363,6 +363,19 @@
 ;;   :hook (haskell-mode . structured-haskell-mode))
 
 
+;; Lua -----------------------------------------------------------------------------------
+(use-package lua-mode
+  :ensure t
+  :defer t
+  ;; :mode (("\\.lua\\'" . lua-mode))
+  :config
+  (setq lua-indent-level 2))
+
+(use-package company-lua
+  :ensure t
+  :defer t)
+
+
 ;; HTML ----------------------------------------------------------------------------------
 (use-package web-mode
   :ensure t
