@@ -366,13 +366,37 @@
 (use-package lua-mode
   :ensure t
   :defer t
-  ;; :mode (("\\.lua\\'" . lua-mode))
+  :hook (lua-mode . lsp)
   :config
-  (setq lua-indent-level 2))
+  (setq lua-indent-level 2)
+  ;; register emmy-lua-lsp
+  (lsp-register-client
+   (make-lsp-client :new-connection
+                    (lsp-stdio-connection "lua-lsp")
+                    :major-modes '(lua-mode)
+                    :server-id 'emmy-lua)))
 
-(use-package company-lua
-  :ensure t
-  :defer t)
+;; (use-package company-lsp
+;;   (setq company-lsp-enable-recompletion t))
+
+;; (defun company-lua-mode-setup()
+;;   "Create lua company backend."
+;;   (setq-local company-backends '(
+;;                                  (
+;;                                   company-lsp
+;;                                   company-lua
+;;                                   company-keywords
+;;                                   company-gtags
+;;                                   company-yasnippet
+;;                                   )
+;;                                  company-capf
+;;                                  company-dabbrev-code
+;;                                  company-files
+;;                                  )
+;;        ))
+
+;; (use-package lua-mode
+;;   :hook (lua-mode . company-lua-mode-setup))
 
 
 ;; HTML ----------------------------------------------------------------------------------
