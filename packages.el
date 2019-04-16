@@ -17,6 +17,9 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+(use-package use-package-ensure-system-package
+  :ensure t)
+
 
 ;; Powerline -----------------------------------------------------------------------------
 (use-package powerline
@@ -368,13 +371,19 @@
   :defer t
   :hook (lua-mode . lsp)
   :config
-  (setq lua-indent-level 2)
-  ;; register emmy-lua-lsp
+  (setq lua-indent-level 2))
+
+(use-package lsp-lua
+  :after lsp
+  :ensure-system-package lua-lsp
+  :init (provide 'lsp-lua)
+  :config
   (lsp-register-client
-   (make-lsp-client :new-connection
-                    (lsp-stdio-connection "lua-lsp")
+   (make-lsp-client :new-connection (lsp-stdio-connection "lua-lsp")
                     :major-modes '(lua-mode)
-                    :server-id 'emmy-lua)))
+                    :server-id 'lua-ls))
+  (setq lsp-prefer-flymake nil))
+
 
 ;; (use-package company-lsp
 ;;   (setq company-lsp-enable-recompletion t))
