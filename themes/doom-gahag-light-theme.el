@@ -234,9 +234,13 @@ determine the exact padding."
    (company-preview-common :background base2 :foreground fg :inherit 'italic)
 
    ;; lsp
+   (lsp-face-highlight-textual :weight 'bold)
    (lsp-ui-sideline-code-action :foreground orange)
    (lsp-ui-sideline-symbol :foreground base7)
    (lsp-ui-sideline-current-symbol :foreground fg :weight 'semi-bold)
+   (lsp-ui-peek-header :background grey)
+   (lsp-ui-peek-selection :foreground black :background silver :weight 'semi-bold)
+
 
    ;; --- major-mode faces -------------------
 
