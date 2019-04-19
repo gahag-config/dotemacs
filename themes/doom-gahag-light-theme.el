@@ -264,6 +264,13 @@ determine the exact padding."
    (markdown-header-face :inherit 'bold :foreground red)
    (markdown-code-face :background (doom-lighten base3 0.05))
 
+   ;; nxml-mode
+   (nxml-element-local-name :foreground blue)
+   (nxml-delimiter :foreground blue)
+   (nxml-attribute-local-name :foreground teal)
+   (nxml-attribute-value :weight 'semi-bold)
+   (nxml-attribute-value-delimiter :weight 'semi-bold)
+
    (nav-flash-face :background region :foreground base8 :weight 'bold)
    ;; org-mode
    (org-hide :foreground hidden)
