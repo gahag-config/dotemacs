@@ -217,6 +217,9 @@
               ("C-," . nil)
               ("C-c a" . org-agenda))
   :config
+  (mapc (lambda (arg) (setcdr arg (list (downcase (cadr arg))))) ; lowercase structure templates
+    org-structure-template-alist)
+
   (setq org-todo-keywords '((sequence "TODO" "NEXT" "|" "DONE" "DISMISSED"))
         org-list-allow-alphabetical t
         org-log-done 'time
