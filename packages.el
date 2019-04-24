@@ -17,9 +17,6 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(use-package use-package-ensure-system-package
-  :ensure t)
-
 
 ;; Powerline -----------------------------------------------------------------------------
 (use-package powerline
@@ -376,7 +373,6 @@
 
 (use-package lsp-lua
   :after lsp
-  :ensure-system-package lua-lsp
   :init (provide 'lsp-lua)
   :config
   (lsp-register-client
