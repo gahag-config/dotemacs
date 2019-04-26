@@ -51,3 +51,6 @@
 (setq-default recentf-save-file       "~/.emacs.d/.cache/recent-files"
               recentf-max-saved-items 50
               recentf-max-menu-items  15)
+
+;; Trailing Spaces
+(add-hook 'write-file-hooks 'delete-trailing-whitespace)

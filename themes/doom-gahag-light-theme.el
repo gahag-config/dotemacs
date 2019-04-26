@@ -230,9 +230,14 @@ determine the exact padding."
    (company-preview-common :background base2 :foreground fg :inherit 'italic)
 
    ;; lsp
+   (lsp-face-highlight-textual :weight 'bold)
+   (lsp-face-highlight-read :weight 'bold)
+   (lsp-face-highlight-write :weight 'bold)
    (lsp-ui-sideline-code-action :foreground orange)
-   (lsp-ui-sideline-symbol :foreground base7 :box base7)
-   (lsp-ui-sideline-current-symbol :foreground fg :weight 'semi-bold :box fg)
+   (lsp-ui-sideline-symbol :foreground base7)
+   (lsp-ui-sideline-current-symbol :foreground fg :weight 'semi-bold)
+   (lsp-ui-peek-header :background grey)
+   (lsp-ui-peek-selection :foreground black :background silver :weight 'semi-bold)
 
    ;; --- major-mode faces -------------------
 
@@ -246,10 +251,22 @@ determine the exact padding."
    (ledger-font-xact-highlight-face :background bg)
    (ledger-font-payee-uncleared-face :foreground fg :weight 'bold)
 
+   ;; web-mode
+   (web-mode-html-tag-face :foreground blue)
+   (web-mode-html-tag-unclosed-face :foreground red)
+   (web-mode-current-element-highlight-face :foreground blue :background bg :weight 'bold)
+
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
    (markdown-code-face :background (doom-lighten base3 0.05))
+
+   ;; nxml-mode
+   (nxml-element-local-name :foreground blue)
+   (nxml-delimiter :foreground blue)
+   (nxml-attribute-local-name :foreground teal)
+   (nxml-attribute-value :weight 'semi-bold)
+   (nxml-attribute-value-delimiter :weight 'semi-bold)
 
    (nav-flash-face :background region :foreground base8 :weight 'bold)
    ;; org-mode
@@ -263,6 +280,9 @@ determine the exact padding."
    (org-code :foreground green)
    (org-footnote :foreground blue)
    (solaire-org-hide-face :foreground hidden)
+
+   ;; js2-mode
+   (js2-external-variable :foreground green)
   )
 
 
