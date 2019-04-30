@@ -30,6 +30,7 @@
         electric-pair-delete-pair
         end-of-visual-line
         eval-print-last-sexp
+        fb4918cedb8484ab6d14b574047464e558b6ec56
         forward-sexp
         haskell-indentation-common-electric-command
         haskell-indentation-delete-backward-char
@@ -43,13 +44,19 @@
         org-beginning-of-line
         org-cycle
         org-delete-char
+        org-demote-subtree
         org-end-of-line
+        org-force-self-insert
         org-return
         org-return-indent
         org-self-insert-command
         org-todo
         org-transpose-words
         org-yank
+        pcomplete
+        python-indent-shift-left
+        python-shell-send-buffer
+        rectangle-mark-mode
         sgml-maybe-name-self
         sgml-slash
         sh-assignment
@@ -57,6 +64,7 @@
         tab-to-tab-stop
         transpose-sexps
         transpose-words
+        upcase-region
         wdired-capitalize-word
         wdired-downcase-word
         yaml-electric-backspace
@@ -69,6 +77,7 @@
       '(
         2C-two-columns
         ace-jump-mode
+        complete-symbol
         delete-rectangle
         helm-M-x
         helm-confirm-and-exit-minibuffer
@@ -80,6 +89,11 @@
         mark-page
         mc/mark-next-lines
         mc/mark-previous-lines
+        mouse-buffer-menu
+        org-ctrl-c-ctrl-c
         org-fill-paragraph
         repeat
+        revert-buffer
+        wdired-finish-edit
+        write-file
         ))

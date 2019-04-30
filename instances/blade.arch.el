@@ -9,8 +9,8 @@
 
 (load dotemacs-file)
 
-(load-X-theme 'doom-gahag)
-(powerline-gahag-theme)
+(load-X-theme 'doom-gahag-light)
+(powerline-gahag-light-theme)
 
 ;; ---------------------------------------------------------------------------------------
 
@@ -25,9 +25,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
  '(package-selected-packages
    (quote
-    (togetherly arduino-mode company-arduino org projectile company-lsp cquery lsp-mode lsp-python lsp-ui dired-quick-sort try htmlize ledger-mode calfw calfw-org company doom-themes shm transpose-frame use-package yasnippet-snippets dired-ranger latex-preview-pane magit intero nyan-mode ace-jump-mode flymake-haskell-multi haskell-mode pdf-tools markdown-mode helm multiple-cursors expand-region yasnippet flycheck powerline auto-complete))))
+    (pdf-tools powerline dockerfile-mode js2-mode json-mode lua-mode use-package-ensure-system-package web-mode gradle-mode highlight-indent-guides projectile pcap-mode rust-mode yasnippet-snippets yasnippet lsp-rust csv-mode lsp-java lsp-ui markdown-mode jsx-mode rainbow-mode ox-reveal togetherly arduino-mode company-arduino company-lsp cquery lsp-mode lsp-python dired-quick-sort try htmlize ledger-mode calfw calfw-org company doom-themes shm transpose-frame use-package dired-ranger latex-preview-pane magit intero nyan-mode ace-jump-mode flymake-haskell-multi haskell-mode helm multiple-cursors expand-region flycheck auto-complete))))

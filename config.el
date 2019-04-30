@@ -14,11 +14,6 @@
 (put 'downcase-region  'disabled nil)
 
 
-;; Local variables -----------------------------------------------------------------------
-(put 'before-save-hook 'safe-local-variable (lambda (_) t))
-(put 'after-save-hook  'safe-local-variable (lambda (_) t))
-
-
 ;; Style ---------------------------------------------------------------------------------
 (setq-default tab-width 2
               tab-always-indent nil
@@ -56,3 +51,6 @@
 (setq-default recentf-save-file       "~/.emacs.d/.cache/recent-files"
               recentf-max-saved-items 50
               recentf-max-menu-items  15)
+
+;; Trailing Spaces
+(add-hook 'write-file-hooks 'delete-trailing-whitespace)
