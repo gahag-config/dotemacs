@@ -112,16 +112,13 @@
 ;;         eglot-ignored-server-capabilites '(:documentHighlightProvider))
 ;;   (help-at-pt-set-timer))
 
-(use-package projectile   ;; lsp uses projectile to detect the project root.
-  :ensure t
-  :defer t)
-
 (use-package lsp-mode
   :ensure t
-  :after projectile
   :commands lsp
-  :bind (("C-c r" . lsp-rename)
-         ("C-c h" . lsp-describe-thing-at-point))
+  :bind (:map lsp-mode-map
+              ("C-c r" . lsp-rename)
+              ("C-c h" . lsp-describe-thing-at-point)
+              ("C-c a" . lsp-execute-code-action))
   :config
   (setq-default lsp-prefer-flymake nil))
 
@@ -418,8 +415,7 @@
 (use-package web-mode
   :ensure t
   :defer t
-  :mode ("\\.html\\'"
-         "\\.marko\\'")
+  :mode ("\\.html\\'")
   :bind (:map web-mode-map
               ("C-c C-c" . web-mode-element-close)
               ("C-c C-n" . web-mode-tag-next)
