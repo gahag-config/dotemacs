@@ -12,6 +12,16 @@
   (package-refresh-contents))
 
 
+;; Features ------------------------------------------------------------------------------
+(if (boundp 'package-features)
+    (mapc (lambda (feature) (set feature t))
+          package-features))
+
+(defmacro package-feature (feat code)
+  `(when (boundp ,feat)
+         ,code))
+
+
 ;; Use-package ---------------------------------------------------------------------------
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -112,35 +122,38 @@
 ;;         eglot-ignored-server-capabilites '(:documentHighlightProvider))
 ;;   (help-at-pt-set-timer))
 
-(use-package lsp-mode
-  :ensure t
-  :commands lsp
-  :bind (:map lsp-mode-map
-              ("C-c r" . lsp-rename)
-              ("C-c h" . lsp-describe-thing-at-point)
-              ("C-c a" . lsp-execute-code-action))
-  :config
-  (setq-default lsp-prefer-flymake nil))
+(package-feature 'feature-lsp
+  (use-package lsp-mode
+    :ensure t
+    :commands lsp
+    :bind (:map lsp-mode-map
+                ("C-c r" . lsp-rename)
+                ("C-c h" . lsp-describe-thing-at-point)
+                ("C-c a" . lsp-execute-code-action))
+    :config
+    (setq-default lsp-prefer-flymake nil)))
 
-(use-package lsp-ui
-  :ensure t
-  :defer t
-  :commands lsp-ui-mode
-  :bind (:map lsp-ui-mode-map
-              ("C-M-." . lsp-ui-peek-find-references)
-              ("M-."   . lsp-ui-peek-find-definitions))
-  :config
-  (setq lsp-ui-sideline-ignore-duplicate t
-        lsp-ui-peek-always-show t
-        lsp-ui-doc-enable nil))
+(package-feature 'feature-lsp
+  (use-package lsp-ui
+    :ensure t
+    :defer t
+    :commands lsp-ui-mode
+    :bind (:map lsp-ui-mode-map
+                ("C-M-." . lsp-ui-peek-find-references)
+                ("M-."   . lsp-ui-peek-find-definitions))
+    :config
+    (setq lsp-ui-sideline-ignore-duplicate t
+          lsp-ui-peek-always-show t
+          lsp-ui-doc-enable nil)))
 
-(use-package company-lsp
-  :ensure t
-  :defer t
-  :commands company-lsp
-  :config
-  (setq company-lsp-async t
-        company-lsp-enable-snippet t))
+(package-feature 'feature-lsp
+  (use-package company-lsp
+    :ensure t
+    :defer t
+    :commands company-lsp
+    :config
+    (setq company-lsp-async t
+          company-lsp-enable-snippet t)))
 
 
 ;; Magit ---------------------------------------------------------------------------------
@@ -162,7 +175,7 @@
                          "-c" "color.diff=false"))))
 
 
-;; Ediff
+;; Ediff ---------------------------------------------------------------------------------
 (use-package ediff
   :ensure t
   :defer t
@@ -285,19 +298,21 @@
 
 
 ;; Pdf-tools -----------------------------------------------------------------------------
-(use-package pdf-tools
-  :ensure t
-  :defer  t
-  :magic  ("%PDF" . pdf-view-mode)
-  :config (pdf-tools-install))
+(package-feature 'feature-pdftools
+  (use-package pdf-tools
+    :ensure t
+    :defer  t
+    :magic  ("%PDF" . pdf-view-mode)
+    :config (pdf-tools-install)))
 
 
 ;; C-mode --------------------------------------------------------------------------------
-(use-package cquery
-  :ensure t
-  :defer t
-  :hook ((c-mode   . (lambda () (require 'cquery) (lsp)))
-         (c++-mode . (lambda () (require 'cquery) (lsp)))))
+(package-feature 'feature-lsp-c
+  (use-package cquery
+    :ensure t
+    :defer t
+    :hook ((c-mode   . (lambda () (require 'cquery) (lsp)))
+           (c++-mode . (lambda () (require 'cquery) (lsp))))))
 
 
 ;; Bash ----------------------------------------------------------------------------------
@@ -308,61 +323,67 @@
 
 
 ;; Javascript ----------------------------------------------------------------------------
-(use-package js2-mode
-  :ensure t
-  :defer  t
-  :mode "\\.js\\'"
-  :hook (js2-mode . lsp)
-  :config (setq js-indent-level 2))
+(package-feature 'feature-javascript
+  (use-package js2-mode
+    :ensure t
+    :defer  t
+    :mode "\\.js\\'"
+    :hook (js2-mode . lsp)
+    :config (setq js-indent-level 2)))
 
 
 ;; Java ----------------------------------------------------------------------------------
-(use-package lsp-java
-  :ensure t
-  :defer t
-  :hook (java-mode . (lambda () (require 'lsp-java) (lsp)))
-  :config
-  (setq lsp-java-server-install-dir "/usr/share/java/jdtls/"
-        lsp-java-workspace-dir (concat (getenv "XDG_CACHE_HOME") "/eclipse-workspace/")))
+(package-feature 'feature-lsp-java
+  (use-package lsp-java
+    :ensure t
+    :defer t
+    :hook (java-mode . (lambda () (require 'lsp-java) (lsp)))
+    :config
+    (setq lsp-java-server-install-dir "/usr/share/java/jdtls/"
+          lsp-java-workspace-dir (concat (getenv "XDG_CACHE_HOME") "/eclipse-workspace/"))))
 
 
 ;; Python --------------------------------------------------------------------------------
-(use-package python
-  :ensure t
-  :defer  t
-  :hook (python-mode . lsp)
-  :config (setq python-indent-offset 2
-                python-guess-indent nil))
+(package-feature 'feature-python
+  (use-package python
+    :ensure t
+    :defer  t
+    :hook (python-mode . lsp)
+    :config (setq python-indent-offset 2
+                  python-guess-indent nil)))
 
 
 ;; Rust ----------------------------------------------------------------------------------
-(use-package rust-mode
-  :ensure t
-  :defer  t
-  :hook (rust-mode . lsp)
-  :config (setq-default rust-indent-offset 2))
+(package-feature 'feature-rust
+  (use-package rust-mode
+    :ensure t
+    :defer  t
+    :hook (rust-mode . lsp)
+    :config (setq-default rust-indent-offset 2)))
 
 
 ;; Haskell -------------------------------------------------------------------------------
-(use-package haskell-mode
-  :ensure t
-  :defer t
-  :hook (haskell-mode . turn-on-haskell-indent) ; Replace by structured-haskell-mode.
-  :config
-  (setq haskell-indent-offset 2
-        haskell-font-lock-symbols t)
+(package-feature 'feature-haskell
+  (use-package haskell-mode
+    :ensure t
+    :defer t
+    :hook (haskell-mode . turn-on-haskell-indent) ; Replace by structured-haskell-mode.
+    :config
+    (setq haskell-indent-offset 2
+          haskell-font-lock-symbols t)
+    
+    (eval-after-load 'haskell-font-lock
+      '(progn
+         (defconst haskell-font-lock-symbols-alist
+           '(("\\" . "λ") ("." "∘" haskell-font-lock-dot-is-not-composition)))
+         ;; (setq haskell-font-lock-keywords (haskell-font-lock-keywords-create nil))
+         ))))
   
-  (eval-after-load 'haskell-font-lock
-    '(progn
-       (defconst haskell-font-lock-symbols-alist
-                 '(("\\" . "λ") ("." "∘" haskell-font-lock-dot-is-not-composition)))
-       ;; (setq haskell-font-lock-keywords (haskell-font-lock-keywords-create nil))
-       )))
-  
-(use-package intero
-  :ensure t
-  :defer t
-  :hook (haskell-mode . intero-mode))
+(package-feature 'feature-haskell
+  (use-package intero
+    :ensure t
+    :defer t
+    :hook (haskell-mode . intero-mode)))
 
 ;; (use-package shm
 ;;   :ensure t
@@ -370,45 +391,24 @@
 
 
 ;; Lua -----------------------------------------------------------------------------------
-(use-package lua-mode
-  :ensure t
-  :defer t
-  :hook (lua-mode . lsp)
-  :config
-  (setq lua-indent-level 2))
+(package-feature 'feature-lua
+  (use-package lua-mode
+    :ensure t
+    :defer t
+    :hook (lua-mode . lsp)
+    :config
+    (setq lua-indent-level 2)))
 
-(use-package lsp-lua
-  :after lsp
-  :init (provide 'lsp-lua)
-  :config
-  (lsp-register-client
-   (make-lsp-client :new-connection (lsp-stdio-connection "lua-lsp")
-                    :major-modes '(lua-mode)
-                    :server-id 'lua-ls))
-  (setq lsp-prefer-flymake nil))
-
-
-;; (use-package company-lsp
-;;   (setq company-lsp-enable-recompletion t))
-
-;; (defun company-lua-mode-setup()
-;;   "Create lua company backend."
-;;   (setq-local company-backends '(
-;;                                  (
-;;                                   company-lsp
-;;                                   company-lua
-;;                                   company-keywords
-;;                                   company-gtags
-;;                                   company-yasnippet
-;;                                   )
-;;                                  company-capf
-;;                                  company-dabbrev-code
-;;                                  company-files
-;;                                  )
-;;        ))
-
-;; (use-package lua-mode
-;;   :hook (lua-mode . company-lua-mode-setup))
+(package-feature 'feature-lsp-lua
+  (use-package lsp-lua
+    :after lsp
+    :init (provide 'lsp-lua)
+    :config
+    (lsp-register-client
+     (make-lsp-client :new-connection (lsp-stdio-connection "lua-lsp")
+                      :major-modes '(lua-mode)
+                      :server-id 'lua-ls))
+    (setq lsp-prefer-flymake nil)))
 
 
 ;; HTML ----------------------------------------------------------------------------------
@@ -445,9 +445,10 @@
 
 
 ;; Dockerfile ----------------------------------------------------------------------------
-(use-package dockerfile-mode
-  :ensure t
-  :defer t)
+(package-feature 'feature-docker
+  (use-package dockerfile-mode
+    :ensure t
+    :defer t))
 
 
 ;; Highlight Indent Guides ---------------------------------------------------------------
@@ -499,28 +500,30 @@
 
 
 ;; Ledger --------------------------------------------------------------------------------
-(use-package ledger-mode
-  :ensure t
-  :defer t
-  :mode "\\.ledger\\'"
-  :bind (:map ledger-mode-map
-              ("C-c a" . ledger-add-transaction)
-              ("C-c r" . ledger-report)
-              ("M-p"   . nil)
-              ("M-n"   . nil)
-              ("C-M-p" . ledger-navigate-prev-xact-or-directive)
-              ("C-M-n" . ledger-navigate-next-xact-or-directive))
-  :config
-  (setq ledger-reports  ; All default, but removing income from report.
-        '(("bal"     "ledger -f %(ledger-file) bal")
-          ("reg"     "ledger -f %(ledger-file) reg")
-          ("account" "ledger -f %(ledger-file) reg %(account)"))))
+(package-feature 'feature-ledger
+  (use-package ledger-mode
+    :ensure t
+    :defer t
+    :mode "\\.ledger\\'"
+    :bind (:map ledger-mode-map
+                ("C-c a" . ledger-add-transaction)
+                ("C-c r" . ledger-report)
+                ("M-p"   . nil)
+                ("M-n"   . nil)
+                ("C-M-p" . ledger-navigate-prev-xact-or-directive)
+                ("C-M-n" . ledger-navigate-next-xact-or-directive))
+    :config
+    (setq ledger-reports  ; All default, but removing income from report.
+          '(("bal"     "ledger -f %(ledger-file) bal")
+            ("reg"     "ledger -f %(ledger-file) reg")
+            ("account" "ledger -f %(ledger-file) reg %(account)")))))
 
 
 ;; Togetherly ----------------------------------------------------------------------------
-(use-package togetherly
-  :ensure t
-  :defer t)
+(package-feature 'feature-togetherly
+  (use-package togetherly
+    :ensure t
+    :defer t))
 
 
 ;; ---------------------------------------------------------------------------------------
