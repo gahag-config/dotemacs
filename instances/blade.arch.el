@@ -7,6 +7,17 @@
 (defconst themes-dir    (concat dotemacs-dir "themes/"))
 (setq-default org-agenda-files '("/gahag/org"))
 
+;; features:
+(defconst package-features '(feature-lsp
+                             feature-pdftools
+                             feature-lsp-c
+                             feature-lsp-java
+                             feature-python
+                             feature-rust
+                             feature-docker
+                             feature-ledger
+                             feature-ein))
+
 (load dotemacs-file)
 
 (load-X-theme 'doom-gahag-light)
@@ -27,4 +38,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (pdf-tools powerline dockerfile-mode js2-mode json-mode lua-mode use-package-ensure-system-package web-mode gradle-mode highlight-indent-guides projectile pcap-mode rust-mode yasnippet-snippets yasnippet lsp-rust csv-mode lsp-java lsp-ui markdown-mode jsx-mode rainbow-mode ox-reveal togetherly arduino-mode company-arduino company-lsp cquery lsp-mode lsp-python dired-quick-sort try htmlize ledger-mode calfw calfw-org company doom-themes shm transpose-frame use-package dired-ranger latex-preview-pane magit intero nyan-mode ace-jump-mode flymake-haskell-multi haskell-mode helm multiple-cursors expand-region flycheck auto-complete))))
+    (helm intero multiple-cursors lsp-java lsp-mode lsp-ui magit org powerline projectile rust-mode use-package web-mode yasnippet yasnippet-snippets rg wgrep ein pdf-tools dockerfile-mode js2-mode json-mode lua-mode use-package-ensure-system-package gradle-mode highlight-indent-guides pcap-mode lsp-rust csv-mode jsx-mode rainbow-mode ox-reveal togetherly arduino-mode company-arduino company-lsp cquery lsp-python dired-quick-sort try htmlize ledger-mode calfw calfw-org company doom-themes shm transpose-frame dired-ranger latex-preview-pane nyan-mode ace-jump-mode flymake-haskell-multi haskell-mode expand-region flycheck auto-complete))))

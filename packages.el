@@ -67,7 +67,11 @@
                                          "\\`\\*Flymake"
                                          "\\`\\*Flycheck"
                                          "\\`magit.*:"
-                                         "\\`\\*tramp"))
+                                         "\\`\\*tramp"
+                                         "\\`\\*ein:jupyter-server\\*"
+                                         "\\`\\*ein:log-all\\*"
+                                         "\\`\\*ein:.*\\*\\[markdown\\]"
+                                         "\\`\\*ein:.*\\*\\[python\\]"))
   :bind
   (("M-x"     . helm-M-x)
    ("M-y"     . helm-show-kill-ring)
@@ -351,6 +355,15 @@
     :hook (python-mode . lsp)
     :config (setq python-indent-offset 2
                   python-guess-indent nil)))
+
+
+;; Jupyter -------------------------------------------------------------------------------
+(package-feature 'feature-ein
+ (use-package ein
+   :ensure t
+   :defer t
+   :config
+   (setq ein:polymode t)))  ; inline images and some other stuff.
 
 
 ;; Rust ----------------------------------------------------------------------------------
