@@ -222,6 +222,10 @@ determine the exact padding."
    (diff-refine-removed :foreground fg :background (doom-blend red bg 0.2) :weight 'bold)
    (git-commit-overlong-summary :background bg :foreground bright-red)
 
+   ;; wgrep
+   (wgrep-face :background (doom-blend green bg 0.2))
+   (wgrep-delete-face :background (doom-blend red bg 0.2))
+
    ;; ivy
    (ivy-posframe :background (doom-blend blue bg 0.2))
    (ivy-virtual :foreground (doom-blend blue bg 0.8))
