@@ -300,6 +300,11 @@
 ;;   :config
 ;;   (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/"))
 
+(package-feature 'feature-ob-mongo
+  (use-package ob-mongo
+    :ensure t
+    :defer t
+    :after org))
 
 ;; Pdf-tools -----------------------------------------------------------------------------
 (package-feature 'feature-pdftools

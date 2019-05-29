@@ -9,7 +9,8 @@
 ;; (defvar org-mode-map (make-sparse-keymap)) ;; Fix for org mode in Emacs 24.3
 
 ;; features:
-(defconst package-features '(feature-lsp
+(defconst package-features '(feature-ob-mongo
+                             feature-lsp
                              feature-pdftools
                              feature-lua
                              feature-lsp-lua
