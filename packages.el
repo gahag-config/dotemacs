@@ -183,7 +183,8 @@
 (use-package ediff
   :ensure t
   :defer t
-  :config (setq ediff-window-setup-function 'ediff-setup-windows-plain
+  :config (setq ediff-diff-options "-w"
+                ediff-window-setup-function 'ediff-setup-windows-plain
                 ediff-split-window-function 'split-window-horizontally))
 
 

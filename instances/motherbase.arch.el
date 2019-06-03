@@ -7,10 +7,21 @@
 (defconst themes-dir    (concat dotemacs-dir "themes/"))
 (setq-default org-agenda-files '("/gahag/org"))
 
+;; features:
+(defconst package-features '(feature-lsp
+                             feature-pdftools
+                             feature-lsp-c
+                             feature-lsp-java
+                             feature-python
+                             feature-rust
+                             feature-ledger
+                             feature-ein))
+
+
 (load dotemacs-file)
 
-(load-X-theme 'doom-gahag)
-(powerline-gahag-theme)
+(load-X-theme 'doom-gahag-light)
+(powerline-gahag-light-theme)
 
 ;; ---------------------------------------------------------------------------------------
 
@@ -26,9 +37,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("a8810eb3e7166f6d1c5825d6de963c45d6d9ea5eb037728c2ff2e0349c4a3a28" "8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
  '(package-selected-packages
    (quote
-    (projectile company-lsp cquery lsp-mode lsp-python lsp-ui org togetherly dired-quick-sort dired-ranger ledger-mode try ox-reveal csharp-mode flycheck markdown-mode use-package transpose-frame calfw-org calfw csv-mode yasnippet-snippets yasnippet rainbow-delimiters gruvbox-theme doom-themes flymd flycheck-haskell yaml-mode magit impatient-mode pdf-tools latex-preview-pane intero lorem-ipsum gh-md markdown-preview-mode powerline omnisharp multiple-cursors heroku-theme helm haskell-mode fsharp-mode flatui-theme expand-region elm-mode company ace-jump-mode))))
+    (dockerfile-mode js2-mode json-mode lua-mode use-package-ensure-system-package web-mode highlight-indent-guides rust-mode wakatime-mode diff-hl lsp-java projectile company-lsp cquery lsp-mode lsp-python lsp-ui org togetherly dired-quick-sort dired-ranger ledger-mode try csharp-mode flycheck markdown-mode use-package transpose-frame calfw-org calfw csv-mode yasnippet-snippets yasnippet rainbow-delimiters gruvbox-theme doom-themes flymd flycheck-haskell yaml-mode magit impatient-mode pdf-tools latex-preview-pane intero lorem-ipsum gh-md markdown-preview-mode powerline omnisharp multiple-cursors heroku-theme helm haskell-mode fsharp-mode flatui-theme expand-region elm-mode company ace-jump-mode))))
