@@ -10,11 +10,13 @@
 
 ;; features:
 (defconst package-features '(feature-ob-mongo
-                             feature-lsp
+                             feature-docker
                              feature-pdftools
+                             feature-lsp
+                             feature-lsp-c
                              feature-lua
                              feature-lsp-lua
-                             feature-docker))
+                             feature-javascript))
 
 (load dotemacs-file)
 
