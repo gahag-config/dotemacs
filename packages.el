@@ -238,8 +238,8 @@
               ("C-," . nil)
               ("C-c a" . org-agenda))
   :config
-  (mapc (lambda (arg) (setcdr arg (list (downcase (cadr arg))))) ; lowercase structure templates
-    org-structure-template-alist)
+  ;; (mapc (lambda (arg) (setcdr arg (list (downcase (cadr arg))))) ; lowercase structure templates
+  ;;   org-structure-template-alist)
 
   (setq org-todo-keywords '((sequence "TODO" "NEXT" "|" "DONE" "DISMISSED"))
         org-list-allow-alphabetical t
@@ -258,6 +258,8 @@
         org-latex-minted-options '(("fontsize" "\\small"))
         org-latex-pdf-process
          '("latexmk -pdflatex='pdflatex -shell-escape -interaction nonstopmode -output-directory %o' -pdf -f  %f"))
+
+  (require 'org-tempo)  ;; `<s` and like snippets
 
   (setq org-agenda-custom-commands
         '(("1" "Week schedule" agenda "display scheduled and deadlines for the current week"
