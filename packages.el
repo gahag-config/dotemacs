@@ -41,6 +41,12 @@
   :config (doom-themes-org-config))
 
 
+;; Re-builder ----------------------------------------------------------------------------
+(use-package re-builder
+  :config
+  (setq reb-re-syntax 'string))
+
+
 ;; Rg ------------------------------------------------------------------------------------
 (use-package rg
   :ensure t
