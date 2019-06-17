@@ -28,6 +28,98 @@
   (package-install 'use-package))
 
 
+;; Emacs ---------------------------------------------------------------------------------
+(use-package emacs
+  :ensure nil
+  :bind (("C-;"   . comment-line)
+         ("M-SPC" . cycle-spacing)
+         ("C-."   . pop-tag-mark)
+
+         ("C-x k" . kill-this-buffer))
+  :config
+  (setq-default make-backup-files nil
+                truncate-lines t ;; disable word-wrap.
+                require-final-newline t
+
+                ;; Indentation
+                tab-width 2
+                tab-always-indent nil
+                indent-tabs-mode  nil
+                tab-stop-list (number-sequence 0 200 2)
+                fill-column 90
+                comment-column 0)
+
+  ;; Fix prompt
+  (fset 'yes-or-no-p 'y-or-n-p)
+
+  ;; Enable functions
+  (put 'narrow-to-region 'disabled nil)
+  (put 'upcase-region    'disabled nil)
+  (put 'downcase-region  'disabled nil)
+
+  ;; File local variables
+  (put 'before-save-hook 'safe-local-variable (lambda (_) t))
+  (put 'after-save-hook  'safe-local-variable (lambda (_) t))
+
+  ;; Modes
+  (tool-bar-mode -1)
+  (menu-bar-mode -1)
+  (scroll-bar-mode -1)
+  (column-number-mode)
+  ;; (global-display-line-numbers-mode)
+
+  (delete-selection-mode)
+  (electric-pair-mode)
+  (show-paren-mode)
+  (global-auto-revert-mode t)
+  (desktop-save-mode t)
+  (recentf-mode t)
+  (eldoc-mode)
+  ;;(semantic-mode)
+
+  ;; Keys
+  (global-unset-key "") ;; ESC ESC ESC
+  (if (window-system) ;; GUI only keybindings:
+      (progn ;; Remap C-i to yank:
+        (define-key input-decode-map [?\C-i] [C-i])
+        (global-set-key (kbd "<C-i>") 'yank) ; Angled brackets required due to decoding.
+        (define-key isearch-mode-map (kbd "<C-i>") 'isearch-yank-kill)))
+
+  ;; Aliases
+  (defalias 'open 'browse-url-of-buffer)
+
+  ;; Registers
+  (set-register ?e '(file . "~/.emacs.d/init.el"))
+  (set-register ?E `(file . ,dotemacs-file))
+  (set-register ?p `(file . ,(concat dotemacs-dir "packages.el"))))
+
+
+;; Recentf -------------------------------------------------------------------------------
+(use-package recentf
+  :ensure nil
+  :config
+  (setq-default recentf-save-file       "~/.emacs.d/.cache/recent-files"
+                recentf-max-saved-items 50
+                recentf-max-menu-items  15))
+
+
+;; Windmove ------------------------------------------------------------------------------
+(use-package windmove
+  :ensure nil
+  :bind (("s-w" . windmove-up)
+         ("s-d" . windmove-right)
+         ("s-s" . windmove-down)
+         ("s-a" . windmove-left))
+  :config
+  (windmove-default-keybindings 'meta))
+
+
+;; Misc ----------------------------------------------------------------------------------
+(use-package misc
+  :defer t
+  :bind ("M-z" . zap-up-to-char))
+
+
 ;; Powerline -----------------------------------------------------------------------------
 (use-package powerline
   :ensure t
@@ -39,21 +131,6 @@
 (use-package doom-themes
   :ensure t
   :config (doom-themes-org-config))
-
-
-;; Re-builder ----------------------------------------------------------------------------
-(use-package re-builder
-  :config
-  (setq reb-re-syntax 'string))
-
-
-;; Rg ------------------------------------------------------------------------------------
-(use-package rg
-  :ensure t
-  :commands rg
-  :bind (:map rg-mode-map
-              ("n" . rg-next-file)
-              ("p" . rg-prev-file)))
 
 
 ;; Helm ----------------------------------------------------------------------------------
@@ -95,6 +172,21 @@
   (global-company-mode))
 
 
+;; Re-builder ----------------------------------------------------------------------------
+(use-package re-builder
+  :config
+  (setq reb-re-syntax 'string))
+
+
+;; Rg ------------------------------------------------------------------------------------
+(use-package rg
+  :ensure t
+  :commands rg
+  :bind (:map rg-mode-map
+              ("n" . rg-next-file)
+              ("p" . rg-prev-file)))
+
+
 ;; Yasnippet -----------------------------------------------------------------------------
 (use-package yasnippet
   :ensure t
@@ -116,22 +208,6 @@
 
 
 ;; Lsp -----------------------------------------------------------------------------------
-;; (use-package eglot
-;;   :ensure t
-;;   :bind   (("C-c r" . eglot-rename)
-;;            ("C-c h" . eglot-help-at-point))
-;;   :hook   ((javascript-mode . eglot-ensure)
-;;            (rust-mode       . eglot-ensure)
-;;            (python-mode     . eglot-ensure)
-;;            (shell-mode      . eglot-ensure)
-;;            (c-mode          . eglot-ensure)
-;;            (c++-mode        . eglot-ensure))
-;;   :config
-;;   (setq help-at-pt-timer-delay 0.3
-;;         help-at-pt-display-when-idle '(flymake-diagnostic)
-;;         eglot-ignored-server-capabilites '(:documentHighlightProvider))
-;;   (help-at-pt-set-timer))
-
 (package-feature 'feature-lsp
   (use-package lsp-mode
     :ensure t
@@ -194,6 +270,12 @@
                 ediff-split-window-function 'split-window-horizontally))
 
 
+;; Term ----------------------------------------------------------------------------------
+(use-package term
+  :ensure nil
+  :bind ("C-x t" . term))
+
+
 ;; Tramp ---------------------------------------------------------------------------------
 (use-package tramp
   :ensure t
@@ -201,20 +283,21 @@
   :config (setq tramp-terminal-type "tramp")) ; Use specific terminal to prevent PS1
                                               ; parsing conflict.
 
+
 ;; Dired ---------------------------------------------------------------------------------
-(use-package wdired
-  :ensure t
-  ; This is necessary so the keybindings of dired-ranger won't be overriden by a late
-  ; dired loading:
-  :demand t
-  :config (setq delete-by-moving-to-trash t)
+(use-package dired
+  :ensure nil
   :bind (:map dired-mode-map
               ("K" . dired-kill-subdir)
-              ("e" . dired-toggle-read-only)))
+              ("e" . dired-toggle-read-only))
+  :config
+  (setq-default dired-dwim-target t
+                dired-listing-switches "-alhG1v --group-directories-first"
+                delete-by-moving-to-trash t))
 
 (use-package dired-ranger
   :ensure t
-  :defer t
+  :after dired
   :bind (:map dired-mode-map
               ("c" . dired-ranger-copy)
               ("Y" . dired-ranger-paste)
@@ -222,8 +305,7 @@
 
 (use-package dired-quick-sort
   :ensure t
-  :defer t
-  :hook dired-mode
+  :after dired
   :bind (:map dired-mode-map
               ("s" . hydra-dired-quick-sort/body)))
 
@@ -315,6 +397,14 @@
     :defer t
     :after org))
 
+
+;; Docview -------------------------------------------------------------------------------
+(use-package doc-view
+  :ensure nil
+  :config
+  (setq-default doc-view-continuous t))
+
+
 ;; Pdf-tools -----------------------------------------------------------------------------
 (package-feature 'feature-pdftools
   (use-package pdf-tools
@@ -325,6 +415,15 @@
 
 
 ;; C-mode --------------------------------------------------------------------------------
+(use-package cc-mode
+  :ensure nil
+  :mode ("\\.impl\\'" . c++-mode)
+  :hook (c-mode . c-toggle-comment-style)
+  :config
+  (setq-default c-basic-offset 2
+                c-default-style "stroustrup")
+  (c-set-offset 'substatement-open 0))
+
 (package-feature 'feature-lsp-c
   (use-package cquery
     :ensure t
@@ -453,6 +552,13 @@
         web-mode-enable-current-element-highlight t))
 
 
+;; Css -----------------------------------------------------------------------------------
+(use-package css-mode
+  :ensure nil
+  :config
+  (setq-default css-indent-offset 2))
+
+
 ;; Markdown ------------------------------------------------------------------------------
 (use-package markdown-mode
   :ensure t
@@ -511,12 +617,6 @@
   (("M-p"     . mc/mark-previous-lines)
    ("M-n"     . mc/mark-next-lines)
    ("C-x C-n" . mc/mark-next-like-this)))
-
-
-;; Misc ----------------------------------------------------------------------------------
-(use-package misc
-  :defer t
-  :bind ("M-z" . zap-up-to-char))
 
 
 ;; Transpose frame -----------------------------------------------------------------------

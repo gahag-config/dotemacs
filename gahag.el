@@ -18,12 +18,7 @@
 
 (cl-flet ((file-name-handler-alist nil) ; Dont run regexes on filenames.
           (dotemacs (name) (concat dotemacs-dir name)))
-  (load (dotemacs "aliases.el"))
-  (load (dotemacs "auto-mode.el"))
-  (load (dotemacs "config.el"))
   (load (dotemacs "defuns.el"))
-  (load (dotemacs "keys.el"))
-  (load (dotemacs "modes.el"))
+  (load (dotemacs "desktop.el"))
   (load (dotemacs "packages.el"))
-  (load (dotemacs "registers.el"))
   (load (dotemacs "theming.el")))
