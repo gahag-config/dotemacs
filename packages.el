@@ -370,6 +370,9 @@
      (python . t)
      (shell . t)))
 
+  (defun org-prop (prop)
+    (org-entry-get (point) prop t))
+
   (put 'org-html-htmlize-output-type 'safe-local-variable (lambda (_) t))
   (put 'org-table-convert-region-max-lines 'safe-local-variable (lambda (_) t)))
 
