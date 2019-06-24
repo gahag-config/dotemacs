@@ -210,6 +210,8 @@ determine the exact padding."
    ;; magit
    (magit-filename :foreground fg)
    (magit-mode-line-process :foreground fg :inherit 'italic)
+   (magit-blame-heading :foreground fg :background base3 :weight 'bold)
+   (magit-blame-date :foreground red :weight 'semi-bold)
    (magit-diff-file-heading-selection :background selection :foreground silver)
    (magit-diff-file-heading-highlight :foreground bg :background bright-blue :weight 'bold)
    (magit-diff-hunk-heading :foreground bg :background base5)

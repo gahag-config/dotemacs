@@ -24,6 +24,7 @@
         cycle-spacing
         dabbrev-expand
         delete-horizontal-space
+        dired-previous-line
         down-list
         downcase-region
         electric-newline-and-maybe-indent
