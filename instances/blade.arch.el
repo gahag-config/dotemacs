@@ -1,8 +1,9 @@
 ;(package-initialize)
 
-(defconst emacs-home    "/gahag/config/emacs/")
-(defconst desktop-home  (concat emacs-home "desktops/"))
-(defconst dotemacs-dir  (concat emacs-home "dotemacs/"))
+(require 'xdg)
+
+(defconst desktop-home  (concat (xdg-data-home) "/emacs/desktops/"))
+(defconst dotemacs-dir  "/gahag/config/emacs/")
 (defconst dotemacs-file (concat dotemacs-dir "gahag.el"))
 (defconst themes-dir    (concat dotemacs-dir "themes/"))
 (setq-default org-agenda-files '("/gahag/org"))
@@ -38,4 +39,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (helm intero multiple-cursors lsp-java lsp-mode lsp-ui magit org powerline projectile rust-mode use-package web-mode yasnippet yasnippet-snippets rg wgrep ein pdf-tools dockerfile-mode js2-mode json-mode lua-mode use-package-ensure-system-package gradle-mode highlight-indent-guides pcap-mode lsp-rust csv-mode jsx-mode rainbow-mode ox-reveal togetherly arduino-mode company-arduino company-lsp cquery lsp-python dired-quick-sort try htmlize ledger-mode calfw calfw-org company doom-themes shm transpose-frame dired-ranger latex-preview-pane nyan-mode ace-jump-mode flymake-haskell-multi haskell-mode expand-region flycheck auto-complete))))
+    (csv yaml-mode helm intero multiple-cursors lsp-java lsp-mode lsp-ui magit org powerline projectile rust-mode use-package web-mode yasnippet yasnippet-snippets rg wgrep ein pdf-tools dockerfile-mode json-mode lua-mode use-package-ensure-system-package gradle-mode highlight-indent-guides pcap-mode lsp-rust csv-mode jsx-mode rainbow-mode ox-reveal togetherly arduino-mode company-arduino company-lsp cquery lsp-python dired-quick-sort try htmlize ledger-mode calfw calfw-org company doom-themes shm transpose-frame dired-ranger latex-preview-pane nyan-mode ace-jump-mode flymake-haskell-multi haskell-mode expand-region flycheck auto-complete))))
