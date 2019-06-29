@@ -368,7 +368,8 @@
    'org-babel-load-languages
    '((emacs-lisp . t)
      (python . t)
-     (shell . t)))
+     (shell . t)
+     (dot . t)))
 
   (defun org-prop (prop)
     (org-entry-get (point) prop t))
