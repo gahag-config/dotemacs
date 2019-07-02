@@ -62,9 +62,10 @@
   (put 'after-save-hook  'safe-local-variable (lambda (_) t))
 
   ;; Modes
-  (tool-bar-mode -1)
+  (when window-system
+    (tool-bar-mode -1)
+    (scroll-bar-mode -1))
   (menu-bar-mode -1)
-  (scroll-bar-mode -1)
   (column-number-mode)
   ;; (global-display-line-numbers-mode)
 
@@ -79,11 +80,11 @@
 
   ;; Keys
   (global-unset-key "") ;; ESC ESC ESC
-  (if (window-system) ;; GUI only keybindings:
-      (progn ;; Remap C-i to yank:
-        (define-key input-decode-map [?\C-i] [C-i])
-        (global-set-key (kbd "<C-i>") 'yank) ; Angled brackets required due to decoding.
-        (define-key isearch-mode-map (kbd "<C-i>") 'isearch-yank-kill)))
+  (when (window-system) ;; GUI only keybindings:
+    ;; Remap C-i to yank:
+    (define-key input-decode-map [?\C-i] [C-i])
+    (global-set-key (kbd "<C-i>") 'yank) ; Angled brackets required due to decoding.
+    (define-key isearch-mode-map (kbd "<C-i>") 'isearch-yank-kill))
 
   ;; Aliases
   (defalias 'open 'browse-url-of-buffer)

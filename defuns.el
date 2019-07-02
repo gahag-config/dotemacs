@@ -43,7 +43,4 @@
                            (current-buffer)))
 
 
-(defun reload-local-variables ()
-  "reload file local variables for the current buffer"
-  (interactive)
-  (hack-local-variables))
+(defalias 'reload-local-variables 'hack-local-variables)
