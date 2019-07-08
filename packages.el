@@ -430,11 +430,10 @@
   (c-set-offset 'substatement-open 0))
 
 (package-feature 'feature-lsp-c
-  (use-package cquery
+  (use-package ccls
     :ensure t
     :defer t
-    :hook ((c-mode   . (lambda () (require 'cquery) (lsp)))
-           (c++-mode . (lambda () (require 'cquery) (lsp))))))
+    :hook ((c-mode c++-mode) . (lambda () (require 'ccls) (lsp)))))
 
 
 ;; Bash ----------------------------------------------------------------------------------
