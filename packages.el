@@ -372,11 +372,17 @@
      (shell . t)
      (dot . t)))
 
+  (put 'org-html-htmlize-output-type 'safe-local-variable (lambda (_) t))
+  (put 'org-table-convert-region-max-lines 'safe-local-variable (lambda (_) t))
+
   (defun org-prop (prop)
     (org-entry-get (point) prop t))
 
-  (put 'org-html-htmlize-output-type 'safe-local-variable (lambda (_) t))
-  (put 'org-table-convert-region-max-lines 'safe-local-variable (lambda (_) t)))
+  (defun org-src (name)
+    (org-element-property
+     :value
+     (org-element--parse-to
+      (org-babel-find-named-block name)))))
 
 
 (use-package calfw
