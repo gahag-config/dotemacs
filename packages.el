@@ -144,6 +144,7 @@
                                          "\\`\\*helm"
                                          "\\`\\*Echo Area"
                                          "\\`\\*Minibuf"
+                                         "\\`\\*Quail Completions\\*"
                                          "\\`\\*lsp-log\\*"
                                          "\\`\\*\\(\\w\\|-\\)+ls\\(::stderr\\)?\\*\\'"
                                          "\\`\\*cquery\\(::stderr\\)?\\*\\'"
