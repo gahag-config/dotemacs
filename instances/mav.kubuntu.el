@@ -17,7 +17,8 @@
                              feature-lsp-c
                              feature-lua
                              feature-lsp-lua
-                             feature-javascript))
+                             feature-javascript
+                             feature-restclient))
 
 (load dotemacs-file)
 

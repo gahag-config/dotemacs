@@ -325,6 +325,12 @@
               ;; Expand region:
               ("C-," . nil)
               ("C-c a" . org-agenda))
+  :init
+  (defvar org-babel-languages '((emacs-lisp . t)
+                                (dot . t)))
+
+  (defun org-babel-add-language (lang)
+      (add-to-list 'org-babel-languages `(,lang . t)))
   :config
   ;; (mapc (lambda (arg) (setcdr arg (list (downcase (cadr arg))))) ; lowercase structure templates
   ;;   org-structure-template-alist)
@@ -364,12 +370,7 @@
             (org-deadline-warning-days 0)))
           ))
   
-  (org-babel-do-load-languages
-   'org-babel-load-languages
-   '((emacs-lisp . t)
-     (python . t)
-     (shell . t)
-     (dot . t)))
+  (org-babel-do-load-languages 'org-babel-load-languages org-babel-languages)
 
   (put 'org-html-htmlize-output-type 'safe-local-variable (lambda (_) t))
   (put 'org-table-convert-region-max-lines 'safe-local-variable (lambda (_) t))
@@ -445,6 +446,7 @@
 (use-package sh-script
   :ensure t
   :defer  t
+  :init (org-babel-add-language 'shell)
   :config (setq sh-basic-offset 2))
 
 
@@ -475,6 +477,7 @@
     :ensure t
     :defer  t
     :hook (python-mode . lsp)
+    :init (org-babel-add-language 'python)
     :config (setq python-indent-offset 2
                   python-guess-indent nil)))
 
@@ -661,6 +664,18 @@
   (use-package togetherly
     :ensure t
     :defer t))
+
+
+;; Restclient ----------------------------------------------------------------------------
+(package-feature 'feature-restclient
+  (use-package restclient
+    :ensure t
+    :defer t)
+
+  (use-package ob-restclient
+    :ensure t
+    :defer t
+    :init (org-babel-add-language 'restclient)))
 
 
 ;; ---------------------------------------------------------------------------------------
