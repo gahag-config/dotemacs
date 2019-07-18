@@ -17,9 +17,9 @@
     (mapc (lambda (feature) (set feature t))
           package-features))
 
-(defmacro package-feature (feat code)
+(defmacro package-feature (feat &rest code)
   `(when (boundp ,feat)
-         ,code))
+         ,(cons 'progn code)))
 
 
 ;; Use-package ---------------------------------------------------------------------------
@@ -219,9 +219,8 @@
                 ("C-c h" . lsp-describe-thing-at-point)
                 ("C-c a" . lsp-execute-code-action))
     :config
-    (setq-default lsp-prefer-flymake nil)))
+    (setq-default lsp-prefer-flymake nil))
 
-(package-feature 'feature-lsp
   (use-package lsp-ui
     :ensure t
     :defer t
@@ -232,9 +231,8 @@
     :config
     (setq lsp-ui-sideline-ignore-duplicate t
           lsp-ui-peek-always-show t
-          lsp-ui-doc-enable nil)))
+          lsp-ui-doc-enable nil))
 
-(package-feature 'feature-lsp
   (use-package company-lsp
     :ensure t
     :defer t
@@ -514,17 +512,17 @@
          (defconst haskell-font-lock-symbols-alist
            '(("\\" . "λ") ("." "∘" haskell-font-lock-dot-is-not-composition)))
          ;; (setq haskell-font-lock-keywords (haskell-font-lock-keywords-create nil))
-         ))))
+         )))
   
-(package-feature 'feature-haskell
   (use-package intero
     :ensure t
     :defer t
-    :hook (haskell-mode . intero-mode)))
+    :hook (haskell-mode . intero-mode))
 
-;; (use-package shm
-;;   :ensure t
-;;   :hook (haskell-mode . structured-haskell-mode))
+  ;; (use-package shm
+  ;;   :ensure t
+  ;;   :hook (haskell-mode . structured-haskell-mode))
+  )
 
 
 ;; Lua -----------------------------------------------------------------------------------
