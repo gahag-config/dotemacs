@@ -309,6 +309,12 @@
   :bind (:map dired-mode-map
               ("s" . hydra-dired-quick-sort/body)))
 
+(use-package dired-narrow
+  :ensure t
+  :after dired
+  :bind (:map dired-mode-map
+              ("N" . dired-narrow)))
+
 
 ;; Org -----------------------------------------------------------------------------------
 (use-package org
