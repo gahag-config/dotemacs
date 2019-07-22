@@ -315,6 +315,16 @@
   :bind (:map dired-mode-map
               ("N" . dired-narrow)))
 
+(use-package dired-subtree
+  :ensure t
+  :after dired
+  :bind (:map dired-mode-map
+              ("K" . dired-subtree-remove)
+              ("i" . dired-subtree-insert))
+  :config
+  (setq dired-subtree-use-backgrounds nil
+        dired-subtree-line-prefix "    "))
+
 
 ;; Org -----------------------------------------------------------------------------------
 (use-package org
