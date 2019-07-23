@@ -412,11 +412,12 @@
   :after calfw
   :config (setq cfw:org-overwrite-default-keybinding t))
 
-;; (use-package ox-reveal ; TODO: replace with org-re-reveal or emacs-reveal
-;;   :ensure t
-;;   :after  org
-;;   :config
-;;   (setq org-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/"))
+(package-feature 'feature-org-reveal
+  (use-package org-re-reveal
+    :ensure t
+    :after  org
+    :config
+    (setq org-re-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")))
 
 (package-feature 'feature-ob-mongo
   (use-package ob-mongo

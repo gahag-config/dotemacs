@@ -47,6 +47,7 @@
         org-demote-subtree
         org-end-of-line
         org-force-self-insert
+        org-kill-line
         org-return
         org-return-indent
         org-self-insert-command
