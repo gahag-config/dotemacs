@@ -1,10 +1,16 @@
 ;(package-initialize)
 
-(defconst emacs-home    "~/emacs/")
-(defconst desktop-home  (concat emacs-home "desktops/"))
-(defconst dotemacs-dir  (concat emacs-home "dotemacs/"))
+(require 'xdg)
+
+(defconst desktop-home  (concat (xdg-data-home) "/emacs/desktops/"))
+(defconst dotemacs-dir  "~/dotemacs/")
 (defconst dotemacs-file (concat dotemacs-dir "gahag.el"))
 (defconst themes-dir    (concat dotemacs-dir "themes/"))
+;; (setq-default org-agenda-files '("/gahag/org"))
+
+;; features:
+(defconst package-features '())
+
 
 ;; (defvar org-mode-map (make-sparse-keymap)) ;; Fix for org mode in Emacs 24.3
 
