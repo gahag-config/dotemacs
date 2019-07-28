@@ -485,7 +485,13 @@
     :hook (java-mode . (lambda () (require 'lsp-java) (lsp)))
     :config
     (setq lsp-java-server-install-dir "/usr/share/java/jdtls/"
-          lsp-java-workspace-dir (concat (getenv "XDG_CACHE_HOME") "/eclipse-workspace/"))))
+          lsp-java-workspace-dir (concat (getenv "XDG_CACHE_HOME") "/eclipse-workspace/"))
+    ;; For android projects, add these entries to the .classpath file in jdt.ls-java-project:
+    ;; <classpathentry kind="src" path="app-dir-with-classpaths">
+    ;; <classpathentry kind="lib"
+    ;;                 path="/path/to/sdk/platforms/android-XXX/android.jar"
+    ;;                 sourcepath="/path/to/sdk/sources/android-XXX">
+    ))
 
 
 ;; Python --------------------------------------------------------------------------------
