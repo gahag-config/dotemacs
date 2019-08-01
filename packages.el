@@ -528,6 +528,7 @@
   (use-package haskell-mode
     :ensure t
     :defer t
+    :init (org-babel-add-language 'haskell)
     :hook (haskell-mode . turn-on-haskell-indent) ; Replace by structured-haskell-mode.
     :config
     (setq haskell-indent-offset 2
@@ -540,15 +541,16 @@
          ;; (setq haskell-font-lock-keywords (haskell-font-lock-keywords-create nil))
          )))
   
-  (use-package intero
-    :ensure t
-    :defer t
-    :hook (haskell-mode . intero-mode))
-
   ;; (use-package shm
   ;;   :ensure t
   ;;   :hook (haskell-mode . structured-haskell-mode))
   )
+
+(package-feature 'feature-haskell-lsp
+  (use-package intero
+    :ensure t
+    :defer t
+    :hook (haskell-mode . intero-mode)))
 
 
 ;; Lua -----------------------------------------------------------------------------------
