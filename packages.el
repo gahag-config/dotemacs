@@ -626,7 +626,7 @@
 (use-package highlight-indent-guides
   :ensure t
   :defer t
-  :hook (prog-mode . highlight-indent-guides-mode)
+  :hook ((python-mode emacs-lisp-mode) . highlight-indent-guides-mode)
   :config
   (setq highlight-indent-guides-method 'character
         highlight-indent-guides-responsive 'top))
