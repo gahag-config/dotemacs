@@ -151,7 +151,7 @@
                                          ;; "\\`\\*EGLOT"
                                          "\\`\\*Flymake"
                                          "\\`\\*Flycheck"
-                                         "\\`magit.*:"
+                                         "\\`magit-.*:"
                                          "\\`\\*tramp"
                                          "\\`\\*emacs\\*"
                                          "\\`\\*ein:jupyter-server\\*"
