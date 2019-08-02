@@ -153,6 +153,7 @@
                                          "\\`\\*Flycheck"
                                          "\\`magit.*:"
                                          "\\`\\*tramp"
+                                         "\\`\\*emacs\\*"
                                          "\\`\\*ein:jupyter-server\\*"
                                          "\\`\\*ein:log-all\\*"
                                          "\\`\\*ein:.*\\*\\[markdown\\]"
@@ -422,7 +423,11 @@
 (package-feature 'feature-ob-mongo
   (use-package ob-mongo
     :ensure t
-    :defer t
+    :after org))
+
+(package-feature 'feature-ob-async
+  (use-package ob-async
+    :ensure t
     :after org))
 
 
