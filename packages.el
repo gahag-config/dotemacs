@@ -353,6 +353,7 @@
   ;;   org-structure-template-alist)
 
   (setq org-todo-keywords '((sequence "TODO" "NEXT" "|" "DONE" "DISMISSED"))
+        org-catch-invisible-edits 'show-and-error
         org-list-allow-alphabetical t
         org-log-done 'time
         org-tags-column 0
