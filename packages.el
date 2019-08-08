@@ -31,6 +31,8 @@
 ;; Emacs ---------------------------------------------------------------------------------
 (use-package emacs
   :ensure nil
+  :diminish ((eldoc-mode . "𝔼")
+             (abbrev-mode . "𝔸"))
   :bind (("C-;"   . comment-line)
          ("M-SPC" . cycle-spacing)
          ("C-."   . pop-tag-mark)
@@ -123,11 +125,14 @@
   :bind ("M-z" . zap-up-to-char))
 
 
-;; Powerline -----------------------------------------------------------------------------
+;; Modeline ------------------------------------------------------------------------------
 (use-package powerline
   :ensure t
   :config (setq powerline-height 18
                 powerline-default-separator 'slant))
+
+(use-package diminish
+  :ensure t)
 
 
 ;; Doom themes ---------------------------------------------------------------------------
@@ -139,6 +144,7 @@
 ;; Helm ----------------------------------------------------------------------------------
 (use-package helm
   :ensure t
+  :diminish "Ξ"
   :config
   (helm-mode)
   (setq helm-buffer-skip-remote-checking t ; Prevent helm-mini from querying remote buffers
@@ -172,6 +178,7 @@
 (use-package company
   :ensure t
   :defer t
+  :diminish "ℂ"
   :config
   (setq company-idle-delay 0.3)
   (global-company-mode))
@@ -196,6 +203,7 @@
 (use-package yasnippet
   :ensure t
   :defer t
+  :diminish (yas-minor-mode . "¥")
   :hook   (prog-mode . yas-global-mode))
 
 (use-package yasnippet-snippets
@@ -206,7 +214,8 @@
 (use-package flycheck
   :ensure t
   :defer t
-  :hook   (prog-mode . flycheck-mode)
+  :diminish "𝔽"
+  :hook (prog-mode . flycheck-mode)
   :config
   ; For some reason, the following does not work with setq, only with setq-default.
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
@@ -217,6 +226,7 @@
   (use-package lsp-mode
     :ensure t
     :commands lsp
+    :diminish "𝕃"
     :bind (:map lsp-mode-map
                 ("C-c r" . lsp-rename)
                 ("C-c h" . lsp-describe-thing-at-point)
@@ -634,6 +644,7 @@
 (use-package highlight-indent-guides
   :ensure t
   :defer t
+  :diminish "Ⅲ"
   :hook ((python-mode emacs-lisp-mode) . highlight-indent-guides-mode)
   :config
   (setq highlight-indent-guides-method 'character
