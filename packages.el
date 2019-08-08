@@ -35,7 +35,9 @@
          ("M-SPC" . cycle-spacing)
          ("C-."   . pop-tag-mark)
 
-         ("C-x k" . kill-this-buffer))
+         ("C-x k" . kill-this-buffer)
+
+         ("M-o" . other-frame))
   :config
   (setq-default make-backup-files nil
                 truncate-lines t ;; disable word-wrap.
