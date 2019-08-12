@@ -6,6 +6,7 @@
 (defconst dotemacs-dir  "/gahag/config/emacs/")
 (defconst dotemacs-file (concat dotemacs-dir "gahag.el"))
 (defconst themes-dir    (concat dotemacs-dir "themes/"))
+(setq-default org-agenda-files '("/gahag/org"))
 
 ;; (defvar org-mode-map (make-sparse-keymap)) ;; Fix for org mode in Emacs 24.3
 

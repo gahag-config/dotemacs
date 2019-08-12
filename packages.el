@@ -300,6 +300,7 @@
           ("C-c C-e" . term-send-esc)
           ("C-m" . term-send-return)
           ("C-y" . term-paste)
+          ("<C-i>" . term-paste)
           ("M-f" . term-send-forward-word)
           ("M-b" . term-send-backward-word)
           ("M-p" . term-send-up)
