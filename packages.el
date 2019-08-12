@@ -301,6 +301,7 @@
           ("C-m" . term-send-return)
           ("C-y" . term-paste)
           ("<C-i>" . term-paste)
+          ("M-d" . term-send-forward-kill-word)
           ("M-f" . term-send-forward-word)
           ("M-b" . term-send-backward-word)
           ("M-p" . term-send-up)
