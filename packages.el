@@ -284,9 +284,30 @@
 
 
 ;; Term ----------------------------------------------------------------------------------
-(use-package term
-  :ensure nil
-  :bind ("C-x t" . term))
+(use-package multi-term
+  :ensure t
+  :bind (("C-x t" . multi-term)
+         :map term-mode-map
+         ("C-c C-j" . term-char-mode)
+         :map term-raw-map
+         ("C-c C-j" . term-line-mode))
+  :init
+  ;; (advice-add 'multi-term :after #'term-line-mode) ; start in line mode
+  (setq multi-term-buffer-name "term"
+        term-bind-key-alist
+        '(("C-c C-j" . term-line-mode)
+          ("C-c C-c" . term-interrupt-subjob)
+          ("C-c C-e" . term-send-esc)
+          ("C-m" . term-send-return)
+          ("C-y" . term-paste)
+          ("M-f" . term-send-forward-word)
+          ("M-b" . term-send-backward-word)
+          ("M-p" . term-send-up)
+          ("M-n" . term-send-down)
+          ("M-r" . term-send-reverse-search-history)
+          ("M->" . term-send-raw-meta)
+          ("M-<" . term-send-raw-meta)
+          ("M-a" . term-send-home))))
 
 
 ;; Tramp ---------------------------------------------------------------------------------
