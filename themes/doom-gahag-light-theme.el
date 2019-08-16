@@ -66,7 +66,7 @@ determine the exact padding."
    (blue        '("#1e3799" "#51afef" "brightblue"))
    (dark-blue   '("#5272AF" "#2257A0" "blue"))
    (magenta     '("#8854d0" "#c678dd" "magenta"))
-   (violet      '("#842879" "#a9a1e1" "brightmagenta"))
+   (violet      '("#c1408c" "#a9a1e1" "brightmagenta"))
    (cyan        '("#398EAC" "#46D9FF" "brightcyan"))
    (dark-cyan   '("#2C7088" "#5699AF" "cyan"))
 
@@ -154,8 +154,8 @@ determine the exact padding."
 
 
    ;; isearch
-   (isearch :background dark-blue)
-   ((lazy-highlight &override) :background grey)
+   (isearch :background blue :foreground silver)
+   ((lazy-highlight &override) :background base4)
 
 
    ;; powerline
@@ -197,7 +197,7 @@ determine the exact padding."
    (helm-ff-dotted-directory :foreground (doom-lighten fg 0.5))
    (helm-ff-directory :foreground blue)
    (helm-ff-executable :foreground fg :inherit 'italic)
-   (helm-buffer-modified :foreground red)
+   (helm-buffer-modified :foreground violet)
    (helm-buffer-directory :foreground blue)
    (helm-buffer-file :foreground fg)
    (helm-non-file-buffer :foreground (doom-lighten fg 0.5))

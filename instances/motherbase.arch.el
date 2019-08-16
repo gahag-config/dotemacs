@@ -14,8 +14,7 @@
                              feature-lsp-java
                              feature-python
                              feature-rust
-                             feature-ledger
-                             feature-ein))
+                             feature-ledger))
 
 
 (load dotemacs-file)
@@ -39,4 +38,4 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ccls dired-narrow dired-subtree lsp-mode magit use-package web-mode ein lsp-java rg dockerfile-mode js2-mode json-mode lua-mode use-package-ensure-system-package highlight-indent-guides rust-mode wakatime-mode diff-hl company-lsp cquery lsp-python lsp-ui org togetherly dired-quick-sort dired-ranger ledger-mode try csharp-mode flycheck markdown-mode transpose-frame calfw-org calfw csv-mode yasnippet-snippets yasnippet rainbow-delimiters gruvbox-theme doom-themes flymd flycheck-haskell yaml-mode impatient-mode pdf-tools latex-preview-pane intero lorem-ipsum gh-md markdown-preview-mode powerline omnisharp multiple-cursors heroku-theme helm haskell-mode fsharp-mode flatui-theme expand-region elm-mode company ace-jump-mode))))
+    (lsp-mode diminish lsp-ui magit multi-term rainbow-mode ccls dired-narrow dired-subtree use-package web-mode lsp-java rg dockerfile-mode json-mode lua-mode use-package-ensure-system-package highlight-indent-guides rust-mode wakatime-mode diff-hl company-lsp cquery lsp-python org togetherly dired-quick-sort dired-ranger ledger-mode try csharp-mode flycheck markdown-mode transpose-frame calfw-org calfw csv-mode yasnippet-snippets yasnippet rainbow-delimiters gruvbox-theme doom-themes flymd flycheck-haskell yaml-mode impatient-mode pdf-tools latex-preview-pane intero lorem-ipsum gh-md markdown-preview-mode powerline omnisharp multiple-cursors heroku-theme helm haskell-mode fsharp-mode flatui-theme expand-region elm-mode company ace-jump-mode))))
