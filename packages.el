@@ -111,6 +111,7 @@
 ;; Windmove ------------------------------------------------------------------------------
 (use-package windmove
   :ensure nil
+  :defer nil
   :bind (("s-w" . windmove-up)
          ("s-d" . windmove-right)
          ("s-s" . windmove-down)

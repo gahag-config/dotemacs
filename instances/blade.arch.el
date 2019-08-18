@@ -16,8 +16,7 @@
                              feature-python
                              feature-rust
                              feature-docker
-                             feature-ledger
-                             feature-ein))
+                             feature-ledger))
 
 (load dotemacs-file)
 
