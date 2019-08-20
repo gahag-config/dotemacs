@@ -264,6 +264,7 @@ determine the exact padding."
 
    ;; web-mode
    (web-mode-html-tag-face :foreground blue)
+   (web-mode-html-tag-namespaced-face :foreground blue)
    (web-mode-html-tag-unclosed-face :foreground red)
    (web-mode-current-element-highlight-face :foreground blue :background bg :weight 'bold)
 
