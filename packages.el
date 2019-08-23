@@ -428,6 +428,7 @@
 
   (put 'org-html-htmlize-output-type 'safe-local-variable (lambda (_) t))
   (put 'org-table-convert-region-max-lines 'safe-local-variable (lambda (_) t))
+  (put 'org-latex-toc-command 'safe-local-variable (lambda (_) t))
 
   (defun org-prop (prop)
     (org-entry-get (point) prop t))
