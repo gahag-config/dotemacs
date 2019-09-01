@@ -389,6 +389,7 @@
   ;;   org-structure-template-alist)
 
   (setq org-todo-keywords '((sequence "TODO" "NEXT" "|" "DONE" "DISMISSED"))
+        org-hide-emphasis-markers t
         org-catch-invisible-edits 'show-and-error
         org-list-allow-alphabetical t
         org-log-done 'time
@@ -439,6 +440,12 @@
      (org-element--parse-to
       (org-babel-find-named-block name)))))
 
+
+(use-package org-bullets
+  :ensure t
+  :hook (org-mode . org-bullets-mode)
+  :config
+  (setq org-bullets-bullet-list '("⁖")))
 
 (use-package calfw
   :ensure t
