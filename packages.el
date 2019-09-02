@@ -636,6 +636,7 @@
               ("C-<tab>" . web-mode-fold-or-unfold))
   :config
   (setq web-mode-markup-indent-offset 2
+        web-mode-code-indent-offset 2
         web-mode-enable-current-element-highlight t))
 
 
