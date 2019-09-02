@@ -670,7 +670,12 @@
 (package-feature 'feature-docker
   (use-package dockerfile-mode
     :ensure t
-    :defer t))
+    :defer t)
+
+  (use-package docker
+    :ensure t
+    :defer t
+    :commands docker))
 
 
 ;; Highlight Indent Guides ---------------------------------------------------------------
