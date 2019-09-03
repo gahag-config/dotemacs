@@ -270,9 +270,9 @@
                                          t
                                          10)))
           (setq magit-git-global-arguments ; magit over tramp
-                (nconc magit-git-global-arguments
-                       '("-c" "color.ui=false"
-                         "-c" "color.diff=false"))))
+                (append magit-git-global-arguments
+                        '("-c" "color.ui=false"
+                          "-c" "color.diff=false"))))
 
 
 ;; Ediff ---------------------------------------------------------------------------------
