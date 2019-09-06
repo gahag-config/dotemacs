@@ -456,6 +456,7 @@
   :ensure t
   :defer t
   :after calfw
+  :commands cfw:open-org-calendar
   :config (setq cfw:org-overwrite-default-keybinding t))
 
 (package-feature 'feature-org-reveal
