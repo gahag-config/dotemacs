@@ -256,6 +256,9 @@ determine the exact padding."
 
    ;; --- major-mode faces -------------------
 
+   ;; whitespace-mode
+   (whitespace-tab :foreground base2)
+
    ;; css-mode / scss-mode
    (css-proprietary-property :foreground orange)
    (css-property :foreground green)

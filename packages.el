@@ -45,11 +45,6 @@
                 truncate-lines t ;; disable word-wrap.
                 require-final-newline t
 
-                ;; Indentation
-                tab-width 2
-                tab-always-indent nil
-                indent-tabs-mode  nil
-                tab-stop-list (number-sequence 0 200 2)
                 fill-column 90
                 comment-column 0)
 
@@ -62,6 +57,9 @@
   (put 'downcase-region  'disabled nil)
 
   ;; File local variables
+  (defun reload-local-variables ()
+    (interactive)
+    (hack-local-variables))
   (put 'before-save-hook 'safe-local-variable (lambda (_) t))
   (put 'after-save-hook  'safe-local-variable (lambda (_) t))
 
@@ -97,6 +95,58 @@
   (set-register ?e '(file . "~/.emacs.d/init.el"))
   (set-register ?E `(file . ,dotemacs-file))
   (set-register ?p `(file . ,(concat dotemacs-dir "packages.el"))))
+
+
+;; Whitespace ----------------------------------------------------------------------------
+(use-package whitespace
+  :ensure nil
+  :diminish "W"
+  :hook (prog-mode . whitespace-mode)
+  :init
+  (defvar indent-size 2)
+
+  (defun indent-tabs-mode ()
+    (interactive)
+    (setq-local indent-tabs-mode t))
+
+  (defun indent-spaces-mode ()
+    (interactive)
+    (setq-local indent-tabs-mode nil))
+
+  (defun set-indent-size (size global)
+    "Set the tab size for the current buffer."
+    (interactive (list (read-number "Size: ")
+                       (y-or-n-p "Global? ")))
+    (let ((variables '(tab-width
+                       c-basic-offset
+                       css-indent-offset
+                       haskell-indent-offset
+                       js-indent-level
+                       lua-indent-level
+                       python-indent-offset
+                       rust-indent-offset
+                       sh-basic-offset
+                       web-mode-markup-indent-offset
+                       web-mode-code-indent-offset)))
+      (mapc (lambda (var)
+              (if global
+                  (set-default var size)
+                  (progn
+                    (make-local-variable var)
+                    (set var size))))
+            variables)))
+
+  (defun align-whitespace (size)
+    "Align columns delimited by whitespace."
+    (interactive "NSize: ") ;; Number
+    (align-regexp (region-beginning) (region-end) "\\(\\s-*\\)\\s-" 1 size 't))
+
+  :config
+  (set-indent-size indent-size 't)
+  (setq-default backward-delete-char-untabify-method nil
+
+                whitespace-style '(face tabs tab-mark trailing)
+                whitespace-display-mappings '((tab-mark 9 [?\u2502 9])))) ; 9 = ascii TAB
 
 
 ;; Recentf -------------------------------------------------------------------------------
@@ -424,7 +474,7 @@
             (org-agenda-entry-types '(:deadline :scheduled))
             (org-deadline-warning-days 0)))
           ))
-  
+
   (org-babel-do-load-languages 'org-babel-load-languages org-babel-languages)
 
   (put 'org-html-htmlize-output-type 'safe-local-variable (lambda (_) t))
@@ -493,13 +543,19 @@
     :config (pdf-tools-install)))
 
 
+;; Elisp-mode ----------------------------------------------------------------------------
+(use-package elisp-mode
+  :ensure nil
+  :hook (emacs-lisp-mode . indent-spaces-mode))
+
+
 ;; C-mode --------------------------------------------------------------------------------
 (use-package cc-mode
   :ensure nil
   :mode ("\\.impl\\'" . c++-mode)
   :hook (c-mode . c-toggle-comment-style)
   :config
-  (setq-default c-basic-offset 2
+  (setq-default c-basic-offset indent-size
                 c-default-style "stroustrup")
   (c-set-offset 'substatement-open 0))
 
@@ -515,7 +571,7 @@
   :ensure t
   :defer  t
   :init (org-babel-add-language 'shell)
-  :config (setq sh-basic-offset 2))
+  :config (setq sh-basic-offset indent-size))
 
 
 ;; Javascript ----------------------------------------------------------------------------
@@ -525,7 +581,7 @@
     :defer  t
     :mode "\\.js\\'"
     :hook (js2-mode . lsp)
-    :config (setq js-indent-level 2)))
+    :config (setq js-indent-level indent-size)))
 
 
 ;; Java ----------------------------------------------------------------------------------
@@ -552,7 +608,7 @@
     :defer  t
     :hook (python-mode . lsp)
     :init (org-babel-add-language 'python)
-    :config (setq python-indent-offset 2
+    :config (setq python-indent-offset indent-size
                   python-guess-indent nil)))
 
 
@@ -571,7 +627,7 @@
     :ensure t
     :defer  t
     :hook (rust-mode . lsp)
-    :config (setq-default rust-indent-offset 2)))
+    :config (setq-default rust-indent-offset indent-size)))
 
 
 ;; Haskell -------------------------------------------------------------------------------
@@ -582,16 +638,16 @@
     :init (org-babel-add-language 'haskell)
     :hook (haskell-mode . turn-on-haskell-indent) ; Replace by structured-haskell-mode.
     :config
-    (setq haskell-indent-offset 2
+    (setq haskell-indent-offset indent-size
           haskell-font-lock-symbols t)
-    
+
     (eval-after-load 'haskell-font-lock
       '(progn
          (defconst haskell-font-lock-symbols-alist
            '(("\\" . "λ") ("." "∘" haskell-font-lock-dot-is-not-composition)))
          ;; (setq haskell-font-lock-keywords (haskell-font-lock-keywords-create nil))
          )))
-  
+
   ;; (use-package shm
   ;;   :ensure t
   ;;   :hook (haskell-mode . structured-haskell-mode))
@@ -611,7 +667,7 @@
     :defer t
     :hook (lua-mode . lsp)
     :config
-    (setq lua-indent-level 2)))
+    (setq lua-indent-level indent-size)))
 
 (package-feature 'feature-lsp-lua
   (use-package lsp-lua
@@ -636,8 +692,8 @@
               ("C-c C-p" . web-mode-tag-previous)
               ("C-<tab>" . web-mode-fold-or-unfold))
   :config
-  (setq web-mode-markup-indent-offset 2
-        web-mode-code-indent-offset 2
+  (setq web-mode-markup-indent-offset indent-size
+        web-mode-code-indent-offset indent-size
         web-mode-enable-current-element-highlight t))
 
 
@@ -645,7 +701,7 @@
 (use-package css-mode
   :ensure nil
   :config
-  (setq-default css-indent-offset 2))
+  (setq-default css-indent-offset indent-size))
 
 
 ;; Markdown ------------------------------------------------------------------------------
@@ -664,7 +720,7 @@
 (use-package json-mode
   :ensure t
   :defer t
-  :config (setq js-indent-level 2))
+  :config (setq js-indent-level indent-size))
 
 
 ;; Dockerfile ----------------------------------------------------------------------------
