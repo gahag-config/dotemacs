@@ -100,7 +100,7 @@
 ;; Whitespace ----------------------------------------------------------------------------
 (use-package whitespace
   :ensure nil
-  :diminish "W"
+  :diminish "𝕎"
   :hook (prog-mode . whitespace-mode)
   :init
   (defvar indent-size 2)
