@@ -481,15 +481,30 @@
   (put 'org-html-htmlize-output-type 'safe-local-variable (lambda (_) t))
   (put 'org-table-convert-region-max-lines 'safe-local-variable (lambda (_) t))
   (put 'org-latex-toc-command 'safe-local-variable (lambda (_) t))
+  (put 'org-after-todo-state-change-hook 'safe-local-variable (lambda (_) t))
 
   (defun org-prop (prop)
     (org-entry-get (point) prop t))
 
   (defun org-src (name)
-    (org-element-property
-     :value
-     (org-element--parse-to
-      (org-babel-find-named-block name)))))
+    (org-element-property :value (org-element--parse-to
+                                  (org-babel-find-named-block name))))
+
+  (defun org-refile-to (headline)
+    "Move current subtree to specified headline"
+    (org-refile nil
+                nil
+                (list headline
+                      (buffer-file-name)
+                      nil
+                      (org-find-exact-headline-in-buffer (capitalize headline)))))
+
+  (defun org-refile-todo ()
+    "Move current subtree to the corresponding todo heading"
+    (interactive)
+    (org-mark-ring-push)
+    (org-refile-to (org-get-todo-state))
+    (org-mark-ring-goto)))
 
 
 (use-package org-bullets
