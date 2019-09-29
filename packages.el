@@ -503,9 +503,7 @@
     "Move current subtree to the corresponding todo heading"
     (interactive)
     (when (eq (org-current-level) 2)
-      (org-mark-ring-push)
-      (org-refile-to (org-get-todo-state))
-      (org-mark-ring-goto))))
+      (org-refile-to (org-get-todo-state)))))
 
 
 (use-package org-bullets
