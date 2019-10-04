@@ -66,6 +66,7 @@
         upcase-region
         wdired-capitalize-word
         wdired-downcase-word
+        wdired-upcase-word
         yaml-electric-backspace
         yaml-electric-dash-and-dot
         yas-expand

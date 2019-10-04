@@ -10,6 +10,7 @@
 
 ;; features:
 (defconst package-features '(feature-lsp
+                             feature-lsp-c
                              feature-pdftools
                              feature-lsp-c
                              feature-lsp-java
