@@ -578,7 +578,9 @@
   (use-package ccls
     :ensure t
     :defer t
-    :hook ((c-mode c++-mode) . (lambda () (require 'ccls) (lsp)))))
+    :hook ((c-mode c++-mode) . (lambda () (require 'ccls) (lsp)))
+    :config
+    (setq lsp-enable-on-type-formatting nil)))
 
 
 ;; Bash ----------------------------------------------------------------------------------
