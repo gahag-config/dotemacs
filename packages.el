@@ -826,7 +826,9 @@
 (package-feature 'feature-restclient
   (use-package restclient
     :ensure t
-    :defer t)
+    :defer t
+    :config
+    (setq restclient-inhibit-cookies t))
 
   (use-package ob-restclient
     :ensure t

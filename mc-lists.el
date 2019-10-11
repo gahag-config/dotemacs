@@ -7,6 +7,7 @@
         backward-kill-sentence
         backward-sexp
         beginning-of-buffer
+        beginning-of-visual-line
         c-electric-brace
         c-electric-colon
         c-electric-delete-forward
