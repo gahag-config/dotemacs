@@ -135,8 +135,8 @@ determine the exact padding."
     (when (memq doom-gahag-light-region-highlight '(frost snowstorm))
       bg-alt))
 
-   ((font-lock-keyword-face &override) :weight 'semi-bold )
-   ((font-lock-type-face &override) :weight 'semi-bold )
+   ((font-lock-keyword-face &override) :weight 'medium )
+   ((font-lock-type-face &override) :weight 'medium )
    ((font-lock-string-face &override) :weight 'bold )
 
    ((line-number &override) :foreground (doom-lighten 'base5 0.2))
@@ -191,7 +191,7 @@ determine the exact padding."
    (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
 
    ;; helm
-   (helm-selection :background (doom-darken bg 0.1) :weight 'semi-bold)
+   (helm-selection :background (doom-darken bg 0.1) :weight 'medium)
    (helm-match     :foreground highlight)
    (helm-source-header :background bg :weight 'bold)
    (helm-ff-dotted-directory :foreground (doom-lighten fg 0.5))
@@ -202,16 +202,16 @@ determine the exact padding."
    (helm-buffer-file :foreground fg)
    (helm-non-file-buffer :foreground (doom-lighten fg 0.5))
    (helm-candidate-number :background bright-blue)
-   (helm-minibuffer-prompt :foreground fg :weight 'semi-bold)
+   (helm-minibuffer-prompt :foreground fg :weight 'medium)
 
    ;; minibuffer
-   (minibuffer-prompt :foreground fg :weight 'semi-bold)
+   (minibuffer-prompt :foreground fg :weight 'medium)
 
    ;; magit
    (magit-filename :foreground fg)
    (magit-mode-line-process :foreground fg :inherit 'italic)
    (magit-blame-heading :foreground fg :background base3 :weight 'bold)
-   (magit-blame-date :foreground red :weight 'semi-bold)
+   (magit-blame-date :foreground red :weight 'medium)
    (magit-diff-file-heading-selection :background selection :foreground silver)
    (magit-diff-file-heading-highlight :foreground bg :background bright-blue :weight 'bold)
    (magit-diff-hunk-heading :foreground bg :background base5)
@@ -240,7 +240,7 @@ determine the exact padding."
 
    ;; company
    (company-tooltip :background base2)
-   (company-tooltip-selection :background bright-blue :foreground bg :weight 'semi-bold)
+   (company-tooltip-selection :background bright-blue :foreground bg :weight 'medium)
    (company-preview-common :background base2 :foreground fg :inherit 'italic)
 
    ;; lsp
@@ -249,9 +249,9 @@ determine the exact padding."
    (lsp-face-highlight-write :weight 'bold)
    (lsp-ui-sideline-code-action :foreground orange)
    (lsp-ui-sideline-symbol :foreground base7)
-   (lsp-ui-sideline-current-symbol :foreground fg :weight 'semi-bold)
+   (lsp-ui-sideline-current-symbol :foreground fg :weight 'medium)
    (lsp-ui-peek-header :background grey)
-   (lsp-ui-peek-selection :foreground black :background silver :weight 'semi-bold)
+   (lsp-ui-peek-selection :foreground black :background silver :weight 'medium)
 
 
    ;; --- major-mode faces -------------------
@@ -284,27 +284,27 @@ determine the exact padding."
    (nxml-element-local-name :foreground blue)
    (nxml-delimiter :foreground blue)
    (nxml-attribute-local-name :foreground teal)
-   (nxml-attribute-value :weight 'semi-bold)
-   (nxml-attribute-value-delimiter :weight 'semi-bold)
+   (nxml-attribute-value :weight 'medium)
+   (nxml-attribute-value-delimiter :weight 'medium)
 
    (nav-flash-face :background region :foreground base8 :weight 'bold)
    ;; org-mode
    (org-hide :foreground hidden)
    (org-todo :foreground green :underline t :weight 'bold)
    (org-done :foreground grey :underline t :weight 'bold)
-   (org-headline-done :foreground grey :weight 'semi-bold)
-   (org-checkbox :foreground green :weight 'semi-bold)
+   (org-headline-done :foreground grey :weight 'medium)
+   (org-checkbox :foreground green :weight 'medium)
    (org-checkbox-statistics-todo :foreground green :weight 'bold)
    (org-checkbox-statistics-done :foreground grey :weight 'bold)
    (org-date :foreground fg :weight 'bold)
-   (org-level-1 :background bg :foreground blue :weight 'semi-bold)
-   (org-level-2 :background bg :foreground bright-blue :weight 'semi-bold)
-   (org-level-3 :background bg :foreground violet :weight 'semi-bold)
-   (org-level-4 :background bg :foreground green :weight 'semi-bold)
-   (org-level-5 :background bg :foreground magenta :weight 'semi-bold)
-   (org-level-6 :background bg :foreground bright-blue :weight 'semi-bold)
-   (org-level-7 :background bg :foreground violet :weight 'semi-bold)
-   (org-level-8 :background bg :foreground black :weight 'semi-bold)
+   (org-level-1 :background bg :foreground blue :weight 'medium)
+   (org-level-2 :background bg :foreground bright-blue :weight 'medium)
+   (org-level-3 :background bg :foreground violet :weight 'medium)
+   (org-level-4 :background bg :foreground green :weight 'medium)
+   (org-level-5 :background bg :foreground magenta :weight 'medium)
+   (org-level-6 :background bg :foreground bright-blue :weight 'medium)
+   (org-level-7 :background bg :foreground violet :weight 'medium)
+   (org-level-8 :background bg :foreground black :weight 'medium)
    (org-block   :background (doom-darken bg 0.02))
    (org-block-begin-line :foreground fg-alt :weight 'bold)
    (org-code :foreground green)
