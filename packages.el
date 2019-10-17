@@ -32,7 +32,8 @@
 (use-package emacs
   :ensure nil
   :diminish ((eldoc-mode . "𝔼")
-             (abbrev-mode . "𝔸"))
+             (abbrev-mode . "𝔸")
+             (visual-line-mode . "↲"))
   :bind (("C-;"   . comment-line)
          ("M-SPC" . cycle-spacing)
          ("C-."   . pop-tag-mark)
