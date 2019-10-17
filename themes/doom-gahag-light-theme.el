@@ -137,7 +137,7 @@ determine the exact padding."
 
    ((font-lock-keyword-face &override) :weight 'medium )
    ((font-lock-type-face &override) :weight 'medium )
-   ((font-lock-string-face &override) :weight 'bold )
+   ((font-lock-string-face &override) :weight 'medium )
 
    ((line-number &override) :foreground (doom-lighten 'base5 0.2))
    ((line-number-current-line &override) :foreground base7)
@@ -290,13 +290,14 @@ determine the exact padding."
    (nav-flash-face :background region :foreground base8 :weight 'bold)
    ;; org-mode
    (org-hide :foreground hidden)
-   (org-todo :foreground green :underline t :weight 'bold)
-   (org-done :foreground grey :underline t :weight 'bold)
+   (org-todo :foreground green :underline t :weight 'medium)
+   (org-done :foreground grey :underline t :weight 'medium)
    (org-headline-done :foreground grey :weight 'medium)
    (org-checkbox :foreground green :weight 'medium)
-   (org-checkbox-statistics-todo :foreground green :weight 'bold)
-   (org-checkbox-statistics-done :foreground grey :weight 'bold)
-   (org-date :foreground fg :weight 'bold)
+   (org-checkbox-statistics-todo :foreground green :weight 'medium)
+   (org-checkbox-statistics-done :foreground grey :weight 'medium)
+   (org-date :foreground fg :weight 'medium)
+   (org-link :foreground blue :underline t :weight 'regular)
    (org-level-1 :background bg :foreground blue :weight 'medium)
    (org-level-2 :background bg :foreground bright-blue :weight 'medium)
    (org-level-3 :background bg :foreground violet :weight 'medium)
