@@ -338,7 +338,7 @@
 ;; Term ----------------------------------------------------------------------------------
 (use-package multi-term
   :ensure t
-  :bind (("C-x t" . multi-term)
+  :bind (("C-c t" . multi-term)
          :map term-mode-map
          ("C-c C-j" . term-char-mode)
          :map term-raw-map
