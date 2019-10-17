@@ -772,6 +772,13 @@
   :config (setq expand-region-contract-fast-key "."))
 
 
+;; Multi-line ----------------------------------------------------------------------------
+(use-package multi-line
+  :ensure t
+  :defer t
+  :bind ("C-c m" . multi-line))
+
+
 ;; Ace jump ------------------------------------------------------------------------------
 (use-package ace-jump-mode
   :ensure t
