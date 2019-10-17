@@ -137,7 +137,7 @@ determine the exact padding."
 
    ((font-lock-keyword-face &override) :weight 'medium )
    ((font-lock-type-face &override) :weight 'medium )
-   ((font-lock-string-face &override) :weight 'medium )
+   ((font-lock-string-face &override) :weight 'bold )
 
    ((line-number &override) :foreground (doom-lighten 'base5 0.2))
    ((line-number-current-line &override) :foreground base7)
