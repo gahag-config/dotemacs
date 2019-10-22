@@ -381,7 +381,8 @@
   :config
   (setq-default dired-dwim-target t
                 dired-listing-switches "-alhG1v --group-directories-first"
-                delete-by-moving-to-trash t))
+                delete-by-moving-to-trash t
+                completion-ignored-extensions (cons ".ccls-cache/" completion-ignored-extensions)))
 
 (use-package dired-ranger
   :ensure t
