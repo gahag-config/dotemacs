@@ -229,6 +229,10 @@ determine the exact padding."
    (ediff-current-diff-A :background (doom-blend green bg 0.2))
    (ediff-fine-diff-A :background (doom-blend green bg 0.35))
 
+   ;; rg
+   (rg-filename-face :foreground grey)
+   (rg-match-face :foreground green)
+
    ;; wgrep
    (wgrep-face :background (doom-blend green bg 0.2))
    (wgrep-delete-face :background (doom-blend red bg 0.2))
