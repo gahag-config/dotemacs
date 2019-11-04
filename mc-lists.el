@@ -96,4 +96,5 @@
         revert-buffer
         wdired-finish-edit
         write-file
+        xref-find-definitions
         ))

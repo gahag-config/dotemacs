@@ -292,6 +292,9 @@ determine the exact padding."
    (nxml-attribute-value :weight 'medium)
    (nxml-attribute-value-delimiter :weight 'medium)
 
+   ;; yaml-mode
+   (yaml-tab-face :background bg)
+
    (nav-flash-face :background region :foreground base8 :weight 'bold)
    ;; org-mode
    (org-hide :foreground hidden)
