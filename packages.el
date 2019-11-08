@@ -531,7 +531,8 @@
     :ensure t
     :after  org
     :config
-    (setq org-re-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/")))
+    (setq org-re-reveal-root "http://cdn.jsdelivr.net/reveal.js/3.0.0/"
+          org-re-reveal-plugins '(markdown notes zoom))))
 
 (package-feature 'feature-ob-mongo
   (use-package ob-mongo
