@@ -457,7 +457,7 @@
         ;; Minted setup:
         org-latex-listings 'minted
         org-latex-packages-alist '(("" "minted"))
-        org-latex-minted-options '(("fontsize" "\\small"))
+        org-latex-minted-options '(("fontsize" "\\small") ("tabsize" "4"))
         org-latex-pdf-process
          '("latexmk -pdflatex='pdflatex -shell-escape -interaction nonstopmode -output-directory %o' -pdf -f  %f"))
 
