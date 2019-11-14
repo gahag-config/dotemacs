@@ -79,6 +79,7 @@
         2C-two-columns
         ace-jump-mode
         delete-rectangle
+        dired-toggle-read-only
         helm-M-x
         helm-confirm-and-exit-minibuffer
         helm-find-files
