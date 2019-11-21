@@ -247,8 +247,8 @@
   :ensure t
   :commands rg
   :bind (:map rg-mode-map
-              ("n" . rg-next-file)
-              ("p" . rg-prev-file)))
+              ("n" . next-line)
+              ("p" . previous-line)))
 
 
 ;; Yasnippet -----------------------------------------------------------------------------
