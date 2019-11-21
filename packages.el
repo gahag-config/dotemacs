@@ -626,10 +626,17 @@
   (use-package python
     :ensure t
     :defer  t
-    :hook (python-mode . lsp)
+    :hook ((python-mode . python-indent-setup)
+           (python-mode . lsp))
     :init (org-babel-add-language 'python)
-    :config (setq python-indent-offset indent-size
-                  python-guess-indent nil)))
+    :config
+    (defun python-indent-setup ()
+      (indent-tabs-mode)
+      (set-indent-size indent-size nil)
+      (setq-local py-indent-tabs-mode t))
+
+    (setq python-indent-offset indent-size
+          python-guess-indent nil)))
 
 
 ;; Jupyter -------------------------------------------------------------------------------
@@ -760,7 +767,7 @@
   :ensure t
   :defer t
   :diminish "Ⅲ"
-  :hook ((python-mode emacs-lisp-mode) . highlight-indent-guides-mode)
+  :hook (emacs-lisp-mode . highlight-indent-guides-mode)
   :config
   (setq highlight-indent-guides-method 'character
         highlight-indent-guides-responsive 'top))
