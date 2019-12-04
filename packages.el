@@ -631,6 +631,8 @@
            (python-mode . lsp))
     :init (org-babel-add-language 'python)
     :config
+    (setq-default org-babel-python-command "python3")
+
     (defun python-indent-setup ()
       (indent-tabs-mode)
       (set-indent-size indent-size nil)

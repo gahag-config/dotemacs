@@ -80,6 +80,7 @@
         ace-jump-mode
         delete-rectangle
         dired-toggle-read-only
+        handle-switch-frame
         helm-M-x
         helm-confirm-and-exit-minibuffer
         helm-find-files
@@ -93,6 +94,7 @@
         mouse-buffer-menu
         org-ctrl-c-ctrl-c
         org-fill-paragraph
+        other-frame
         repeat
         revert-buffer
         wdired-finish-edit
