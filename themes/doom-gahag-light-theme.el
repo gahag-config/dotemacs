@@ -318,6 +318,7 @@ determine the exact padding."
    (org-block-begin-line :foreground fg-alt :weight 'bold)
    (org-code :foreground green)
    (org-footnote :foreground blue)
+   (org-drawer :foreground grey)
    (solaire-org-hide-face :foreground hidden)
 
    ;; js2-mode
