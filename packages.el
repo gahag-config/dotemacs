@@ -285,7 +285,8 @@
                 ("C-c h" . lsp-describe-thing-at-point)
                 ("C-c a" . lsp-execute-code-action))
     :config
-    (setq-default lsp-prefer-flymake nil))
+    (setq-default lsp-prefer-flymake nil
+                  lsp-file-watch-threshold 10000))
 
   (use-package lsp-ui
     :ensure t
