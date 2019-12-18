@@ -754,6 +754,13 @@
   :config (setq js-indent-level indent-size))
 
 
+;; Yaml
+(package-feature 'feature-yaml
+  (use-package yaml-mode
+    :ensure t
+    :defer t))
+
+
 ;; Dockerfile ----------------------------------------------------------------------------
 (package-feature 'feature-docker
   (use-package dockerfile-mode

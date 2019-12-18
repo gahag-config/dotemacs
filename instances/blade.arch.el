@@ -16,6 +16,7 @@
                              feature-lsp-java
                              feature-python
                              feature-rust
+                             feature-yaml
                              feature-docker
                              feature-ledger
                              feature-org-reveal))
@@ -39,5 +40,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-	 (quote
-		(csharp-mode ccls diminish dired-narrow dired-subtree multi-term org-bullets org-re-reveal docker csv yaml-mode helm intero multiple-cursors lsp-java lsp-mode lsp-ui magit org powerline projectile rust-mode use-package web-mode yasnippet yasnippet-snippets rg wgrep ein pdf-tools dockerfile-mode json-mode lua-mode use-package-ensure-system-package gradle-mode highlight-indent-guides pcap-mode lsp-rust csv-mode jsx-mode rainbow-mode ox-reveal togetherly arduino-mode company-arduino company-lsp cquery lsp-python dired-quick-sort try htmlize ledger-mode calfw calfw-org company doom-themes shm transpose-frame dired-ranger latex-preview-pane nyan-mode ace-jump-mode flymake-haskell-multi haskell-mode expand-region flycheck auto-complete))))
+   (quote
+    (org org-re-reveal rg rust-mode use-package yasnippet-snippets org-ref web-mode multi-line csharp-mode ccls diminish dired-narrow dired-subtree multi-term org-bullets docker csv yaml-mode helm intero multiple-cursors lsp-java lsp-mode lsp-ui magit powerline yasnippet wgrep ein dockerfile-mode json-mode lua-mode use-package-ensure-system-package gradle-mode highlight-indent-guides pcap-mode lsp-rust csv-mode jsx-mode rainbow-mode ox-reveal togetherly arduino-mode company-arduino company-lsp cquery lsp-python dired-quick-sort try htmlize ledger-mode calfw calfw-org company doom-themes shm transpose-frame dired-ranger latex-preview-pane nyan-mode ace-jump-mode flymake-haskell-multi haskell-mode expand-region flycheck auto-complete))))
