@@ -42,6 +42,9 @@
          ("C-x k" . kill-this-buffer)
 
          ("M-o" . other-frame))
+  :bind (:map occur-mode-map
+              ("n" . occur-next)
+              ("p" . occur-prev))
   :config
   (setq-default make-backup-files nil
                 truncate-lines t ;; disable word-wrap.
