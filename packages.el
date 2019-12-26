@@ -41,7 +41,9 @@
 
          ("C-x k" . kill-this-buffer)
 
-         ("M-o" . other-frame))
+         ("M-o" . other-frame)
+
+         ("M-#" . quick-calc))
   :bind (:map occur-mode-map
               ("n" . occur-next)
               ("p" . occur-prev))
