@@ -485,6 +485,12 @@
             (org-deadline-warning-days 0)))
           ))
 
+  (add-to-list 'org-latex-classes
+               '("letter" "\\documentclass{letter}"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
+
   (org-babel-do-load-languages 'org-babel-load-languages org-babel-languages)
 
   (put 'org-html-htmlize-output-type 'safe-local-variable (lambda (_) t))
