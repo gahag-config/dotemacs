@@ -879,4 +879,14 @@
     :init (org-babel-add-language 'restclient)))
 
 
+;; Langtool ------------------------------------------------------------------------------
+(package-feature 'feature-langtool  ; requires the languagetool package
+  (use-package langtool
+    :ensure t
+    :defer t
+    :init
+    (setq langtool-java-classpath
+          "/usr/share/languagetool:/usr/share/java/languagetool/*")))
+
+
 ;; ---------------------------------------------------------------------------------------
