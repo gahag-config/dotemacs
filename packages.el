@@ -512,7 +512,12 @@
     "Move current subtree to the corresponding todo heading"
     (interactive)
     (when (eq (org-current-level) 2)
-      (org-refile-to (org-get-todo-state)))))
+      (org-refile-to (org-get-todo-state))))
+
+  (defun org-done-after (date)
+    (interactive "SDone after: ")
+    (org-tags-view nil
+                   (format "CLOSED>=\"[%s]\"" date))))
 
 
 (use-package org-bullets
