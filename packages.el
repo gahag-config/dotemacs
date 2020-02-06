@@ -452,6 +452,7 @@
 
   (setq org-todo-keywords '((sequence "TODO" "NEXT" "|" "DONE" "DISMISSED"))
         org-hide-emphasis-markers t
+        org-ellipsis "..."
         org-catch-invisible-edits 'show-and-error
         org-list-allow-alphabetical t
         org-log-done 'time
