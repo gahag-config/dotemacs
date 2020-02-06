@@ -33,7 +33,8 @@
   :ensure nil
   :diminish ((eldoc-mode . "𝔼")
              (abbrev-mode . "𝔸")
-             (visual-line-mode . "↲"))
+             (visual-line-mode . "↲")
+             (subword-mode . ""))
   :bind (("C-x C-r" . replace-string)
          ("C-;"   . comment-line)
          ("M-SPC" . cycle-spacing)
@@ -85,6 +86,7 @@
   (desktop-save-mode t)
   (recentf-mode t)
   (eldoc-mode)
+  (global-subword-mode)
   ;;(semantic-mode)
 
   ;; Keys
