@@ -1,8 +1,9 @@
 ;(package-initialize)
 
-(defconst emacs-home  "/gahag/config/emacs/")
-(defconst desktop-home  (concat emacs-home "desktops/"))
-(defconst dotemacs-dir  (concat emacs-home "dotemacs/"))
+(require 'xdg)
+
+(defconst desktop-home  (concat (xdg-data-home) "/emacs/desktops/"))
+(defconst dotemacs-dir  "/gahag/config/emacs/dotemacs/")
 (defconst dotemacs-file (concat dotemacs-dir "gahag.el"))
 (defconst themes-dir    (concat dotemacs-dir "themes/"))
 (setq-default org-agenda-files '("/gahag/org"))
