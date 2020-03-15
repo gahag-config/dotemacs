@@ -464,6 +464,8 @@
         org-src-fontify-natively t
         org-src-window-setup 'current-window
 
+        org-highlight-latex-and-related '(latex script entities)
+
         ;; Minted setup:
         org-latex-listings 'minted
         org-latex-packages-alist '(("" "minted"))
