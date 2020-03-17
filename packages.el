@@ -452,6 +452,11 @@
 
         org-highlight-latex-and-related '(latex script entities)
 
+        ;; Inline images:
+        org-display-inline-images t
+        org-redisplay-inline-images t
+        org-startup-with-inline-images "inlineimages"
+
         ;; Minted setup:
         org-latex-listings 'minted
         org-latex-packages-alist '(("" "minted"))
