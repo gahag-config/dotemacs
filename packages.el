@@ -354,9 +354,11 @@
          ("C-c C-j" . vterm-copy-mode)
          :map vterm-copy-mode-map
          ("C-c C-j" . vterm-copy-mode))
-  :init
+  ;; :init
   ;; (advice-add 'multi-term :after #'term-line-mode) ; start in line mode
-  (setq vterm-kill-buffer-on-exit t))
+  :config
+  (setq vterm-kill-buffer-on-exit t
+        vterm-max-scrollback 1000000))
 
 
 ;; Tramp ---------------------------------------------------------------------------------
