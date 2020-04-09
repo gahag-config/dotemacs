@@ -349,6 +349,7 @@
   :ensure t
   :bind (("C-c t" . vterm)
          :map vterm-mode-map
+         ("C-y" . vterm-send-C-y)
          ("M-<" . vterm--self-insert)
          ("M->" . vterm--self-insert)
          ("C-c C-j" . vterm-copy-mode)
