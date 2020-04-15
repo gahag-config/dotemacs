@@ -803,6 +803,19 @@
         highlight-indent-guides-responsive 'top))
 
 
+;; Hideshow ------------------------------------------------------------------------------
+(use-package hideshow
+  :ensure nil
+  :diminish "…"
+  :bind ("C-c q" . hs-toggle)
+  :config
+  (defun hs-toggle ()
+    (interactive)
+    (unless (bound-and-true-p hs-minor-mode)
+      (hs-minor-mode))
+    (hs-toggle-hiding)))
+
+
 ;; Expand region -------------------------------------------------------------------------
 (use-package expand-region
   :ensure t
