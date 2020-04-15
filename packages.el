@@ -204,7 +204,7 @@
 ;; Helm ----------------------------------------------------------------------------------
 (use-package helm
   :ensure t
-  :diminish "Ξ"
+  :diminish (helm-mode . "Ξ")
   :config
   (helm-mode)
   (setq helm-buffer-skip-remote-checking t ; Prevent helm-mini from querying remote buffers
@@ -806,7 +806,7 @@
 ;; Hideshow ------------------------------------------------------------------------------
 (use-package hideshow
   :ensure nil
-  :diminish "…"
+  :diminish (hs-minor-mode . "⋯")
   :bind ("C-c q" . hs-toggle)
   :config
   (defun hs-toggle ()
