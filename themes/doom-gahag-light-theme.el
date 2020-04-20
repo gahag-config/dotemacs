@@ -257,6 +257,7 @@ determine the exact padding."
    (lsp-ui-sideline-current-symbol :foreground fg :weight 'medium)
    (lsp-ui-peek-header :background grey)
    (lsp-ui-peek-selection :foreground black :background silver :weight 'medium)
+   (lsp-lsp-flycheck-warning-unnecessary-face :background bg)
 
 
    ;; --- major-mode faces -------------------

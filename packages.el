@@ -215,6 +215,7 @@
                                          "\\`\\*Quail Completions\\*"
                                          "\\`\\*lsp-log\\*"
                                          "\\`\\*\\(\\w\\|-\\)+ls\\(::stderr\\)?\\*\\'"
+                                         "\\`\\*rust-analyzer\\(::stderr\\)?\\*\\'"
                                          "\\`\\*cquery\\(::stderr\\)?\\*\\'"
                                          ;; "\\`\\*EGLOT"
                                          "\\`\\*Flymake"
@@ -677,7 +678,9 @@
     :ensure t
     :defer  t
     :hook (rust-mode . lsp)
-    :config (setq-default rust-indent-offset indent-size)))
+    :config
+    (setq-default rust-indent-offset indent-size)
+    (setq-default lsp-rust-server 'rust-analyzer)))
 
 
 ;; Haskell -------------------------------------------------------------------------------
