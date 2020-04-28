@@ -566,6 +566,11 @@
     :ensure t
     :after org))
 
+(package-feature 'feature-org-special-blocks
+  (use-package org-special-block-extras
+    :ensure t
+    :hook (org-mode . org-special-block-extras-mode)))
+
 
 ;; Docview -------------------------------------------------------------------------------
 (use-package doc-view
