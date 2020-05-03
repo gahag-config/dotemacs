@@ -665,7 +665,18 @@
       (setq-local py-indent-tabs-mode t))
 
     (setq python-indent-offset indent-size
-          python-guess-indent nil)))
+          python-guess-indent nil))
+
+  (use-package lsp-tramp-pyls
+    :ensure nil
+    :after lsp-mode
+    :init (provide 'lsp-tramp-pyls)
+    :config
+    (lsp-register-client
+     (make-lsp-client :new-connection (lsp-tramp-connection "~/.local/bin/pyls")
+                      :major-modes '(python-mode)
+                      :remote? t
+                      :server-id 'lsp-tramp-pyls))))
 
 
 ;; Jupyter -------------------------------------------------------------------------------
@@ -729,7 +740,7 @@
 
 (package-feature 'feature-lsp-lua
   (use-package lsp-lua
-    :after lsp
+    :after lsp-mode
     :init (provide 'lsp-lua)
     :config
     (lsp-register-client
