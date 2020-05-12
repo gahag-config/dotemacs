@@ -512,7 +512,8 @@
   (defun org-refile-todo ()
     "Move current subtree to the corresponding todo heading"
     (interactive)
-    (when (eq (org-current-level) 2)
+    (when (and (eq (org-current-level) 2)
+               (not (member "pin" (org-get-tags))))
       (org-refile-to (org-get-todo-state))))
 
   (defun org-done-after (date)
