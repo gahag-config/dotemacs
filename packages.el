@@ -279,7 +279,8 @@
   :hook (prog-mode . flycheck-mode)
   :config
   ; For some reason, the following does not work with setq, only with setq-default.
-  (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
+  (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
+  (setq-default flycheck-checker-error-threshold 1000))
 
 
 ;; Lsp -----------------------------------------------------------------------------------
