@@ -882,6 +882,7 @@
     :ensure t
     :defer t
     :mode "\\.ledger\\'"
+    :hook (ledger-mode . indent-spaces-mode)
     :bind (:map ledger-mode-map
                 ("C-c a" . ledger-add-transaction)
                 ("C-c r" . ledger-report)
