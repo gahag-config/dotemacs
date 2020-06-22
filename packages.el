@@ -630,7 +630,18 @@
     :defer  t
     :mode "\\.js\\'"
     :hook (js2-mode . lsp)
-    :config (setq js-indent-level indent-size)))
+    :config (setq js-indent-level indent-size))
+
+  (use-package lsp-tramp-tsls
+    :ensure nil
+    :after lsp-mode
+    :init (provide 'lsp-tramp-tsls)
+    :config
+    (lsp-register-client
+     (make-lsp-client :new-connection (lsp-tramp-connection '("typescript-language-server" "--stdio"))
+                      :major-modes '(js-mode js2-mode typescript-mode)
+                      :remote? t
+                      :server-id 'lsp-tramp-tsls))))
 
 
 ;; Java ----------------------------------------------------------------------------------
