@@ -255,6 +255,7 @@ determine the exact padding."
    (lsp-ui-sideline-code-action :foreground orange)
    (lsp-ui-sideline-symbol :foreground base7)
    (lsp-ui-sideline-current-symbol :foreground fg :weight 'medium)
+   (lsp-ui-sideline-symbol-info :foreground base7)
    (lsp-ui-peek-header :background grey)
    (lsp-ui-peek-selection :foreground black :background silver :weight 'medium)
    (lsp-lsp-flycheck-warning-unnecessary-face :background bg)
