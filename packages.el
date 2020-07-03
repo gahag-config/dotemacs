@@ -459,6 +459,8 @@
         org-src-window-setup 'current-window
 
         org-highlight-latex-and-related '(latex script entities)
+        org-latex-preview-ltxpng-directory "/tmp/ltximg/"
+        org-startup-with-latex-preview t
 
         ;; Inline images:
         org-display-inline-images t
