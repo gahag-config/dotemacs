@@ -44,7 +44,9 @@
 
          ("M-o" . other-frame)
 
-         ("M-#" . quick-calc))
+         ("M-#" . quick-calc)
+
+         ("C-q" . pop-to-mark-command))
   :bind (:map occur-mode-map
               ("n" . occur-next)
               ("p" . occur-prev))
