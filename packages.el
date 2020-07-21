@@ -91,6 +91,9 @@
   (global-subword-mode)
   ;;(semantic-mode)
 
+  ;; Calc
+  (setq-default calc-multiplication-has-precedence nil)
+
   ;; Keys
   (global-unset-key "") ;; ESC ESC ESC
   (when (window-system) ;; GUI only keybindings:
