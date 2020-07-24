@@ -46,7 +46,9 @@
 
          ("M-#" . quick-calc)
 
-         ("C-q" . pop-to-mark-command))
+         ("C-q" . pop-to-mark-command)
+
+         ("C-z" . quoted-insert))
   :bind (:map occur-mode-map
               ("n" . occur-next)
               ("p" . occur-prev))
