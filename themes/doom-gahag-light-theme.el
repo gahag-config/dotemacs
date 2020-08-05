@@ -198,6 +198,7 @@ determine the exact padding."
    (helm-ff-dotted-directory :foreground (doom-lighten fg 0.5))
    (helm-ff-directory :foreground blue)
    (helm-ff-executable :foreground fg :inherit 'italic)
+   (helm-ff-file-extension :foreground fg)
    (helm-buffer-modified :foreground violet)
    (helm-buffer-directory :foreground blue)
    (helm-buffer-file :foreground fg)
