@@ -364,7 +364,8 @@
          ("M->" . vterm--self-insert)
          ("C-c C-j" . vterm-copy-mode)
          :map vterm-copy-mode-map
-         ("C-c C-j" . vterm-copy-mode))
+         ("C-c C-j" . vterm-copy-mode)
+         ("<return>" . vterm-copy-mode))
   ;; :init
   ;; (advice-add 'multi-term :after #'term-line-mode) ; start in line mode
   :config
