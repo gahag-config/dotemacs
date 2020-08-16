@@ -169,7 +169,7 @@
 (use-package recentf
   :ensure nil
   :config
-  (setq-default recentf-save-file       "~/.emacs.d/.cache/recent-files"
+  (setq-default recentf-save-file       "~/.cache/emacs/recent-files"
                 recentf-max-saved-items 50
                 recentf-max-menu-items  15))
 
