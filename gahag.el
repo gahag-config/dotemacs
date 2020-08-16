@@ -10,7 +10,7 @@
 ;; desktop-home  - the parent directory to save desktops
 
 
-(require 'cl)
+(require 'cl-lib)
 
 ;; Relax gc during init 
 (setq gc-cons-threshold 50000000)
