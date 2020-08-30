@@ -53,6 +53,7 @@
         org-return-indent
         org-self-insert-command
         org-todo
+        org-transpose-element
         org-transpose-words
         org-yank
         python-indent-shift-left
