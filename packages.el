@@ -467,6 +467,7 @@
         org-highlight-latex-and-related '(latex script entities)
         org-latex-preview-ltxpng-directory "/tmp/ltximg/"
         org-startup-with-latex-preview t
+        org-format-latex-options (plist-put org-format-latex-options :scale 0.35)
 
         ;; Inline images:
         org-display-inline-images t
