@@ -108,7 +108,7 @@
   (defalias 'open 'browse-url-of-buffer)
 
   ;; Registers
-  (set-register ?e '(file . "~/.emacs.d/init.el"))
+  (set-register ?e '(file . "~/.config/emacs/init.el"))
   (set-register ?E `(file . ,dotemacs-file))
   (set-register ?p `(file . ,(concat dotemacs-dir "packages.el"))))
 
