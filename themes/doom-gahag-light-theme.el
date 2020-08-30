@@ -318,7 +318,7 @@ determine the exact padding."
    (org-level-6 :background bg :foreground bright-blue :weight 'medium)
    (org-level-7 :background bg :foreground violet :weight 'medium)
    (org-level-8 :background bg :foreground black :weight 'medium)
-   (org-block   :background (doom-darken bg 0.02))
+   (org-block   :background (doom-darken bg 0.02) :extend t)
    (org-block-begin-line :foreground fg-alt :weight 'bold)
    (org-table :foreground (doom-lighten fg 0.15))
    (org-code :foreground green)
