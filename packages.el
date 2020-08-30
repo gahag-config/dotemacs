@@ -585,6 +585,56 @@
     :hook (org-mode . org-special-block-extras-mode)))
 
 
+(package-feature 'feature-org-presentation
+  (use-package olivetti
+    :ensure t
+    :defer t
+    :diminish
+    :config
+    (setq olivetti-body-width 0.7
+          olivetti-minimum-body-width 80
+          olivetti-recall-visual-line-mode-entry-state t))
+
+  (use-package org-tree-slide
+    :ensure t
+    :after org
+    :bind (:map org-tree-slide-mode-map
+                ("<down>" . org-tree-slide-display-header-toggle)
+                ("<right>" . org-tree-slide-move-next-tree)
+                ("<left>" . org-tree-slide-move-previous-tree))
+    :config
+    (setq org-tree-slide-breadcrumbs nil
+          org-tree-slide-header nil
+          org-tree-slide-slide-in-effect nil
+          org-tree-slide-heading-emphasis nil
+          org-tree-slide-cursor-init t
+          org-tree-slide-modeline-display nil
+          org-tree-slide-skip-done nil
+          org-tree-slide-skip-comments t
+          org-tree-slide-fold-subtrees-skipped t
+          org-tree-slide-skip-outline-level 8
+          org-tree-slide-never-touch-face t
+          org-tree-slide-activate-message (propertize "Presentation mode ON" 'face 'success)
+          org-tree-slide-deactivate-message (propertize "Presentation mode OFF" 'face 'error)))
+
+  (use-package org-presentation
+    :ensure nil
+    :bind ("C-c p" . org-presentation-mode))
+    :init
+    (define-minor-mode org-presentation-mode
+      "Parameters for plain text presentations with `org-mode'."
+      :init-value nil
+      :global nil
+      (if org-presentation-mode
+          (progn
+            (unless (eq major-mode 'org-mode)
+              (user-error "Not in an Org buffer"))
+            (org-tree-slide-mode)
+            (olivetti-mode))
+        (org-tree-slide-mode -1)
+        (olivetti-mode -1))))
+
+
 ;; Docview -------------------------------------------------------------------------------
 (use-package doc-view
   :ensure nil
