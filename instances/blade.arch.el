@@ -14,7 +14,6 @@
                              feature-lsp-java
                              feature-pdftools
                              feature-python
-                             feature-javascript
                              feature-rust
                              feature-yaml
                              feature-docker
