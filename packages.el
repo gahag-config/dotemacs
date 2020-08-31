@@ -230,6 +230,7 @@
                                          "\\`magit-.*:"
                                          "\\`\\*tramp"
                                          "\\`\\*emacs\\*"
+                                         "\\`\\*Org Preview LaTeX Output\\*"
                                          "\\`\\*ein:jupyter-server\\*"
                                          "\\`\\*ein:log-all\\*"
                                          "\\`\\*ein:.*\\*\\[markdown\\]"
