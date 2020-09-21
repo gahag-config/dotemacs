@@ -98,6 +98,7 @@
         other-frame
         repeat
         revert-buffer
+        suspend-frame
         wdired-finish-edit
         write-file
         xref-find-definitions
