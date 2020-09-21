@@ -506,6 +506,15 @@
   (put 'org-latex-toc-command 'safe-local-variable (lambda (_) t))
   (put 'org-after-todo-state-change-hook 'safe-local-variable (lambda (_) t))
 
+  (defun org-custom-timestamp (trans back _comm)
+    "Remove <> around time-stamps."
+    (pcase back
+      (`html
+       (replace-regexp-in-string "&[lg]t;" "" trans))
+      (_ ;; `latex or nil
+       (replace-regexp-in-string "[<>]" "" trans))))
+  (add-to-list 'org-export-filter-timestamp-functions #'org-custom-timestamp)
+
   (defun org-prop (prop)
     (org-entry-get (point) prop t))
 
@@ -561,7 +570,9 @@
                '("letter" "\\documentclass{letter}"
                  ("\\section{%s}" . "\\section*{%s}")
                  ("\\subsection{%s}" . "\\subsection*{%s}")
-                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))))
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
+  (setq org-latex-active-timestamp-format "{%s}"
+        org-latex-inactive-timestamp-format "{%s}"))
 
 (package-feature 'feature-org-reveal
   (use-package org-re-reveal
