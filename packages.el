@@ -513,6 +513,7 @@
        (replace-regexp-in-string "&[lg]t;" "" trans))
       (_ ;; `latex or nil
        (replace-regexp-in-string "[<>]" "" trans))))
+  (require 'ox)
   (add-to-list 'org-export-filter-timestamp-functions #'org-custom-timestamp)
 
   (defun org-prop (prop)
