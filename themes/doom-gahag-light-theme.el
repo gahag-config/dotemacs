@@ -140,6 +140,7 @@ determine the exact padding."
    ((font-lock-string-face &override) :weight 'bold )
 
    (header-line :background bright-blue)
+   (match :foreground fg :weight 'bold)
    ((line-number &override) :foreground (doom-lighten 'base5 0.2))
    ((line-number-current-line &override) :foreground base7)
    ((paren-face-match &override) :foreground fg :background bg :weight 'ultra-bold)
