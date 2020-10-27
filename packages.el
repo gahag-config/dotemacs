@@ -649,6 +649,12 @@
         (olivetti-mode -1))))
 
 
+(package-feature 'feature-org-calc
+	(use-package literate-calc-mode
+		:ensure t
+		:hook (org-mode . literate-calc-minor-mode)))
+
+
 ;; Docview -------------------------------------------------------------------------------
 (use-package doc-view
   :ensure nil
