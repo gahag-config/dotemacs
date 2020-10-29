@@ -31,8 +31,8 @@
 ;; Emacs ---------------------------------------------------------------------------------
 (use-package emacs
   :ensure nil
-  :diminish ((eldoc-mode . "𝔼")
-             (abbrev-mode . "𝔸")
+  :diminish ((eldoc-mode . "Σ")
+             (abbrev-mode . "Λ")
              (visual-line-mode . "↲")
              (subword-mode . ""))
   :bind (("C-x C-r" . replace-string)
@@ -116,7 +116,7 @@
 ;; Whitespace ----------------------------------------------------------------------------
 (use-package whitespace
   :ensure nil
-  :diminish "𝕎"
+  :diminish "→"
   :hook (prog-mode . whitespace-mode)
   :init
   (defvar indent-size 2)
@@ -211,7 +211,7 @@
 ;; Helm ----------------------------------------------------------------------------------
 (use-package helm
   :ensure t
-  :diminish (helm-mode . "Ξ")
+  :diminish (helm-mode . "Γ")
   :config
   (helm-mode)
   (setq helm-buffer-skip-remote-checking t ; Prevent helm-mini from querying remote buffers
@@ -247,7 +247,7 @@
 (use-package company
   :ensure t
   :defer t
-  :diminish "ℂ"
+  :diminish "Ξ"
   :config
   (setq company-idle-delay 0.3)
   (global-company-mode))
@@ -272,7 +272,7 @@
 (use-package yasnippet
   :ensure t
   :defer t
-  :diminish (yas-minor-mode . "¥")
+  :diminish (yas-minor-mode . "Υ")
   :hook   (prog-mode . yas-global-mode))
 
 (use-package yasnippet-snippets
@@ -283,7 +283,7 @@
 (use-package flycheck
   :ensure t
   :defer t
-  :diminish "𝔽"
+  :diminish "Ϝ"
   :hook (prog-mode . flycheck-mode)
   :config
   ; For some reason, the following does not work with setq, only with setq-default.
@@ -296,7 +296,7 @@
   (use-package lsp-mode
     :ensure t
     :commands lsp
-    :diminish "𝕃"
+    :diminish "λ"
     :bind (:map lsp-mode-map
                 ("C-c r" . lsp-rename)
                 ("C-c h" . lsp-describe-thing-at-point)
@@ -652,7 +652,7 @@
 (package-feature 'feature-org-calc
 	(use-package literate-calc-mode
 		:ensure t
-		:hook (org-mode . literate-calc-minor-mode)))
+    :diminish (literate-calc-minor-mode . "π")))
 
 
 ;; Docview -------------------------------------------------------------------------------
@@ -909,7 +909,7 @@
 (use-package highlight-indent-guides
   :ensure t
   :defer t
-  :diminish "Ⅲ"
+  :diminish "¦"
   :hook (emacs-lisp-mode . highlight-indent-guides-mode)
   :config
   (setq highlight-indent-guides-method 'character
