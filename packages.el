@@ -303,7 +303,8 @@
                 ("C-c a" . lsp-execute-code-action))
     :config
     (setq-default lsp-prefer-flymake nil
-                  lsp-file-watch-threshold 10000))
+                  lsp-file-watch-threshold 10000
+                  lsp-modeline-code-action-fallback-icon "λ"))
 
   (use-package lsp-ui
     :ensure t
