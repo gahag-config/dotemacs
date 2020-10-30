@@ -254,7 +254,7 @@ determine the exact padding."
    (lsp-face-highlight-textual :weight 'bold)
    (lsp-face-highlight-read :weight 'bold)
    (lsp-face-highlight-write :weight 'bold)
-   (lsp-ui-sideline-code-action :foreground orange)
+   (lsp-ui-sideline-code-action :foreground (doom-darken grey 0.3))
    (lsp-ui-sideline-symbol :foreground base7)
    (lsp-ui-sideline-current-symbol :foreground fg :weight 'medium)
    (lsp-ui-sideline-symbol-info :foreground base7)
