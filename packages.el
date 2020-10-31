@@ -220,6 +220,7 @@
                                          "\\`\\*Echo Area"
                                          "\\`\\*Minibuf"
                                          "\\`\\*Quail Completions\\*"
+                                         "\\`\\*Calculator\\*"
                                          "\\`\\*lsp-log\\*"
                                          "\\`\\*\\(\\w\\|-\\)+ls\\(::stderr\\)?\\*\\'"
                                          "\\`\\*rust-analyzer\\(::stderr\\)?\\*\\'"
