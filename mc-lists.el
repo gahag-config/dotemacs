@@ -81,6 +81,7 @@
         ace-jump-mode
         delete-rectangle
         dired-toggle-read-only
+        goto-line
         handle-switch-frame
         helm-M-x
         helm-confirm-and-exit-minibuffer

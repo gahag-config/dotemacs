@@ -40,6 +40,9 @@
          ("M-SPC" . cycle-spacing)
          ("C-."   . pop-tag-mark)
 
+         ("M-[" . backward-paragraph)
+         ("M-]" . forward-paragraph)
+
          ("C-x k" . kill-this-buffer)
 
          ("M-o" . other-frame)
@@ -442,7 +445,9 @@
               ("<M-right>" . nil)
               ;; Expand region:
               ("C-," . nil)
-              ("C-c a" . org-agenda))
+              ("C-c a" . org-agenda)
+              ("C-j" . org-insert-heading-respect-content)
+              ("C-m" . org-return-indent))
   :init
   (defvar org-babel-languages '((emacs-lisp . t)
                                 (dot . t)))
