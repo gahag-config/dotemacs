@@ -308,7 +308,8 @@
     :config
     (setq-default lsp-prefer-flymake nil
                   lsp-file-watch-threshold 10000
-                  lsp-modeline-code-action-fallback-icon "λ"))
+                  lsp-modeline-code-action-fallback-icon "λ"
+                  lsp-headerline-breadcrumb-enable nil))
 
   (use-package lsp-ui
     :ensure t
@@ -337,8 +338,8 @@
   :ensure t
   :defer t
   :bind   ("C-x m" . magit-status)
-  :bind   (:map magit-file-mode-map
-                ("C-x g" . nil))
+  ;; :bind   (:map magit-file-mode-map
+  ;;               ("C-x g" . nil))
   :config (setq-default magit-diff-refine-hunk 'all)
           (setq magit-log-margin (quote (t
                                          "%Y-%m-%d %H:%M "
