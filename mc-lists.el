@@ -49,6 +49,7 @@
         org-end-of-line
         org-force-self-insert
         org-kill-line
+        org-open-line
         org-return
         org-return-indent
         org-self-insert-command

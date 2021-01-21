@@ -35,7 +35,8 @@
              (abbrev-mode . "Λ")
              (visual-line-mode . "↲")
              (subword-mode . ""))
-  :bind (("C-x C-r" . replace-string)
+  :bind (("C-M-u" . undo)
+         ("C-x C-r" . replace-string)
          ("C-;"   . comment-line)
          ("M-SPC" . cycle-spacing)
          ("C-."   . pop-tag-mark)
@@ -47,7 +48,10 @@
 
          ("M-o" . other-frame)
 
-         ("M-#" . quick-calc)
+         ("C-M-1" . shell-command)
+         ("C-M-3" . quick-calc)
+         ("C-M-4" . ispell-word)
+         ("C-M-5" . query-replace)
 
          ("C-q" . pop-to-mark-command)
 
