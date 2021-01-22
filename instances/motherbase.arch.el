@@ -6,7 +6,12 @@
 (defconst dotemacs-dir  "/gahag/config/emacs/dotemacs/")
 (defconst dotemacs-file (concat dotemacs-dir "gahag.el"))
 (defconst themes-dir    (concat dotemacs-dir "themes/"))
-(setq-default org-agenda-files '("/gahag/org"))
+(setq-default org-agenda-files
+              (append
+               (file-expand-wildcards "/gahag/org/*.org")
+               (file-expand-wildcards "/gahag/org/work/*.org")
+               (file-expand-wildcards "/gahag/org/gastro/*.org")
+               (file-expand-wildcards "/gahag/org/cinema/*.org")))
 
 ;; features:
 (defconst package-features '(feature-lsp
