@@ -185,10 +185,10 @@
 (use-package windmove
   :ensure nil
   :defer nil
-  :bind (("s-w" . windmove-up)
-         ("s-d" . windmove-right)
-         ("s-s" . windmove-down)
-         ("s-a" . windmove-left))
+  :bind (("s-e" . windmove-up)
+         ("s-f" . windmove-right)
+         ("s-d" . windmove-down)
+         ("s-s" . windmove-left))
   :config
   (windmove-default-keybindings 'meta))
 
