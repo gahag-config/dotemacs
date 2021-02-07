@@ -443,13 +443,9 @@
          (org-babel-after-execute . (lambda () (when org-inline-image-overlays
                                                 (org-redisplay-inline-images)))))
   :bind (:map org-mode-map
-              ;; These conflict with windmove:
-              ("<M-up>"    . nil)
-              ("<M-down>"  . nil)
-              ("<M-left>"  . nil)
-              ("<M-right>" . nil)
-              ;; Expand region:
-              ("C-," . nil)
+              ("C-," . nil) ;; Expand region.
+              ("C-<" . org-promote-subtree)
+              ("C->" . org-demote-subtree)
               ("C-c a" . org-agenda)
               ("C-j" . org-insert-heading-respect-content)
               ("C-m" . org-return-indent))
@@ -884,13 +880,7 @@
 ;; Markdown ------------------------------------------------------------------------------
 (use-package markdown-mode
   :ensure t
-  :defer t
-  :bind (:map markdown-mode-map
-              ;; These conflict with windmove:
-              ("<M-up>"    . nil)
-              ("<M-down>"  . nil)
-              ("<M-left>"  . nil)
-              ("<M-right>" . nil)))
+  :defer t)
 
 
 ;; Json ----------------------------------------------------------------------------------
