@@ -38,7 +38,7 @@
   :bind (("C-M-u" . undo)
          ("C-x C-r" . replace-string)
          ("C-;"   . comment-line)
-         ("M-SPC" . cycle-spacing)
+         ("s-SPC" . cycle-spacing)
          ("C-."   . pop-tag-mark)
 
          ("M-[" . backward-paragraph)
