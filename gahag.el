@@ -18,7 +18,6 @@
 
 (cl-flet ((file-name-handler-alist nil) ; Dont run regexes on filenames.
           (dotemacs (name) (concat dotemacs-dir name)))
-  (load (dotemacs "defuns.el"))
   (load (dotemacs "desktop.el"))
   (load (dotemacs "packages.el"))
   (load (dotemacs "theming.el")))

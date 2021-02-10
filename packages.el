@@ -82,7 +82,21 @@
   (put 'before-save-hook 'safe-local-variable (lambda (_) t))
   (put 'after-save-hook  'safe-local-variable (lambda (_) t))
 
-  ;; Modes
+  ;; Temp files
+  (defun find-temp-file (filename)
+    "Find new temporary file"
+    (interactive "sFile name: ") ;; String
+    (find-file (make-temp-file (concat filename "-") nil ".txt")))
+
+  ;; Shell
+  (defun shell-command-on-buffer ()
+    (interactive)
+    (shell-command-on-region (point-min)
+                             (point-max)
+                             (read-shell-command "Shell command on buffer: ")
+                             (current-buffer)))
+
+ ;; Modes
   (when window-system
     (tool-bar-mode -1)
     (scroll-bar-mode -1))
