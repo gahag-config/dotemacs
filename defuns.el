@@ -1,7 +1,7 @@
 (defun find-temp-file (filename)
   "Find new temporary file"
   (interactive "sFile name: ") ;; String
-  (find-file (make-temp-file filename)))
+  (find-file (make-temp-file (concat filename "-") nil ".txt")))
 
 
 (defun shell-command-on-buffer ()
