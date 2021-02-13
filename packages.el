@@ -48,6 +48,9 @@
 
          ("M-o" . other-frame)
 
+         ("C-x -" . text-scale-adjust)
+         ("C-x +" . text-scale-adjust)
+
          ("C-M-1" . shell-command)
          ("C-M-3" . quick-calc)
          ("C-M-4" . ispell-word)
