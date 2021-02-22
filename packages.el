@@ -38,7 +38,7 @@
   :bind (("C-M-u" . undo)
          ("C-x C-r" . replace-string)
          ("C-;"   . comment-line)
-         ("s-SPC" . cycle-spacing)
+         ("C-M-s-SPC" . cycle-spacing)
          ("C-."   . pop-tag-mark)
 
          ("M-[" . backward-paragraph)
@@ -202,10 +202,10 @@
 (use-package windmove
   :ensure nil
   :defer nil
-  :bind (("s-e" . windmove-up)
-         ("s-f" . windmove-right)
-         ("s-d" . windmove-down)
-         ("s-s" . windmove-left))
+  :bind (("C-M-s-e" . windmove-up)
+         ("C-M-s-f" . windmove-right)
+         ("C-M-s-d" . windmove-down)
+         ("C-M-s-s" . windmove-left))
   :config
   (windmove-default-keybindings 'meta))
 
