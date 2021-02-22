@@ -464,6 +464,7 @@
               ("C-<" . org-promote-subtree)
               ("C->" . org-demote-subtree)
               ("C-c a" . org-agenda)
+              ("C-c b" . org-insert-structure-template)
               ("C-j" . org-insert-heading-respect-content)
               ("C-m" . org-return-indent))
   :init
@@ -506,8 +507,6 @@
         org-latex-minted-options '(("fontsize" "\\small") ("tabsize" "4"))
         org-latex-pdf-process
          '("latexmk -pdflatex='pdflatex -shell-escape -interaction nonstopmode -output-directory %o' -pdf -f  %f"))
-
-  (require 'org-tempo)  ;; `<s` and like snippets
 
   (setq org-agenda-custom-commands
         '(("1" "Week schedule" agenda "display scheduled and deadlines for the current week"
