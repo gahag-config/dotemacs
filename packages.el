@@ -41,8 +41,8 @@
          ("C-M-s-SPC" . cycle-spacing)
          ("C-."   . pop-tag-mark)
 
-         ("M-[" . backward-paragraph)
-         ("M-]" . forward-paragraph)
+         ("C-{" . backward-paragraph)
+         ("C-}" . forward-paragraph)
 
          ("C-x k" . kill-this-buffer)
 
