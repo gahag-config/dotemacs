@@ -472,7 +472,8 @@
                                 (dot . t)))
 
   (defun org-babel-add-language (lang)
-      (add-to-list 'org-babel-languages `(,lang . t)))
+    (add-to-list 'org-babel-languages `(,lang . t))
+    (org-babel-do-load-languages 'org-babel-load-languages org-babel-languages))
   :config
   ;; (mapc (lambda (arg) (setcdr arg (list (downcase (cadr arg))))) ; lowercase structure templates
   ;;   org-structure-template-alist)
@@ -522,8 +523,6 @@
             (org-agenda-entry-types '(:deadline :scheduled))
             (org-deadline-warning-days 0)))
           ))
-
-  (org-babel-do-load-languages 'org-babel-load-languages org-babel-languages)
 
   (put 'org-html-htmlize-output-type 'safe-local-variable (lambda (_) t))
   (put 'org-table-convert-region-max-lines 'safe-local-variable (lambda (_) t))
