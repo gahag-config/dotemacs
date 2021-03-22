@@ -595,6 +595,23 @@
   (setq org-latex-active-timestamp-format "{%s}"
         org-latex-inactive-timestamp-format "{%s}"))
 
+(package-feature 'feature-org-paper
+  (use-package org-ref
+    :ensure t
+    :after ox-latex
+    :config
+    (add-to-list 'org-latex-classes
+                 '("abntex2"
+                   "\\documentclass{abntex2}
+                      [NO-DEFAULT-PACKAGES]
+                      [EXTRA]"
+                   ("\\chapter{%s}" . "\\chapter*{%s}")
+                   ("\\section{%s}" . "\\section*{%s}")
+                   ("\\subsection{%s}" . "\\subsection*{%s}")
+                   ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                   ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
+                   ("\\maketitle" . "\\imprimircapa")))))
+
 (package-feature 'feature-org-reveal
   (use-package org-re-reveal
     :ensure t
