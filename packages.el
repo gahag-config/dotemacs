@@ -340,15 +340,7 @@
     (setq lsp-ui-sideline-ignore-duplicate t
           lsp-ui-peek-always-show t
           lsp-ui-doc-enable nil)
-    (lsp-ui-sideline-toggle-symbols-info))
-
-  (use-package company-lsp
-    :ensure t
-    :defer t
-    :commands company-lsp
-    :config
-    (setq company-lsp-async t
-          company-lsp-enable-snippet t)))
+    (lsp-ui-sideline-toggle-symbols-info)))
 
 
 ;; Magit ---------------------------------------------------------------------------------
