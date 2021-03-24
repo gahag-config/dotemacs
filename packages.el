@@ -374,7 +374,7 @@
 ;; Term ----------------------------------------------------------------------------------
 (use-package vterm
   :ensure t
-  :bind (("C-c t" . vterm)
+  :bind (("C-c t" . (lambda () (interactive) (vterm 't)))
          :map vterm-mode-map
          ("C-y" . vterm-send-C-y)
          ("M-<" . vterm--self-insert)
