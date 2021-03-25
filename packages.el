@@ -114,6 +114,9 @@
   (global-subword-mode)
   ;;(semantic-mode)
 
+  ;; Ispell and flyspell
+  (setq ispell-silently-savep t)
+
   ;; Calc
   (setq-default calc-multiplication-has-precedence nil)
 
