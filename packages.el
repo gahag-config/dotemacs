@@ -646,10 +646,11 @@
   (use-package org-tree-slide
     :ensure t
     :after org
+    :diminish (org-tree-slide-mode . "⮹")
     :bind (:map org-tree-slide-mode-map
-                ("<down>" . org-tree-slide-display-header-toggle)
-                ("<right>" . org-tree-slide-move-next-tree)
-                ("<left>" . org-tree-slide-move-previous-tree))
+                ("<tab>" . org-tree-slide-display-header-toggle)
+                ("C-c C-n" . org-tree-slide-move-next-tree)
+                ("C-c C-p" . org-tree-slide-move-previous-tree))
     :config
     (setq org-tree-slide-breadcrumbs nil
           org-tree-slide-header nil
@@ -660,7 +661,7 @@
           org-tree-slide-skip-done nil
           org-tree-slide-skip-comments t
           org-tree-slide-fold-subtrees-skipped t
-          org-tree-slide-skip-outline-level 8
+          org-tree-slide-skip-outline-level 0
           org-tree-slide-never-touch-face t
           org-tree-slide-activate-message (propertize "Presentation mode ON" 'face 'success)
           org-tree-slide-deactivate-message (propertize "Presentation mode OFF" 'face 'error)))
@@ -863,6 +864,7 @@
     :ensure t
     :defer t
     :hook (lua-mode . lsp)
+    :init (org-babel-add-language 'lua)
     :config
     (setq lua-indent-level indent-size)))
 
