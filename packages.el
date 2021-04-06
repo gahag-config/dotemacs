@@ -483,6 +483,7 @@
         org-src-tab-acts-natively t
         org-src-fontify-natively t
         org-src-window-setup 'current-window
+        org-startup-folded t
 
         org-highlight-latex-and-related '(latex script entities)
         org-latex-preview-ltxpng-directory "/tmp/ltximg/"
@@ -668,7 +669,7 @@
 
   (use-package org-presentation
     :ensure nil
-    :bind ("C-c p" . org-presentation-mode))
+    :bind ("C-c p" . org-presentation-mode)
     :init
     (define-minor-mode org-presentation-mode
       "Parameters for plain text presentations with `org-mode'."
@@ -681,7 +682,7 @@
             (org-tree-slide-mode)
             (olivetti-mode))
         (org-tree-slide-mode -1)
-        (olivetti-mode -1))))
+        (olivetti-mode -1)))))
 
 
 (package-feature 'feature-org-calc
