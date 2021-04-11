@@ -8,6 +8,8 @@
         backward-sexp
         beginning-of-buffer
         beginning-of-visual-line
+        bison-electric-open-brace
+        bison-electric-semicolon
         c-electric-brace
         c-electric-colon
         c-electric-delete-forward
@@ -81,6 +83,8 @@
         2C-two-columns
         ace-jump-mode
         delete-rectangle
+        dired-next-line
+        dired-subtree-insert
         dired-toggle-read-only
         goto-line
         handle-switch-frame
