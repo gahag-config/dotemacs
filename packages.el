@@ -59,6 +59,9 @@
   :bind (:map occur-mode-map
               ("n" . occur-next)
               ("p" . occur-prev))
+  :bind (:map flyspell-mode-map
+              ("C-," . nil) ;; Expand region.
+              ("C-c s" . flyspell-goto-next-error))
   :config
   (setq-default make-backup-files nil
                 truncate-lines t ;; disable word-wrap.
