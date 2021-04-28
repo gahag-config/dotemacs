@@ -20,6 +20,7 @@
                              feature-ledger
                              feature-org-paper
                              feature-org-reveal
+                             feature-org-presentation
                              feature-org-calc
                              feature-docker
                              feature-javascript

@@ -25,6 +25,7 @@
         cycle-spacing
         dabbrev-expand
         delete-horizontal-space
+        dired-mark
         dired-previous-line
         down-list
         downcase-region
