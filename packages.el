@@ -59,9 +59,6 @@
   :bind (:map occur-mode-map
               ("n" . occur-next)
               ("p" . occur-prev))
-  :bind (:map flyspell-mode-map
-              ("C-," . nil) ;; Expand region.
-              ("C-c s" . flyspell-goto-next-error))
   :config
   (setq-default make-backup-files nil
                 truncate-lines t ;; disable word-wrap.
@@ -316,6 +313,13 @@
   ; For some reason, the following does not work with setq, only with setq-default.
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
   (setq-default flycheck-checker-error-threshold 1000))
+
+
+;; Flyspell ------------------------------------------------------------------------------
+(use-package flyspell
+  :bind (:map flyspell-mode-map
+              ("C-," . nil) ;; Expand region.
+              ("C-c s" . flyspell-goto-next-error)))
 
 
 ;; Lsp -----------------------------------------------------------------------------------
