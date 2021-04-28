@@ -248,7 +248,6 @@
                                          "\\`\\*lsp-log\\*"
                                          "\\`\\*\\(\\w\\|-\\)+ls\\(::stderr\\)?\\*\\'"
                                          "\\`\\*rust-analyzer\\(::stderr\\)?\\*\\'"
-                                         "\\`\\*cquery\\(::stderr\\)?\\*\\'"
                                          ;; "\\`\\*EGLOT"
                                          "\\`\\*Flymake"
                                          "\\`\\*Flycheck"
@@ -718,6 +717,7 @@
   :ensure nil
   :mode ("\\.impl\\'" . c++-mode)
   :hook (c-mode . c-toggle-comment-style)
+  :init (org-babel-add-language 'C)
   :config
   (setq-default c-basic-offset indent-size
                 c-default-style "stroustrup")
