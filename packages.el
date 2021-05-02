@@ -817,6 +817,7 @@
 
 
 ;; Jupyter -------------------------------------------------------------------------------
+;; There is an alternative to ein: https://github.com/nnicandro/emacs-jupyter
 (package-feature 'feature-ein
  (use-package ein
    :ensure t
