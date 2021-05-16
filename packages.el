@@ -482,6 +482,7 @@
         org-catch-invisible-edits 'show-and-error
         org-list-allow-alphabetical t
         org-log-done 'time
+        org-log-repeat nil
         org-tags-column 0
         org-agenda-tags-column 0
         org-export-with-toc nil
