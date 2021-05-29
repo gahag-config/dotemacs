@@ -3,7 +3,6 @@
 (require 'package)
 
 (setq-default package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-                                 ("org" . "https://orgmode.org/elpa/")
                                  ("melpa" . "https://melpa.org/packages/")))
 
 (package-initialize)
@@ -453,7 +452,7 @@
 ;; Org -----------------------------------------------------------------------------------
 (use-package org
   :ensure t
-  :pin org
+  :pin gnu
   :hook ((org-mode . indent-spaces-mode)
          (org-babel-after-execute . (lambda () (when org-inline-image-overlays
                                                 (org-redisplay-inline-images)))))
