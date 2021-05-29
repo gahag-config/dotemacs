@@ -157,7 +157,7 @@ determine the exact padding."
 
    ;; isearch
    (isearch :background blue :foreground silver)
-   ((lazy-highlight &override) :background base4)
+   (lazy-highlight :background base4)
 
 
    ;; powerline
