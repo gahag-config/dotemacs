@@ -64,7 +64,9 @@
                 require-final-newline t
 
                 fill-column 90
-                comment-column 0)
+                comment-column 0
+
+                ring-bell-function 'ignore)
 
   ;; Fix prompt
   (fset 'yes-or-no-p 'y-or-n-p)
