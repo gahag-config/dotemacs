@@ -62,6 +62,8 @@
         org-yank
         python-indent-shift-left
         rectangle-mark-mode
+        rjsx-delete-creates-full-tag
+        rjsx-electric-lt
         sgml-maybe-name-self
         sgml-slash
         sh-assignment

@@ -66,7 +66,9 @@
                 fill-column 90
                 comment-column 0
 
-                ring-bell-function 'ignore)
+                ring-bell-function 'ignore
+
+                frame-resize-pixelwise t)
 
   ;; Fix prompt
   (fset 'yes-or-no-p 'y-or-n-p)
@@ -248,6 +250,7 @@
                                          "\\`\\*Calculator\\*"
                                          "\\`\\*lsp-log\\*"
                                          "\\`\\*\\(\\w\\|-\\)+ls\\(::stderr\\)?\\*\\'"
+                                         "\\`.*server-boot-ls.*"
                                          "\\`\\*rust-analyzer\\(::stderr\\)?\\*\\'"
                                          ;; "\\`\\*EGLOT"
                                          "\\`\\*Flymake"
@@ -770,6 +773,30 @@
                       :server-id 'lsp-tramp-tsls))))
 
 
+(package-feature 'feature-jsx
+  (use-package rjsx-mode
+    :ensure t
+    :defer  t
+    :mode "\\.jsx\\'"
+    :hook ((rjsx-mode . indent-spaces-mode)
+           (rjsx-mode . highlight-indent-guides-mode)
+           ;; (rjsx-mode . lsp)
+           )
+    :config (setq js-indent-level indent-size))
+
+  ;; (use-package lsp-tramp-tsls
+  ;;   :ensure nil
+  ;;   :after lsp-mode
+  ;;   :init (provide 'lsp-tramp-tsls)
+  ;;   :config
+  ;;   (lsp-register-client
+  ;;    (make-lsp-client :new-connection (lsp-tramp-connection '("typescript-language-server" "--stdio"))
+  ;;                     :major-modes '(js-mode js2-mode typescript-mode)
+  ;;                     :remote? t
+  ;;                     :server-id 'lsp-tramp-tsls)))
+  )
+
+
 ;; Java ----------------------------------------------------------------------------------
 (package-feature 'feature-lsp-java
   (use-package lsp-java
@@ -777,8 +804,8 @@
     :defer t
     :hook (java-mode . (lambda () (require 'lsp-java) (lsp)))
     :config
-    (setq lsp-java-server-install-dir "/usr/share/java/jdtls/"
-          lsp-java-workspace-dir (concat (getenv "XDG_CACHE_HOME") "/eclipse-workspace/"))
+    (setq lsp-java-server-install-dir "~/tw/code/java/jdtls/eclipse.jdt.ls-1.2.0/eclipse.jdt.ls-1.2.0/org.eclipse.jdt.ls.product/target/repository/"
+          lsp-java-workspace-dir (expand-file-name "~/.cache/eclipse-workspace/"))
     ;; For android projects, add these entries to the .classpath file in jdt.ls-java-project:
     ;; <classpathentry kind="src" path="app-dir-with-classpaths">
     ;; <classpathentry kind="lib"
@@ -1059,6 +1086,14 @@
     :init
     (setq langtool-java-classpath
           "/usr/share/languagetool:/usr/share/java/languagetool/*")))
+
+
+;; CommandLog ----------------------------------------------------------------------------
+(package-feature 'feature-command-log
+  (use-package command-log-mode
+    :ensure t
+    :defer t
+    :diminish "⌘"))
 
 
 ;; ---------------------------------------------------------------------------------------
