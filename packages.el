@@ -277,7 +277,8 @@
   :defer t
   :diminish "Ξ"
   :config
-  (setq company-idle-delay 0.3)
+  (setq company-idle-delay 0.3
+        company-minimum-prefix-length 0)
   (global-company-mode))
 
 
@@ -805,7 +806,8 @@
     :hook (java-mode . (lambda () (require 'lsp-java) (lsp)))
     :config
     (setq lsp-java-server-install-dir "~/tw/code/java/jdtls/eclipse.jdt.ls-1.2.0/eclipse.jdt.ls-1.2.0/org.eclipse.jdt.ls.product/target/repository/"
-          lsp-java-workspace-dir (expand-file-name "~/.cache/eclipse-workspace/"))
+          lsp-java-workspace-dir (expand-file-name "~/.cache/eclipse-workspace/")
+          lsp-java-code-generation-hash-code-equals-use-java7objects t)
     ;; For android projects, add these entries to the .classpath file in jdt.ls-java-project:
     ;; <classpathentry kind="src" path="app-dir-with-classpaths">
     ;; <classpathentry kind="lib"
