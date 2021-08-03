@@ -276,9 +276,9 @@
   :ensure t
   :defer t
   :diminish "Ξ"
+  :bind ("C-c SPC" . company-complete)
   :config
-  (setq company-idle-delay 0.3
-        company-minimum-prefix-length 0)
+  (setq company-idle-delay 0.3)
   (global-company-mode))
 
 
