@@ -24,8 +24,13 @@
 
 (load dotemacs-file)
 
+(load-X-theme 'doom-gahag-light)
+(powerline-gahag-light-theme)
+
+
 ;; Mac specifics
-(setq dired-listing-switches "-alhGv")
+(setq-default dired-listing-switches "-alhGv"
+              magit-git-executable "/usr/bin/git")
 (add-to-list 'exec-path "/usr/local/bin/")
 
 (use-package exec-path-from-shell
@@ -41,9 +46,6 @@
                             (highlight-indent-guides-mode)))
 
 
-(load-X-theme 'doom-gahag-light)
-(powerline-gahag-light-theme)
-
 ;; ---------------------------------------------------------------------------------------
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -51,7 +53,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(command-log-mode lsp-java rjsx-mode exec-path-from-shell ob-restclient restclient ledger-mode transpose-frame multiple-cursors ace-jump-mode multi-line expand-region highlight-indent-guides docker dockerfile-mode json-mode web-mode rust-mode literate-calc-mode org-tree-slide olivetti org-re-reveal org-ref calfw-org calfw org-bullets dired-subtree dired-narrow dired-quick-sort dired-ranger vterm magit lsp-ui lsp-mode flycheck yasnippet-snippets yasnippet rg company helm doom-themes diminish powerline use-package)))
+   '(rainbow-mode yaml-mode command-log-mode lsp-java rjsx-mode exec-path-from-shell ob-restclient restclient ledger-mode transpose-frame multiple-cursors ace-jump-mode multi-line expand-region highlight-indent-guides docker dockerfile-mode json-mode web-mode rust-mode literate-calc-mode org-tree-slide olivetti org-re-reveal org-ref calfw-org calfw org-bullets dired-subtree dired-narrow dired-quick-sort dired-ranger vterm magit lsp-ui lsp-mode flycheck yasnippet-snippets yasnippet rg company helm doom-themes diminish powerline use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
