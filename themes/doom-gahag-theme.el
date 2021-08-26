@@ -232,6 +232,7 @@
    (org-level-8 :background bg :foreground magenta :weight 'medium)
    (org-block   :background (doom-darken bg 0.02) :extend t)
    (org-tag     :background bg :foreground bright)
+   (org-link :foreground yellow :underline t :weight 'regular)
   )
   ;; --- extra variables ---------------------
   ;; ()
