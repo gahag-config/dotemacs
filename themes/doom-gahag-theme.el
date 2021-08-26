@@ -166,12 +166,12 @@
    (magit-diff-file-heading-highlight :foreground yellow :background bg :weight 'bold)
    (magit-diff-hunk-heading :foreground fg :background base4)
    (magit-diff-hunk-heading-highlight :foreground fg :background base4 :weight 'bold)
-   (magit-diff-added :foreground fg :background (doom-blend green bg 0.5))
-   (magit-diff-added-highlight :foreground fg :background (doom-blend green bg 0.5))
-   (magit-diff-removed :foreground fg :background (doom-blend red bg 0.5))
-   (magit-diff-removed-highlight :foreground fg :background (doom-blend red bg 0.5))
-   (diff-refine-added :foreground fg :background (doom-blend green bg 0.5) :weight 'ultra-bold)
-   (diff-refine-removed :foreground fg :background (doom-blend red bg 0.5) :weight 'ultra-bold)
+   (magit-diff-added :foreground (doom-darken base8 0.1) :background (doom-blend green bg 0.5))
+   (magit-diff-added-highlight :foreground (doom-darken base8 0.1) :background (doom-blend green bg 0.5))
+   (magit-diff-removed :foreground (doom-darken base8 0.1) :background (doom-blend red bg 0.5))
+   (magit-diff-removed-highlight :foreground (doom-darken base8 0.1) :background (doom-blend red bg 0.5))
+   (diff-refine-added :foreground white :background (doom-blend green bg 0.5))
+   (diff-refine-removed :foreground white :background (doom-blend red bg 0.5))
    ;; (git-commit-overlong-summary :background bg :foreground bright-red)
 
    ;; popup
@@ -222,8 +222,15 @@
    (markdown-code-face :background (doom-lighten base3 0.05))
 
    ;; org-mode
-   (org-level-1 :background bg :foreground blue :weight 'ultra-bold)
-   (org-level-2 :background bg :foreground teal :weight 'extra-bold)
+   (org-level-1 :background bg :foreground blue :weight 'medium)
+   (org-level-2 :background bg :foreground teal :weight 'medium)
+   (org-level-3 :background bg :foreground violet :weight 'medium)
+   (org-level-4 :background bg :foreground cyan :weight 'medium)
+   (org-level-5 :background bg :foreground green :weight 'medium)
+   (org-level-6 :background bg :foreground yellow2 :weight 'medium)
+   (org-level-7 :background bg :foreground blue2 :weight 'medium)
+   (org-level-8 :background bg :foreground magenta :weight 'medium)
+   (org-block   :background (doom-darken bg 0.02) :extend t)
    (org-tag     :background bg :foreground bright)
   )
   ;; --- extra variables ---------------------
