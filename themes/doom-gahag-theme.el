@@ -28,7 +28,7 @@
 ;;
 (def-doom-theme doom-gahag
   "gahag theme!"
-  
+
   ;; name        default   256       16
   ((bg         '("#2b2a27" nil       nil            ))
    (bg-alt     '("#282725" nil       nil            )) ;; arbitrarily picked this colour to change hline
@@ -61,6 +61,9 @@
    (dark-cyan  '("#5699AF" "#5699AF" "cyan"         ))
    (yellow2    '("#ffd73a" "#ECBE7B" "yellow"       ))
    (coral-popup  '("#a60033" "#f6bfbc" "coral-popup"         ))
+   (mdline-bg base8)
+   (mdline-inactive-bg (doom-lighten bg 0.1))
+
 
    ;; face categories -- required for all themes
    (highlight      yellow)
@@ -93,27 +96,20 @@
     (when doom-gahag-padded-modeline
       (if (integerp doom-gahag-padded-modeline) doom-gahag-padded-modeline 4)))
 
-   (modeline-fg     nil)
-   (modeline-fg-alt (doom-blend violet base4 (if -modeline-bright 0.5 0.2)))
-
-   (modeline-bg
-    (if -modeline-bright
-        (doom-darken bg 0.475)
-      `(,(doom-darken (car bg) 0.15) ,@(cdr base0))))
-   (modeline-bg-l
-    (if -modeline-bright
-        (doom-darken blue 0.45)
-      `(,(doom-darken (car bg-alt) 0.1) ,@(cdr base0))))
-   (modeline-bg-inactive   (doom-darken bg 0.1))
-   (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
+   (modeline-fg     bg)
+   (modeline-fg-alt fg)
+   (modeline-bg mdline-bg)
+   (modeline-bg-l mdline-bg)
+   (modeline-bg-inactive mdline-inactive-bg)
+   (modeline-bg-inactive-l mdline-inactive-bg))
 
 
   ;; --- extra faces ------------------------
   ((cursor :background white)
    (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
-   
+
    ((font-lock-keyword-face &override) :weight 'semi-bold )
-   
+
    (font-lock-comment-face
     :foreground comments
     :background (if doom-gahag-comment-bg (doom-lighten bg 0.05)))
@@ -126,6 +122,10 @@
 
    ;; tooltip
    (tooltip              :background bg-alt :foreground fg)
+
+   ;; isearch
+   (isearch :background yellow2 :foreground bg)
+   (lazy-highlight :background yellow :foreground bg)
 
    ;; company
    (company-tooltip            :inherit 'tooltip)
@@ -141,6 +141,39 @@
    (company-preview-search     :inherit 'company-tooltip-search)
    (company-template-field     :inherit 'match)
 
+   ;; lsp
+   (lsp-face-highlight-textual :weight 'bold)
+   (lsp-face-highlight-read :weight 'bold)
+   (lsp-face-highlight-write :weight 'bold)
+   (lsp-ui-sideline-code-action :foreground base7)
+   (lsp-modeline-code-actions-face :foreground fg)
+   (lsp-ui-sideline-symbol :foreground base7)
+   (lsp-ui-sideline-global :foreground base7)
+   (lsp-ui-sideline-current-symbol :foreground base7 :weight 'medium)
+   (lsp-ui-sideline-symbol-info :foreground base7)
+   ;; (lsp-ui-peek-header :background grey)
+   ;; (lsp-ui-peek-selection :foreground black :background silver :weight 'medium)
+   (lsp-lsp-flycheck-warning-unnecessary-face :background bg)
+
+   ;; magit
+   ;; (magit-filename :foreground fg)
+   ;; (magit-branch-local :foreground bright-blue)
+   ;; (magit-mode-line-process :foreground fg :inherit 'italic)
+   ;; (magit-blame-heading :foreground fg :background base3 :weight 'bold)
+   ;; (magit-blame-date :foreground red :weight 'medium)
+   ;; (magit-diff-file-heading-selection :background selection :foreground silver)
+   (magit-diff-file-heading :foreground yellow2 :background bg :weight 'bold)
+   (magit-diff-file-heading-highlight :foreground yellow :background bg :weight 'bold)
+   (magit-diff-hunk-heading :foreground fg :background base4)
+   (magit-diff-hunk-heading-highlight :foreground fg :background base4 :weight 'bold)
+   (magit-diff-added :foreground fg :background (doom-blend green bg 0.5))
+   (magit-diff-added-highlight :foreground fg :background (doom-blend green bg 0.5))
+   (magit-diff-removed :foreground fg :background (doom-blend red bg 0.5))
+   (magit-diff-removed-highlight :foreground fg :background (doom-blend red bg 0.5))
+   (diff-refine-added :foreground fg :background (doom-blend green bg 0.5) :weight 'ultra-bold)
+   (diff-refine-removed :foreground fg :background (doom-blend red bg 0.5) :weight 'ultra-bold)
+   ;; (git-commit-overlong-summary :background bg :foreground bright-red)
+
    ;; popup
    (popup-face :inherit 'tooltip)
    (popup-selection-face :inherit 'tooltip)
@@ -149,6 +182,13 @@
    (popup          :inherit 'tooltip)
    (popup-tip-face :inherit 'tooltip)
 
+   ;; powerline
+   (powerline-active0 :inherit 'mode-line :foreground bg :background base8)
+   (powerline-active1 :inherit 'mode-line :foreground bg :background base8)
+   (powerline-active2 :inherit 'mode-line :foreground bg :background base8)
+   (powerline-inactive0 :inherit 'mode-line :foreground fg :background (doom-lighten bg 0.1))
+   (powerline-inactive1 :inherit 'mode-line :foreground fg :background (doom-lighten bg 0.1))
+   (powerline-inactive2 :inherit 'mode-line :foreground fg :background (doom-lighten bg 0.1))
 
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
 
@@ -180,7 +220,7 @@
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
    (markdown-code-face :background (doom-lighten base3 0.05))
-   
+
    ;; org-mode
    (org-level-1 :background bg :foreground blue :weight 'ultra-bold)
    (org-level-2 :background bg :foreground teal :weight 'extra-bold)

@@ -165,6 +165,7 @@
                        css-indent-offset
                        haskell-indent-offset
                        js-indent-level
+                       typescript-indent-level
                        lua-indent-level
                        python-indent-offset
                        rust-indent-offset
@@ -784,6 +785,28 @@
            ;; (rjsx-mode . lsp)
            )
     :config (setq js-indent-level indent-size))
+
+  ;; (use-package lsp-tramp-tsls
+  ;;   :ensure nil
+  ;;   :after lsp-mode
+  ;;   :init (provide 'lsp-tramp-tsls)
+  ;;   :config
+  ;;   (lsp-register-client
+  ;;    (make-lsp-client :new-connection (lsp-tramp-connection '("typescript-language-server" "--stdio"))
+  ;;                     :major-modes '(js-mode js2-mode typescript-mode)
+  ;;                     :remote? t
+  ;;                     :server-id 'lsp-tramp-tsls)))
+  )
+
+(package-feature 'feature-typescript
+  (use-package typescript-mode
+    :ensure t
+    :defer  t
+    :mode "\\.ts\\'"
+    :hook ((typescript-mode . indent-spaces-mode)
+           (typescript-mode . highlight-indent-guides-mode)
+           (typescript-mode . lsp))
+    :config (setq typescript-indent-level indent-size))
 
   ;; (use-package lsp-tramp-tsls
   ;;   :ensure nil
