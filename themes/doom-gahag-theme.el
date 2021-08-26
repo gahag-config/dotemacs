@@ -127,6 +127,14 @@
    (isearch :background yellow2 :foreground bg)
    (lazy-highlight :background yellow :foreground bg)
 
+   ;; helm
+   (helm-ff-dotted-directory :foreground (doom-lighten fg 0.5))
+   (helm-ff-directory :foreground blue)
+   (helm-buffer-modified :foreground yellow)
+   (helm-buffer-directory :foreground blue)
+   (helm-buffer-file :foreground fg)
+   (helm-non-file-buffer :foreground (doom-darken fg 0.5))
+
    ;; company
    (company-tooltip            :inherit 'tooltip)
    (company-tooltip-common                           :foreground highlight)
