@@ -130,6 +130,7 @@
    ;; helm
    (helm-ff-dotted-directory :foreground (doom-lighten fg 0.5))
    (helm-ff-directory :foreground blue)
+   (helm-ff-file-extension :foreground fg)
    (helm-buffer-modified :foreground yellow)
    (helm-buffer-directory :foreground blue)
    (helm-buffer-file :foreground fg)
@@ -238,6 +239,8 @@
    (org-level-6 :background bg :foreground yellow2 :weight 'medium)
    (org-level-7 :background bg :foreground blue2 :weight 'medium)
    (org-level-8 :background bg :foreground magenta :weight 'medium)
+   (org-todo :foreground green :underline t :weight 'medium)
+   (org-done :foreground grey :underline t :weight 'medium)
    (org-block   :background (doom-darken bg 0.02) :extend t)
    (org-tag     :background bg :foreground bright)
    (org-link :foreground yellow :underline t :weight 'regular)
