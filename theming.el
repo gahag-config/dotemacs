@@ -9,6 +9,11 @@
 
 (defun load-X-theme (theme)
   "Load theme when not in a terminal."
+  (interactive
+   (list
+    (intern (completing-read "Load custom theme: "
+                             (mapcar #'symbol-name
+				                             (custom-available-themes))))))
   (if (display-graphic-p)
       (load-theme theme t)))
 
