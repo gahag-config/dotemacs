@@ -888,7 +888,8 @@
     :hook (rust-mode . lsp)
     :config
     (setq-default rust-indent-offset indent-size)
-    (setq-default lsp-rust-server 'rust-analyzer)))
+    (setq-default lsp-rust-server 'rust-analyzer)
+    (setq-default lsp-rust-analyzer-proc-macro-enable 't)))
 
 
 ;; Haskell -------------------------------------------------------------------------------
