@@ -559,7 +559,8 @@
                 (list headline
                       (buffer-file-name)
                       nil
-                      (org-find-exact-headline-in-buffer (capitalize headline)))))
+                      (org-find-exact-headline-in-buffer (capitalize headline))))
+    (org-update-statistics-cookies 't))
 
   (defun org-refile-todo ()
     "Move current subtree to the corresponding todo heading"
