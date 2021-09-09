@@ -20,6 +20,7 @@
                              feature-docker
                              feature-jsx
                              feature-lsp-java
+                             feature-lsp-java-boot
                              feature-typescript
                              feature-restclient))
 

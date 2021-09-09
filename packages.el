@@ -832,6 +832,8 @@
     :defer t
     :hook (java-mode . (lambda () (require 'lsp-java) (lsp)))
     :config
+    (package-feature 'feature-lsp-java-boot
+      (require 'lsp-java-boot))
     (setq lsp-java-server-install-dir "~/tw/code/java/jdtls/eclipse.jdt.ls-1.2.0/eclipse.jdt.ls-1.2.0/org.eclipse.jdt.ls.product/target/repository/"
           lsp-java-workspace-dir (expand-file-name "~/.cache/eclipse-workspace/")
           lsp-java-code-generation-hash-code-equals-use-java7objects t)
