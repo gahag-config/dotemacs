@@ -837,6 +837,14 @@
     (setq lsp-java-server-install-dir "~/tw/code/java/jdtls/eclipse.jdt.ls-1.2.0/eclipse.jdt.ls-1.2.0/org.eclipse.jdt.ls.product/target/repository/"
           lsp-java-workspace-dir (expand-file-name "~/.cache/eclipse-workspace/")
           lsp-java-code-generation-hash-code-equals-use-java7objects t)
+
+    ;; Lombok:
+    (setq path-to-lombok (expand-file-name "~/tw/code/java/lombok.jar"))
+    (add-to-list 'lsp-java-vmargs
+                 (concat "-javaagent:" path-to-lombok))
+    (add-to-list 'lsp-java-vmargs
+                 (concat "-Xbootclasspath/a:" path-to-lombok))
+
     ;; For android projects, add these entries to the .classpath file in jdt.ls-java-project:
     ;; <classpathentry kind="src" path="app-dir-with-classpaths">
     ;; <classpathentry kind="lib"

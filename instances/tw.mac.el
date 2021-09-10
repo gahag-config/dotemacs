@@ -45,11 +45,6 @@
                             (indent-spaces-mode)
                             (set-indent-size 2 nil)
                             (highlight-indent-guides-mode)))
-(setq path-to-lombok (expand-file-name "~/tw/code/java/lombok.jar"))
-(add-to-list 'lsp-java-vmargs
-             (concat "-javaagent:" path-to-lombok))
-(add-to-list 'lsp-java-vmargs
-             (concat "-Xbootclasspath/a:" path-to-lombok))
 
 
 ;; ---------------------------------------------------------------------------------------
