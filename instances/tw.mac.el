@@ -6,7 +6,7 @@
 (defconst dotemacs-dir  "~/tw/config/dotemacs/")
 (defconst dotemacs-file (concat dotemacs-dir "gahag.el"))
 (defconst themes-dir    (concat dotemacs-dir "themes/"))
-(setq-default org-agenda-files (file-expand-wildcards "~/tw/org/*.org"))
+(setq-default org-agenda-files (directory-files-recursively "~/tw/org/" ".*\.org"))
 
 ;; features:
 (defconst package-features '(feature-lsp
@@ -31,9 +31,8 @@
 
 
 ;; Mac specifics
-(setq-default dired-listing-switches "-alhGv"
-              magit-git-executable "/usr/bin/git")
-(add-to-list 'exec-path "/usr/local/bin/")
+;; Avoid path lookup because it is *slow*
+(setq-default magit-git-executable "/usr/bin/git")
 
 (use-package exec-path-from-shell
   :ensure t
