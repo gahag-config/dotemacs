@@ -537,6 +537,7 @@
   (put 'org-table-convert-region-max-lines 'safe-local-variable (lambda (_) t))
   (put 'org-latex-toc-command 'safe-local-variable (lambda (_) t))
   (put 'org-after-todo-state-change-hook 'safe-local-variable (lambda (_) t))
+  (put 'org-hierarchical-todo-statistics 'safe-local-variable (lambda (_) t))
 
   (defun org-custom-timestamp (trans back _comm)
     "Remove <> around time-stamps."
