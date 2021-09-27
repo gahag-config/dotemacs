@@ -295,7 +295,9 @@
   :commands rg
   :bind (:map rg-mode-map
               ("n" . next-line)
-              ("p" . previous-line)))
+              ("p" . previous-line))
+  :config
+  (add-to-list 'rg-custom-type-aliases '("graphql" . "*.graphqls")))
 
 
 ;; Yasnippet -----------------------------------------------------------------------------
