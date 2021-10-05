@@ -58,6 +58,7 @@
   :bind (:map occur-mode-map
               ("n" . occur-next)
               ("p" . occur-prev))
+  :hook ((help-mode . visual-line-mode))
   :config
   (setq-default make-backup-files nil
                 truncate-lines t ;; disable word-wrap.
