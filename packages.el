@@ -1109,7 +1109,7 @@
     :defer t))
 
 
-;; Restclient ----------------------------------------------------------------------------
+;; HTTP clients --------------------------------------------------------------------------
 (package-feature 'feature-restclient
   (use-package restclient
     :ensure t
@@ -1121,6 +1121,13 @@
     :ensure t
     :defer t
     :init (org-babel-add-language 'restclient)))
+
+(package-feature 'feature-verb
+  (use-package verb
+    :ensure t
+    :defer t
+    :bind (:map verb-mode-map
+                ("C-c v" . verb-send-request-on-point))))
 
 
 ;; Langtool ------------------------------------------------------------------------------
