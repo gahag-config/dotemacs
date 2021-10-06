@@ -299,7 +299,8 @@
               ("n" . next-line)
               ("p" . previous-line))
   :config
-  (add-to-list 'rg-custom-type-aliases '("graphql" . "*.graphqls")))
+  (add-to-list 'rg-custom-type-aliases '("graphql" . "*.graphqls"))
+  (add-to-list 'rg-custom-type-aliases '("velocity" . "*.vm")))
 
 
 ;; Yasnippet -----------------------------------------------------------------------------
