@@ -22,7 +22,8 @@
                              feature-lsp-java
                              feature-lsp-java-boot
                              feature-typescript
-                             feature-restclient))
+                             feature-restclient
+                             feature-verb))
 
 (load dotemacs-file)
 
@@ -37,13 +38,16 @@
 (use-package exec-path-from-shell
   :ensure t
   :config
+  (setq exec-path-from-shell-arguments nil)
   (exec-path-from-shell-initialize))
 
 ;; Project specifics:
+(setq lsp-enable-file-watchers nil)
 (add-hook 'java-mode-hook (lambda ()
                             (indent-spaces-mode)
                             (set-indent-size 2 nil)
-                            (highlight-indent-guides-mode)))
+                            ;; (highlight-indent-guides-mode)
+                            ))
 
 
 ;; ---------------------------------------------------------------------------------------
@@ -54,7 +58,7 @@
  ;; If there is more than one, they won't work right.
  '(org-agenda-files '("~/tw/org/info.org" "~/tw/org/tasks.org"))
  '(package-selected-packages
-   '(go-mode typescript-mode lua-mode rainbow-mode yaml-mode command-log-mode lsp-java rjsx-mode exec-path-from-shell ob-restclient restclient ledger-mode transpose-frame multiple-cursors ace-jump-mode multi-line expand-region highlight-indent-guides docker dockerfile-mode json-mode web-mode rust-mode literate-calc-mode org-tree-slide olivetti org-re-reveal org-ref calfw-org calfw org-bullets dired-subtree dired-narrow dired-quick-sort dired-ranger vterm magit lsp-ui lsp-mode flycheck yasnippet-snippets yasnippet rg company helm doom-themes diminish powerline use-package)))
+   '(verb graphql-mode go-mode typescript-mode lua-mode rainbow-mode yaml-mode command-log-mode lsp-java rjsx-mode exec-path-from-shell ob-restclient restclient ledger-mode transpose-frame multiple-cursors ace-jump-mode multi-line expand-region highlight-indent-guides docker dockerfile-mode json-mode web-mode rust-mode literate-calc-mode org-tree-slide olivetti org-re-reveal org-ref calfw-org calfw org-bullets dired-subtree dired-narrow dired-quick-sort dired-ranger vterm magit lsp-ui lsp-mode flycheck yasnippet-snippets yasnippet rg company helm doom-themes diminish powerline use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
