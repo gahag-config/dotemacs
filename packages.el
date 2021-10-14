@@ -563,13 +563,24 @@
 
   (defun org-refile-to (headline)
     "Move current subtree to specified headline"
-    (org-refile nil
-                nil
-                (list headline
-                      (buffer-file-name)
-                      nil
-                      (org-find-exact-headline-in-buffer (capitalize headline))))
-    (org-update-statistics-cookies 't))
+    (let ((previous_parent (save-excursion
+                             (outline-up-heading 1)
+                             (point))))
+      (org-refile nil
+                  nil
+                  (list headline
+                        (buffer-file-name)
+                        nil
+                        (org-find-exact-headline-in-buffer (capitalize headline))))
+      (save-excursion
+        (goto-char previous_parent)
+        (org-update-statistics-cookies nil))
+
+      (org-refile-goto-last-stored)
+
+      (save-excursion
+        (outline-up-heading 1)
+        (org-update-statistics-cookies nil))))
 
   (defun org-refile-todo ()
     "Move current subtree to the corresponding todo heading"
