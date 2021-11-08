@@ -566,22 +566,26 @@
     "Move current subtree to specified headline"
     (let ((previous_parent (save-excursion
                              (outline-up-heading 1)
-                             (point))))
-      (org-refile nil
-                  nil
-                  (list headline
-                        (buffer-file-name)
+                             (point)))
+          (target-heading (org-find-exact-headline-in-buffer (capitalize headline))))
+      (if target-heading
+          (progn
+            (org-refile nil
                         nil
-                        (org-find-exact-headline-in-buffer (capitalize headline))))
-      (save-excursion
-        (goto-char previous_parent)
-        (org-update-statistics-cookies nil))
+                        (list headline
+                              (buffer-file-name)
+                              nil
+                              target-heading))
+            (save-excursion
+              (goto-char previous_parent)
+              (org-update-statistics-cookies nil))
 
-      (org-refile-goto-last-stored)
+            (org-refile-goto-last-stored)
 
-      (save-excursion
-        (outline-up-heading 1)
-        (org-update-statistics-cookies nil))))
+            (save-excursion
+              (outline-up-heading 1)
+              (org-update-statistics-cookies nil)))
+        (message "failed to resolve headline: %s" headline))))
 
   (defun org-refile-todo ()
     "Move current subtree to the corresponding todo heading"
