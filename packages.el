@@ -342,7 +342,8 @@
     :bind (:map lsp-mode-map
                 ("C-c r" . lsp-rename)
                 ("C-c h" . lsp-describe-thing-at-point)
-                ("C-c a" . lsp-execute-code-action))
+                ("C-c a" . lsp-execute-code-action)
+                ("C-M-." . lsp-goto-implementation))
     :config
     (setq-default lsp-prefer-flymake nil
                   lsp-file-watch-threshold 10000
@@ -354,7 +355,7 @@
     :defer t
     :commands lsp-ui-mode
     :bind (:map lsp-ui-mode-map
-                ("C-M-." . lsp-ui-peek-find-references)
+                ("C-M-," . lsp-ui-peek-find-references)
                 ("M-."   . lsp-ui-peek-find-definitions))
     :config
     (setq lsp-ui-sideline-ignore-duplicate t
