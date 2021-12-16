@@ -349,7 +349,8 @@
     (setq-default lsp-prefer-flymake nil
                   lsp-file-watch-threshold 10000
                   lsp-modeline-code-action-fallback-icon "λ"
-                  lsp-headerline-breadcrumb-enable nil))
+                  lsp-headerline-breadcrumb-enable nil
+                  lsp-lens-enable nil))
 
   (use-package lsp-ui
     :ensure t
