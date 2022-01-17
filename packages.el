@@ -100,6 +100,39 @@
                              (read-shell-command "Shell command on buffer: ")
                              (current-buffer)))
 
+  ;; ASCII-HEX converion
+  (defun hex-decode-string (hex-string)
+    (let ((res nil))
+      (dotimes (i (/ (length hex-string) 2) (apply #'concat (reverse res)))
+        (let ((hex-byte (substring hex-string (* 2 i) (* 2 (+ i 1)))))
+          (push (format "%c" (string-to-number hex-byte 16)) res)))))
+
+  (defun hex-encode-string (ascii-string)
+    (let ((res nil))
+      (dotimes (i (length ascii-string) (apply #'concat (reverse res)))
+        (let ((ascii-char (substring ascii-string i  (+ i 1))))
+          (push (format "%x" (string-to-char ascii-char)) res)))))
+
+  (defun hex-decode-region (start end)
+    "Decode a hex string in the selected region."
+    (interactive "r")
+    (save-excursion
+      (let* ((decoded-text
+              (hex-decode-string
+               (buffer-substring start end))))
+        (delete-region start end)
+        (insert decoded-text))))
+
+  (defun hex-encode-region (start end)
+    "Encode a hex string in the selected region."
+    (interactive "r")
+    (save-excursion
+      (let* ((encoded-text
+              (hex-encode-string
+               (buffer-substring start end))))
+        (delete-region start end)
+        (insert encoded-text))))
+
  ;; Modes
   (when window-system
     (tool-bar-mode -1)
