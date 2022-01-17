@@ -961,7 +961,8 @@
     :config
     (setq-default rust-indent-offset indent-size)
     (setq-default lsp-rust-server 'rust-analyzer)
-    (setq-default lsp-rust-analyzer-proc-macro-enable 't)))
+    (setq-default lsp-rust-analyzer-proc-macro-enable 't)
+    (setq-default lsp-rust-all-features 't)))
 
 
 ;; Haskell -------------------------------------------------------------------------------
