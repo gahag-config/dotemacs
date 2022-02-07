@@ -443,7 +443,7 @@
   (define-derived-mode run-mode shell-script-mode "run" ())
   (defun org-babel-execute:run (body params)
     "Send a block of shell code to vterm."
-    (vterm)
+    (vterm 't)
     (vterm-insert body)
     (vterm-send-return))
   :config
