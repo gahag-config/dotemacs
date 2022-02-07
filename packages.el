@@ -439,8 +439,13 @@
          :map vterm-copy-mode-map
          ("C-c C-j" . vterm-copy-mode)
          ("<return>" . vterm-copy-mode))
-  ;; :init
-  ;; (advice-add 'multi-term :after #'term-line-mode) ; start in line mode
+  :init
+  (define-derived-mode run-mode shell-script-mode "run" ())
+  (defun org-babel-execute:run (body params)
+    "Send a block of shell code to vterm."
+    (vterm)
+    (vterm-insert body)
+    (vterm-send-return))
   :config
   (setq vterm-kill-buffer-on-exit t
         vterm-max-scrollback 1000000))
