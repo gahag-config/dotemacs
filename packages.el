@@ -586,6 +586,8 @@
   (put 'org-hierarchical-todo-statistics 'safe-local-variable (lambda (_) t))
   (put 'org-confirm-babel-evaluate 'safe-local-variable (lambda (_) t))
 
+  (add-to-list 'org-export-backends 'md)
+
   (defun org-custom-timestamp (trans back _comm)
     "Remove <> around time-stamps."
     (pcase back
