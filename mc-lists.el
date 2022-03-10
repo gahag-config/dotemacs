@@ -26,6 +26,7 @@
         csharp-maybe-insert-codedoc
         cycle-spacing
         dabbrev-expand
+        default-indent-new-line
         delete-horizontal-space
         dired-mark
         dired-previous-line
@@ -45,6 +46,7 @@
         kill-sentence
         markdown-enter-key
         markdown-outdent-or-delete
+        multi-line
         org-beginning-of-line
         org-cycle
         org-delete-char
@@ -95,6 +97,7 @@
         helm-confirm-and-exit-minibuffer
         helm-find-files
         helm-show-kill-ring
+        ignore
         jump-to-register
         kmacro-end-or-call-macro
         list-directory
