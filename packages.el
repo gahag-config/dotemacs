@@ -332,6 +332,8 @@
               ("n" . next-line)
               ("p" . previous-line))
   :config
+  (setq-default rg-command-line-flags '("-."))
+
   (add-to-list 'rg-custom-type-aliases '("graphql" . "*.graphqls"))
   (add-to-list 'rg-custom-type-aliases '("velocity" . "*.vm"))
   (add-to-list 'rg-custom-type-aliases '("ledger" . "*.ledger")))
