@@ -409,6 +409,7 @@
   ;; :bind   (:map magit-file-mode-map
   ;;               ("C-x g" . nil))
   :config (setq-default magit-diff-refine-hunk 'all)
+          (setq-default magit-save-repository-buffers nil)
           (setq magit-log-margin (quote (t
                                          "%Y-%m-%d %H:%M "
                                          magit-log-margin-width
