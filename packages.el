@@ -171,7 +171,11 @@
   ;; Registers
   (set-register ?e '(file . "~/.config/emacs/init.el"))
   (set-register ?E `(file . ,dotemacs-file))
-  (set-register ?p `(file . ,(concat dotemacs-dir "packages.el"))))
+  (set-register ?p `(file . ,(concat dotemacs-dir "packages.el")))
+
+  ;; Authentication
+  (add-to-list 'auth-sources '"~/.config/authinfo")
+  (setq network-stream-use-client-certificates 't))
 
 
 ;; Whitespace ----------------------------------------------------------------------------
