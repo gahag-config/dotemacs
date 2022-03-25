@@ -1181,6 +1181,16 @@
             ("account" "ledger -f %(ledger-file) reg %(account)")))))
 
 
+;; PlantUML --------------------------------------------------------------------------------
+(package-feature 'feature-plantuml
+  (use-package plantuml-mode
+    :ensure t
+    :defer t
+    :init (org-babel-add-language 'plantuml)
+    :config
+    (setq-default org-plantuml-jar-path "/usr/share/java/plantuml/plantuml.jar"))
+
+
 ;; Togetherly ----------------------------------------------------------------------------
 (package-feature 'feature-togetherly
   (use-package togetherly
