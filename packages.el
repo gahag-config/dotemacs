@@ -1191,7 +1191,7 @@
     :defer t
     :init (org-babel-add-language 'plantuml)
     :config
-    (setq-default org-plantuml-jar-path "/usr/share/java/plantuml/plantuml.jar"))
+    (setq-default org-plantuml-jar-path "/usr/share/java/plantuml/plantuml.jar")))
 
 
 ;; Togetherly ----------------------------------------------------------------------------
