@@ -208,6 +208,7 @@
                        python-indent-offset
                        rust-indent-offset
                        sh-basic-offset
+                       markdown-list-indent-width
                        web-mode-markup-indent-offset
                        web-mode-code-indent-offset)))
       (mapc (lambda (var)
@@ -1068,7 +1069,9 @@
 ;; Markdown ------------------------------------------------------------------------------
 (use-package markdown-mode
   :ensure t
-  :defer t)
+  :defer t
+  :config
+  (setq-default markdown-list-indent-width indent-size))
 
 
 ;; Json ----------------------------------------------------------------------------------
