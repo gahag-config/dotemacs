@@ -34,6 +34,7 @@
         downcase-region
         electric-newline-and-maybe-indent
         electric-pair-delete-pair
+        end-of-defun
         end-of-visual-line
         eval-print-last-sexp
         forward-sexp

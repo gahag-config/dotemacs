@@ -16,7 +16,7 @@
                              feature-yaml
                              feature-docker
                              feature-org-reveal
-                             feature-org-plantuml
+                             feature-plantuml
                              feature-org-presentation
                              feature-org-calc
                              feature-restclient
