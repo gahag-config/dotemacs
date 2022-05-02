@@ -548,6 +548,7 @@
   ;;   org-structure-template-alist)
 
   (setq org-todo-keywords '((sequence "TODO" "NEXT" "|" "DONE" "DISMISSED"))
+        org-adapt-indentation t
         org-hide-emphasis-markers t
         org-ellipsis "..."
         org-catch-invisible-edits 'show-and-error
