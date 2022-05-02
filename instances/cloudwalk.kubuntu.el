@@ -3,10 +3,10 @@
 (require 'xdg)
 
 (defconst desktop-home  (concat (xdg-data-home) "/emacs/desktops/"))
-(defconst dotemacs-dir  "/home/gahag/gahag/config/dotemacs/")
+(defconst dotemacs-dir  "/home/gabrielbastos-e14/gahag/config/dotemacs/")
 (defconst dotemacs-file (concat dotemacs-dir "gahag.el"))
 (defconst themes-dir    (concat dotemacs-dir "themes/"))
-(setq-default org-agenda-files '("/home/gahag/gahag/org"))
+(setq-default org-agenda-files '("/home/gabrielbastos-e14/gahag/org"))
 
 ;; features:
 (defconst package-features '(feature-lsp
@@ -34,6 +34,7 @@
               (set-indent-size 4 nil)
               (indent-spaces-mode))))
 
+(setq org-plantuml-jar-path "/usr/share/plantuml/plantuml.jar")
 
 ;; ---------------------------------------------------------------------------------------
 
