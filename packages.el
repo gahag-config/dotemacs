@@ -206,6 +206,7 @@
                        typescript-indent-level
                        lua-indent-level
                        python-indent-offset
+                       ruby-indent-level
                        rust-indent-offset
                        sh-basic-offset
                        markdown-list-indent-width
@@ -977,6 +978,17 @@
    :defer t
    :config
    (setq ein:polymode t)))  ; inline images and some other stuff.
+
+
+;; Ruby --------------------------------------------------------------------------------
+(package-feature 'feature-ruby
+  (use-package ruby-mode
+    :ensure t
+    :defer  t
+    :hook (ruby-mode . lsp)
+    :init (org-babel-add-language 'ruby)
+    :config
+    (setq ruby-indent-level indent-size)))
 
 
 ;; Rust ----------------------------------------------------------------------------------
