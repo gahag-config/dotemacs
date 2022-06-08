@@ -402,6 +402,7 @@
                 ("M-."   . lsp-ui-peek-find-definitions))
     :config
     (setq lsp-ui-sideline-ignore-duplicate t
+          lsp-ui-sideline-show-code-actions t
           lsp-ui-peek-always-show t
           lsp-ui-doc-enable nil)
     (lsp-ui-sideline-toggle-symbols-info)))
