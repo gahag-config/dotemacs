@@ -43,7 +43,7 @@
          ("C-{" . backward-paragraph)
          ("C-}" . forward-paragraph)
 
-         ("C-x k" . kill-this-buffer)
+         ("C-x k" . kill-current-buffer)
 
          ("M-o" . other-frame)
 

@@ -75,6 +75,7 @@
         transpose-sexps
         transpose-words
         upcase-region
+        wdired--self-insert
         wdired-capitalize-word
         wdired-downcase-word
         wdired-upcase-word
