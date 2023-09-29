@@ -313,6 +313,7 @@
                                          "\\`magit-.*:"
                                          "\\`\\*tramp"
                                          "\\`\\*emacs\\*"
+                                         "\\`\\*Verb log\\*"
                                          "\\`\\*Org Preview LaTeX Output\\*"
                                          "\\`\\*ein:jupyter-server\\*"
                                          "\\`\\*ein:log-all\\*"
