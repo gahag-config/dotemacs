@@ -133,6 +133,19 @@
         (delete-region start end)
         (insert encoded-text))))
 
+  (defun url-decode (start end)
+    "Url-decode region"
+    (interactive "r")
+    (let ((input (buffer-substring start end)))
+      (require 'url-util)
+      (delete-region start end)
+      (insert
+       (json-encode
+        (mapcar
+         (lambda (pair) (mapcar 'url-unhex-string (split-string pair "=")))
+         (split-string input "&"))))
+      (json-pretty-print (mark) (point))))
+
  ;; Modes
   (when window-system
     (tool-bar-mode -1)
