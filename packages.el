@@ -199,7 +199,7 @@
   :init
   (defvar indent-size 2)
 
-  (defun indent-tabs-mode ()
+  (defun indent-tab-mode ()
     (interactive)
     (setq-local indent-tabs-mode t))
 
