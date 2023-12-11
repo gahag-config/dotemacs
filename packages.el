@@ -146,6 +146,22 @@
          (split-string input "&"))))
       (json-pretty-print (mark) (point))))
 
+  (defun jwt-decode ()
+    "Jwt-decode region"
+    (interactive)
+    (let ((start (point)))
+      (search-forward ".")
+      (delete-char -1)
+      (base64-decode-region start (point) 't)
+      (json-pretty-print start (point)))
+    (newline)
+    (let ((start (point)))
+      (search-forward ".")
+      (delete-char -1)
+      (base64-decode-region start (point) 't)
+      (json-pretty-print start (point)))
+    (newline))
+
  ;; Modes
   (when window-system
     (tool-bar-mode -1)
