@@ -314,6 +314,7 @@
   (setq helm-buffer-skip-remote-checking t ; Prevent helm-mini from querying remote buffers
         helm-buffer-max-length 40
         helm-boring-buffer-regexp-list '("\\` "
+                                         "\\`\\*Async-native-compile-log\\*"
                                          "\\`\\*helm"
                                          "\\`\\*Echo Area"
                                          "\\`\\*Minibuf"
