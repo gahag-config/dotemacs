@@ -842,6 +842,20 @@
     :config (pdf-tools-install)))
 
 
+;; SQL mode ------------------------------------------------------------------------------
+(use-package sql
+  :ensure nil
+  :init
+  (org-babel-add-language 'sql)
+  (defun org-babel-execute:bq (orig-fun body params)
+    (if (string-equal-ignore-case (cdr (assq :engine params)) "bq")
+        (with-temp-buffer
+          (insert (org-babel-eval "bq query --format=prettyjson --nouse_legacy_sql" body))
+          (delete-trailing-whitespace)
+          (buffer-string))
+      (org-babel-execute:sql body params)))
+  (advice-add 'org-babel-execute:sql :around #'org-babel-execute:bq))
+
 ;; Elisp-mode ----------------------------------------------------------------------------
 (use-package elisp-mode
   :ensure nil
