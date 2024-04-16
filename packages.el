@@ -850,7 +850,7 @@
   (defun org-babel-execute:bq (orig-fun body params)
     (if (string-equal-ignore-case (cdr (assq :engine params)) "bq")
         (with-temp-buffer
-          (insert (org-babel-eval "bq query --format=prettyjson --nouse_legacy_sql" body))
+          (insert (org-babel-eval "bq query --quiet --format=prettyjson --nouse_legacy_sql" body))
           (delete-trailing-whitespace)
           (buffer-string))
       (org-babel-execute:sql body params)))
