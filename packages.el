@@ -847,14 +847,14 @@
   :ensure nil
   :init
   (org-babel-add-language 'sql)
-  (defun org-babel-execute:bq (orig-fun body params)
+  (defun org-babel-execute-bq-advice (orig-fun body params)
     (if (string-equal-ignore-case (cdr (assq :engine params)) "bq")
         (with-temp-buffer
           (insert (org-babel-eval "bq query --quiet --format=prettyjson --max_rows 1000 --nouse_legacy_sql" body))
           (delete-trailing-whitespace)
           (buffer-string))
-      (org-babel-execute:sql body params)))
-  (advice-add 'org-babel-execute:sql :around #'org-babel-execute:bq))
+      (funcall orig-fun body params)))
+  (advice-add 'org-babel-execute:sql :around #'org-babel-execute-bq-advice))
 
 ;; Elisp-mode ----------------------------------------------------------------------------
 (use-package elisp-mode
