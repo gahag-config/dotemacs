@@ -10,6 +10,7 @@
 
 ;; features:
 (defconst package-features '(feature-lsp
+                             feature-llm
                              feature-pdftools
                              feature-python
                              feature-ruby
@@ -35,7 +36,8 @@
               (set-indent-size 4 nil)
               (indent-spaces-mode))))
 
-(setq org-plantuml-jar-path "/usr/share/plantuml/plantuml.jar")
+(setq org-plantuml-jar-path "~/.local/bin/plantuml.jar")
+(setq plantuml-jar-path "~/.local/bin/plantuml.jar")
 
 ;; ---------------------------------------------------------------------------------------
 
@@ -52,4 +54,4 @@
  ;; If there is more than one, they won't work right.
  '(auth-source-save-behavior nil)
  '(package-selected-packages
-   '(adaptive-wrap kotlin-mode plantuml-mode ron-mode rust-playground ob-rust nginx-mode go-mode verb org-tree-slide web-mode literate-calc-mode pdf-tools olivetti js2-mode yasnippet-snippets ob-restclient php-mode restclient vterm use-package cmake-mode org-chef org org-re-reveal rg rust-mode org-ref multi-line csharp-mode ccls diminish dired-narrow dired-subtree multi-term org-bullets docker csv yaml-mode helm intero multiple-cursors lsp-java lsp-mode lsp-ui magit powerline yasnippet wgrep ein dockerfile-mode json-mode lua-mode use-package-ensure-system-package gradle-mode highlight-indent-guides pcap-mode lsp-rust csv-mode jsx-mode rainbow-mode ox-reveal togetherly arduino-mode company-arduino cquery lsp-python dired-quick-sort try ledger-mode calfw calfw-org company doom-themes shm transpose-frame dired-ranger latex-preview-pane nyan-mode ace-jump-mode flymake-haskell-multi haskell-mode expand-region flycheck auto-complete)))
+   '(dart-mode swift-mode terraform-mode graphviz-dot-mode adaptive-wrap kotlin-mode plantuml-mode ron-mode rust-playground ob-rust nginx-mode go-mode verb org-tree-slide web-mode literate-calc-mode pdf-tools olivetti js2-mode yasnippet-snippets ob-restclient php-mode restclient vterm use-package cmake-mode org-chef org org-re-reveal rg rust-mode org-ref multi-line csharp-mode ccls diminish dired-narrow dired-subtree multi-term org-bullets docker csv yaml-mode helm intero multiple-cursors lsp-java lsp-mode lsp-ui magit powerline yasnippet wgrep ein dockerfile-mode json-mode lua-mode use-package-ensure-system-package gradle-mode highlight-indent-guides pcap-mode lsp-rust csv-mode jsx-mode rainbow-mode ox-reveal togetherly arduino-mode company-arduino cquery lsp-python dired-quick-sort try ledger-mode calfw calfw-org company doom-themes shm transpose-frame dired-ranger latex-preview-pane nyan-mode ace-jump-mode flymake-haskell-multi haskell-mode expand-region flycheck auto-complete)))
