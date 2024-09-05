@@ -439,6 +439,17 @@
     (lsp-ui-sideline-toggle-symbols-info)))
 
 
+;; LLM -----------------------------------------------------------------------------------
+(package-feature 'feature-llm
+  (use-package gptel
+    :ensure t
+    :config
+    (setq gptel-model "claude-3-sonnet-20240229"
+          gptel-backend (gptel-make-anthropic "Claude"
+                                              :stream t
+                                              :key (lambda () (auth-source-pick-first-password :host "api.anthropic.com"))))))
+
+
 ;; Magit ---------------------------------------------------------------------------------
 (use-package magit
   :ensure t
