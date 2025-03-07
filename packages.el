@@ -162,6 +162,13 @@
       (json-pretty-print start (point)))
     (newline))
 
+  (defun get-secret (secret)
+    (funcall (plist-get (car (auth-source-search :host secret)) :secret)))
+
+  (defun get-url-secret (url)
+    (funcall (plist-get (car (auth-source-search :host (url-host (url-generic-parse-url url)))) :secret)))
+
+
  ;; Modes
   (when window-system
     (tool-bar-mode -1)
