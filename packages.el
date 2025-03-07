@@ -868,7 +868,8 @@
   (defun org-babel-execute-bq-advice (orig-fun body params)
     (if (string-equal-ignore-case (cdr (assq :engine params)) "bq")
         (with-temp-buffer
-          (insert (org-babel-eval "bq query --quiet --format=prettyjson --max_rows 1000 --nouse_legacy_sql" body))
+          ;; `cat |' is a workaround for a bug in bq: https://issuetracker.google.com/issues/401444933
+          (insert (org-babel-eval "cat | bq query --quiet --format=prettyjson --max_rows 1000 --nouse_legacy_sql" body))
           (delete-trailing-whitespace)
           (buffer-string))
       (funcall orig-fun body params)))
