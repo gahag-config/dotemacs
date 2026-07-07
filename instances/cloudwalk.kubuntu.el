@@ -2,11 +2,14 @@
 
 (require 'xdg)
 
+; I hate snaps
+(setenv "XDG_DATA_DIRS" (replace-regexp-in-string "/snap/emacs/2504/usr/share:" "" (getenv "XDG_DATA_DIRS")))
+
 (defconst desktop-home  (concat (xdg-data-home) "/emacs/desktops/"))
-(defconst dotemacs-dir  "/home/gabrielbastos-e14/gahag/config/dotemacs/")
+(defconst dotemacs-dir  "/home/gabriel_bastos/gahag/config/dotemacs/")
 (defconst dotemacs-file (concat dotemacs-dir "gahag.el"))
 (defconst themes-dir    (concat dotemacs-dir "themes/"))
-(setq-default org-agenda-files '("/home/gabrielbastos-e14/gahag/org"))
+(setq-default org-agenda-files '("/home/gabriel_bastos/gahag/org"))
 
 ;; features:
 (defconst package-features '(feature-lsp
@@ -54,4 +57,19 @@
  ;; If there is more than one, they won't work right.
  '(auth-source-save-behavior nil)
  '(package-selected-packages
-   '(dart-mode swift-mode terraform-mode graphviz-dot-mode adaptive-wrap kotlin-mode plantuml-mode ron-mode rust-playground ob-rust nginx-mode go-mode verb org-tree-slide web-mode literate-calc-mode pdf-tools olivetti js2-mode yasnippet-snippets ob-restclient php-mode restclient vterm use-package cmake-mode org-chef org org-re-reveal rg rust-mode org-ref multi-line csharp-mode ccls diminish dired-narrow dired-subtree multi-term org-bullets docker csv yaml-mode helm intero multiple-cursors lsp-java lsp-mode lsp-ui magit powerline yasnippet wgrep ein dockerfile-mode json-mode lua-mode use-package-ensure-system-package gradle-mode highlight-indent-guides pcap-mode lsp-rust csv-mode jsx-mode rainbow-mode ox-reveal togetherly arduino-mode company-arduino cquery lsp-python dired-quick-sort try ledger-mode calfw calfw-org company doom-themes shm transpose-frame dired-ranger latex-preview-pane nyan-mode ace-jump-mode flymake-haskell-multi haskell-mode expand-region flycheck auto-complete)))
+   '(ace-jump-mode adaptive-wrap arduino-mode auto-complete calfw calfw-org ccls cmake-mode
+                   company company-arduino cquery csharp-mode csv csv-mode dart-mode
+                   diminish dired-narrow dired-quick-sort dired-ranger dired-subtree
+                   docker dockerfile-mode doom-themes ein elixir-mode elysium
+                   expand-region flycheck flymake-haskell-multi go-mode gptel gradle-mode
+                   graphviz-dot-mode haskell-mode helm highlight-indent-guides intero
+                   js2-mode json-mode jsx-mode kotlin-mode latex-preview-pane ledger-mode
+                   literate-calc-mode lsp-java lsp-mode lsp-python lsp-rust lsp-ui
+                   lua-mode magit multi-line multi-term multiple-cursors nginx-mode
+                   nyan-mode ob-restclient ob-rust olivetti org org-bullets org-chef
+                   org-re-reveal org-ref org-tree-slide ox-reveal pcap-mode pdf-tools
+                   php-mode plantuml-mode powerline rainbow-mode restclient rg ron-mode
+                   rust-mode rust-playground shm swift-mode terraform-mode togetherly
+                   transpose-frame try use-package use-package-ensure-system-package verb
+                   vterm web-mode wgrep yaml-mode yasnippet yasnippet-snippets))
+ '(safe-local-variable-values '((gptel-org-branching-context . t))))

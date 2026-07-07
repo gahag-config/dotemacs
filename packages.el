@@ -330,7 +330,7 @@
                                          ;; "\\`\\*EGLOT"
                                          "\\`\\*Flymake"
                                          "\\`\\*Flycheck"
-                                         "\\`magit-.*:"
+                                         "\\`magit-process:"
                                          "\\`\\*tramp"
                                          "\\`\\*emacs\\*"
                                          "\\`\\*Verb log\\*"
@@ -462,6 +462,7 @@
   ;;               ("C-x g" . nil))
   :config (setq-default magit-diff-refine-hunk 'all)
           (setq-default magit-save-repository-buffers nil)
+          (setq magit-diff-visit-prefer-worktree t)
           (setq magit-log-margin (quote (t
                                          "%Y-%m-%d %H:%M "
                                          magit-log-margin-width
@@ -652,6 +653,7 @@
   (put 'org-after-todo-state-change-hook 'safe-local-variable (lambda (_) t))
   (put 'org-hierarchical-todo-statistics 'safe-local-variable (lambda (_) t))
   (put 'org-confirm-babel-evaluate 'safe-local-variable (lambda (_) t))
+  (put 'org-highlight-latex-and-related 'safe-local-variable (lambda (_) t))
 
   (add-to-list 'org-export-backends 'md)
 

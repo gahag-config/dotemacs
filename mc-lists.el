@@ -56,6 +56,7 @@
         org-force-self-insert
         org-kill-line
         org-open-line
+        org-promote-subtree
         org-return
         org-return-indent
         org-self-insert-command
@@ -79,6 +80,7 @@
         wdired-capitalize-word
         wdired-downcase-word
         wdired-upcase-word
+        wgrep-finish-edit
         yaml-electric-backspace
         yaml-electric-dash-and-dot
         yas-expand
